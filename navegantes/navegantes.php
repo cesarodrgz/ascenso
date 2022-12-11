@@ -40,6 +40,15 @@
           <a href="" class="btn btn-primary btn-block">Editar Perfil</a>
         </div>
       </div>
+      <br>
+      <div class="col-xs-12 col-md-6 col-xl-12">
+        <div class="col">
+          <center>
+            <img src="../img/premio.png" alt="LOGO-PREMIOS" style="width: 150px;">
+          </center>
+          <a href="" class="btn btn-primary btn-block">Ver mis premios</a>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -51,10 +51,10 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
           <center>
             <img src="../../img/usuario.png" alt="LOGO-EDITAR-PERFIL" style="width: 150px;">
           </center>
-          <a href="" class="btn btn-primary btn-block">Editar Perfil</a>
+          <a href="" class="btn btn-primary btn-block">Editar Perfil</a> <br><br>
         </div>
       </div>
-      <br>
+      
       <div class="col-xs-12 col-md-6 col-xl-12">
         <div class="col">
           <center>
@@ -63,9 +63,12 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
           <a href="" class="btn btn-primary btn-block">Ver mis premios</a>
         </div>
       </div>
-
     </div>
   </div>
+<br><br>
+  <?php 
+    include '../../templates/footer.php' //Incluimos el footer
+  ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

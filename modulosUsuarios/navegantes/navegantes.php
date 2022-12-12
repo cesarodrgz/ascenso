@@ -1,3 +1,8 @@
+<?php 
+include "../../templates/conexion.php";
+session_start();
+$user = $_SESSION['user'];
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,9 +31,9 @@
     <div class="row">
       <div class="col-xs-12 col-md-6 col-xl-12">
         <div class="alert alert-primary" role="alert">
-          <h1 class="text-center">
-            Bienvenido
-          </h1>
+          <h2 class="text-center">
+            Bienvenido <?php echo $user //Aquí debe aparecer el nombre (realizar una búsqueda SQL) ?> 
+          </h2>
         </div>
       </div>
 

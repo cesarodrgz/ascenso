@@ -52,4 +52,4 @@ if ($filas > 0) {
 //Iniciamos una sesión (esta nos sirve para mantener uno o varios datos a la vez del usuario ingresado)
 session_start();
 //En este caso mantenemos el correo del usuario
-$_SESSION['user'] = $_POST['txtUsuario'];
+$_SESSION['user'] = $_POST['user'];

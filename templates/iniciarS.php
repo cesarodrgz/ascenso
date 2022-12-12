@@ -7,7 +7,7 @@ $correo = $_POST['user']; //input del correo que llamaremos usuario
 $contra = $_POST['pass']; //input de la contraseña
 
 //Consulta SQL que usaremos para buscar en la base de datos el usuario
-$consulta = "SELECT user, pass FROM administradores WHERE user = '" . $correo . "' and pass = '" . $contra . "'";
+$consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Navegantes'";
 $resultado = mysqli_query($enlace, $consulta);
 
 //Obtenemos el resultados mediante las filas
@@ -17,7 +17,7 @@ $filas = mysqli_num_rows($resultado);
 
 //Si existe un número mayor que cero, enviamos al usuario a la web de opciones
 if ($filas > 0) {
-    header("location:../navegantes/navegantes.php");
+    header("location:../modulosUsuarios/navegantes/navegantes.php");
     //Si el usuario no esta lo enviamos al index nuevamente, es decir el usuario no existe.
 } elseif ($filas < 0) {
     header("location:index.php");

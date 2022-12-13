@@ -1,3 +1,8 @@
+<?php
+include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
+session_start(); //Iniciamos la variable de sesión
+$user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
+?>
 <!doctype html>
 <html lang="en">
 
@@ -9,7 +14,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
+    <!--Sweet Alert CDN-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -20,50 +27,91 @@
                 <h1 class="text-center">
                     Editar Perfil
                 </h1>
-
                 <h4 class="text-center">Foto de Perfil</h4>
                 <center>
-                    <img src="../../img/logo.png" alt="FotoPerfil" style="width: 150px;">
-                    <form action="" method="post">
+                    <?php
+                    $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+                    while ($datos = mysqli_fetch_array($consulta)) { ?>
 
+                        <img src="../../img/logo.png" alt="FotoPerfil" style="width: 150px;">
+                        <form action="" method="post">
+
+                            <br>
+                            <br>
+                            <input type="hidden" name="id" value="<?php echo $datos["id"] ?>">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" name="user" readonly class="form-control" value="<?php echo $datos["nombre"] ?>">
+
+                            <br>
+                            <label for="Direccion">Direccion</label>
+                            <input type="text" name="direccion" class="form-control" value="<?php echo $datos["direccion"] ?>">
+
+                            <br>
+                            <label for="Telefono">Telefono</label>
+                            <input type="tel" name="telefono" class="form-control" value="<?php echo $datos["telefono"] ?>">
+
+                            <br>
+                            <label for="Fecha de nacimiento">Fecha de nacimiento</label>
+                            <input type="varchar" name="fecha de nacimiento" readonly class="form-control" value="<?php echo $datos["fechaNac"] ?>">
+
+                            <br>
+                            <label for="Padre">Padre</label>
+                            <input type="text" name="padre" readonly class="form-control" value="<?php echo $datos["padre"] ?>">
+
+                            <br>
+                            <label for="Madre">Madre</label>
+                            <input type="text" name="madre" readonly class="form-control" value="<?php echo $datos["madre"] ?>">
+
+                        <?php
+                    }
+                        ?>
 
                         <br>
-                        <br>
-                        <label for="Nombre">Nombre</label>
-                        <input type="text" name="user" readonly class="form-control">
+                        <input type="submit" value="GUARDAR" class="btn btn-success btn-block" name="send">
+                        </form>
+                        <?php
+                        if (isset($_POST["send"])) {
+                            $id = $_POST["id"];
+                            $direccion = $_POST["direccion"];
+                            $telefono = $_POST["telefono"];
 
-                        <br>
-                        <label for="Direccion">Direccion</label>
-                        <input type="text" name="direccion" class="form-control">
+                            $modificar = "UPDATE usuarios SET 
+                                            direccion = '" . $direccion . "',
+                                            telefono = '" . $telefono . "'
+                                            WHERE id = " . $id . ";";
 
-                        <br>
-                        <label for="Telefono">Telefono</label>
-                        <input type="tel" name="telefono" class="form-control">
-
-                        <br>
-                        <label for="Fecha de nacimiento">Fecha de nacimiento</label>
-                        <input type="varchar" name="fecha de nacimiento" readonly class="form-control">
-
-                        <br>
-                        <label for="Padre">Padre</label>
-                        <input type="text" name="padre" readonly class="form-control">
-
-                        <br>
-                        <label for="Madre">Madre</label>
-                        <input type="text" name="madre" readonly class="form-control">
-
-                        <br>
-                        <input type="submit" value="GUARDAR" class="btn btn-success btn-block">
-
-                    </form>
+                            $ejecutar = mysqli_query($enlace, $modificar);
+                        ?>
+                        <script>
+                            <?php if (!$ejecutar) { ?>
+                                swal.fire({
+                                    title: "Oops...",
+                                    text: "Algo salió mal..",
+                                    icon: "error",
+                                    button: "OK",
+                                });
+                            <?php } else { ?>
+                                swal.fire({
+                                    title: "¡Bien hecho!",
+                                    text: "Perfil Actualizado Correctamente",
+                                    icon: "success",
+                                    button: "OK",
+                                }).then((result) => {
+                                    if (result.value) {
+                                        window.location.href = 'editarPerfil.php'
+                                    }
+                                });;
+                            <?php }
+                        } ?>
+                        </script>
                 </center>
             </div>
         </div>
     </div>
 
-   <br>
-   <?php 
-        include '../../templates/footer.php'
+    <br>
+    <?php
+    include '../../templates/footer.php'
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

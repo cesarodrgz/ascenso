@@ -71,7 +71,6 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE no
                         </tr>
                         <tbody>
                             <?php
-                            echo $user;
                             $trimestre2 = mysqli_query($enlace, "SELECT p5, p6, p7, p8 from navbronce WHERE nombre = '$user'");
                             //Mostramos los datos que coincidan con la consulta SQL realizada
                             while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>
@@ -108,7 +107,6 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE no
                         </tr>
                         <tbody>
                             <?php
-                            echo $user;
                             $trimestre2 = mysqli_query($enlace, "SELECT p9, p10, p11, p12 from navbronce WHERE nombre = '$user'");
                             //Mostramos los datos que coincidan con la consulta SQL realizada
                             while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>
@@ -145,7 +143,6 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE no
                         </tr>
                         <tbody>
                             <?php
-                            echo $user;
                             $trimestre2 = mysqli_query($enlace, "SELECT p13, p14, p15, p16 from navbronce WHERE nombre = '$user'");
                             //Mostramos los datos que coincidan con la consulta SQL realizada
                             while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>

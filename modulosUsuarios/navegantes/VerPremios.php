@@ -1,3 +1,10 @@
+<?php
+include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
+session_start(); //Iniciamos la variable de sesión
+$user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
+
+$consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE nombre = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+?>
 <!doctype html>
 <html lang="en">
 
@@ -9,14 +16,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body> <br>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h3 class="text-center">Premios obtenidos en el trimestre 1</h3>
+                <h3 class="text-center text-success">Premios obtenidos en el trimestre 1</h3>
                 <div class="table-responsive-md">
                     <table class="table table-hover">
                         <tr>
@@ -28,12 +34,20 @@
                             </thead>
                         </tr>
                         <tbody>
-                            <tr>
-                                <td>Cocina</td>
-                                <td>Limpieza</td>
-                                <td>Naturaleza</td>
-                                <td>Televisión</td>
-                            </tr>
+                            <?php
+                            echo $user;
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos = mysqli_fetch_array($consulta)) { ?>
+                                <tr>
+                                    <td><?php echo $datos["p1"]; ?></td>
+                                    <td><?php echo $datos["p2"]; ?></td>
+                                    <td><?php echo $datos["p3"]; ?></td>
+                                    <td><?php echo $datos["p4"]; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                                
                         </tbody>
                     </table>
                 </div>
@@ -41,8 +55,119 @@
         </div>
     </div>
 
-    <?php 
-        include '../../templates/footer.php'
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <h3 class="text-center text-success">Premios obtenidos en el trimestre 2</h3>
+                <div class="table-responsive-md">
+                    <table class="table table-hover">
+                        <tr>
+                            <thead class="table table-dark">
+                                <td>Premio 1</td>
+                                <td>Premio 2</td>
+                                <td>Premio 3</td>
+                                <td>Premio 4</td>
+                            </thead>
+                        </tr>
+                        <tbody>
+                            <?php
+                            echo $user;
+                            $trimestre2 = mysqli_query($enlace, "SELECT p5, p6, p7, p8 from navbronce WHERE nombre = '$user'");
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>
+                                <tr>
+                                    <td><?php echo $datos2["p5"]; ?></td>
+                                    <td><?php echo $datos2["p6"]; ?></td>
+                                    <td><?php echo $datos2["p7"]; ?></td>
+                                    <td><?php echo $datos2["p8"]; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <h3 class="text-center text-success">Premios obtenidos en el trimestre 3</h3>
+                <div class="table-responsive-md">
+                    <table class="table table-hover">
+                        <tr>
+                            <thead class="table table-dark">
+                                <td>Premio 1</td>
+                                <td>Premio 2</td>
+                                <td>Premio 3</td>
+                                <td>Premio 4</td>
+                            </thead>
+                        </tr>
+                        <tbody>
+                            <?php
+                            echo $user;
+                            $trimestre2 = mysqli_query($enlace, "SELECT p9, p10, p11, p12 from navbronce WHERE nombre = '$user'");
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>
+                                <tr>
+                                    <td><?php echo $datos2["p9"]; ?></td>
+                                    <td><?php echo $datos2["p10"]; ?></td>
+                                    <td><?php echo $datos2["p11"]; ?></td>
+                                    <td><?php echo $datos2["p12"]; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <h3 class="text-center text-success">Premios obtenidos en el trimestre 2</h3>
+                <div class="table-responsive-md">
+                    <table class="table table-hover">
+                        <tr>
+                            <thead class="table table-dark">
+                                <td>Premio 1</td>
+                                <td>Premio 2</td>
+                                <td>Premio 3</td>
+                                <td>Premio 4</td>
+                            </thead>
+                        </tr>
+                        <tbody>
+                            <?php
+                            echo $user;
+                            $trimestre2 = mysqli_query($enlace, "SELECT p13, p14, p15, p16 from navbronce WHERE nombre = '$user'");
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos2 = mysqli_fetch_array($trimestre2)) { ?>
+                                <tr>
+                                    <td><?php echo $datos2["p13"]; ?></td>
+                                    <td><?php echo $datos2["p14"]; ?></td>
+                                    <td><?php echo $datos2["p15"]; ?></td>
+                                    <td><?php echo $datos2["p16"]; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    include '../../templates/footer.php'
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

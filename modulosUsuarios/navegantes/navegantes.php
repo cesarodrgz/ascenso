@@ -51,7 +51,7 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
           <center>
             <img src="../../img/usuario.png" alt="LOGO-EDITAR-PERFIL" style="width: 150px;">
           </center>
-          <a href="" class="btn btn-primary btn-block">Editar Perfil</a> <br><br>
+          <a href="editarPerfil.php" class="btn btn-primary btn-block">Editar Perfil</a> <br><br>
         </div>
       </div>
       

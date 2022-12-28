@@ -3,7 +3,7 @@ include "../../templates/conexion.php"; //Incluimos la clase conexión para real
 session_start(); //Iniciamos la variable de sesión
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
 
-$consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE nombre = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+$consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
 ?>
 <!doctype html>
 <html lang="en">

@@ -28,7 +28,7 @@
                     <img src="../../img/bronce.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="bronce.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="A1/seleccionarT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
             </div>
         </div><br>
 

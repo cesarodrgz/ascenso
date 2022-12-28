@@ -139,7 +139,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
               <td><?php echo $datos["nombre"]; ?></td>
               <td><?php echo $datos["direccion"]; ?></td>
               <td><?php echo $datos["telefono"]; ?></td>
-              <td><input type="button" value="Seleccionar" class="btn btn-primary" name="ACCION"></td>
+              <td><input type="button" value="Editar" class="btn btn-primary"></td>
             </tr>
           <?php
           }

@@ -12,7 +12,6 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- DataTable CSS-->
@@ -21,6 +20,9 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
 
 <body>
   <br>
+  <center>
+    <img src="../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+  </center>
   <div class="container">
     <div class="col-xs-12 col-md-12 col-xl-12">
       <h1 class="text-center">
@@ -82,7 +84,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
                   <br>
                   <div class="col-md-6">
                     <Label>Fecha de nacimiento</Label>
-                    <input type="text" name="fechaNac" class="form-control">
+                    <input type="date" name="fechaNac" class="form-control">
                   </div>
 
                   <br>
@@ -132,7 +134,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
               <td><?php echo $datos["id"]; ?></td>
-              <td><img width='100px' src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
+              <td><img class="img-fluid img-thumbnail" width='100px' src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
               <td><?php echo $datos["user"]; ?></td>
               <td><?php echo $datos["nombre"]; ?></td>
               <td><?php echo $datos["direccion"]; ?></td>
@@ -159,6 +161,8 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
 
   <!-- DataTable Script-->
   <script src="../../js/dataTable.js"></script>
+
+
 </body>
 
 </html>

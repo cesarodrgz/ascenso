@@ -2,40 +2,58 @@
 <html lang="en">
 
 <head>
-    <title>Opciones Administrador</title>
+    <title>Agregar premios navegantes - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
-    <br>
+<body> <br>
     <div class="container">
-        <div class="col">
-            <div class="col-xs-12 col-md-6 col-xl-12">
-                <h1 class="text-center">Opciones</h1>
-                <br>
-                <br>
-                <center>
-                    <img src="../../img/jefe.png" alt="admin" style="width: 150px;">
-                </center>
-                <a href="administrarusuario.php" class="btn btn-primary btn-block">Administrar Usuario</a>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-xl-12">
-                <br>
-                <br>
-                <center>
-                    <img src="../../img/agregar.png" alt="AGREGAR-PREMIOS" style="width: 125px;">
-                </center>
-                <br>
-                <a href="agregarPremios.php" class="btn btn-primary btn-block">Agregar Premios</a>
+        <h1 class="text-primary text-center">Agregar Premios</h1>
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <div class="alert alert-secondary text-center" role="alert">
+                    Seleccione el año al que desea agregar premios al Navegante
+                </div>
             </div>
         </div>
-    </div>
 
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <center>
+                    <img src="../../img/bronce.png" alt="A1-BRONCE" style="width: 125px;">
+                </center>
+                <br>
+                <a href="bronce.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <center>
+                    <img src="../../img/plata.png" alt="A1-BRONCE" style="width: 125px;">
+                </center>
+                <br>
+                <a href="" class="btn btn-info btn-block">Año 2 - Plata</a>
+            </div>
+        </div> <br>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <center>
+                    <img src="../../img/oro.png" alt="A1-BRONCE" style="width: 125px;">
+                </center>
+                <br>
+                <a href="" class="btn btn-info btn-block">Año 3 - Oro</a>
+            </div>
+        </div>
+    </div> <br>
+
+    <?php include '../../templates/footer.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

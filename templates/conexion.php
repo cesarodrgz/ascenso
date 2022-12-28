@@ -13,7 +13,7 @@ $enlace = mysqli_connect($servidor, $usuario, $clave, $nombrebd);
 
 //Si la conexión se realiza o no envia los siguientes mensajes
 if ($enlace) {
-    echo "conectado";
+    //echo "conectado";
 } else {
     echo "error";
 }

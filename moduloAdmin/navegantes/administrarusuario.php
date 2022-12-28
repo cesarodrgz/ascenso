@@ -134,7 +134,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
               <td><?php echo $datos["id"]; ?></td>
-              <td><img class="img-fluid img-thumbnail" width='100px' src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
+              <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
               <td><?php echo $datos["user"]; ?></td>
               <td><?php echo $datos["nombre"]; ?></td>
               <td><?php echo $datos["direccion"]; ?></td>

@@ -1,7 +1,8 @@
 <?php
+include 'metodos.php';
 include '../../templates/conexion.php';
 
-$consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono from usuarios WHERE departamento = 'Navegantes'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+$consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono, foto from usuarios WHERE departamento = 'Navegantes'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,23 +31,23 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
         Agregar Usuario
       </button>
 
-      <div class="modal" id="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Gestión de Usuario</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="" method="post" enctype="multipart/form-data">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="modal" id="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Gestión de Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
                 <div class="form-row">
                   <input type="hidden" name="id">
 
                   <div class="col-md-6">
                     <label>Usuario</label>
-                    <input type="text" name="usuario" class="form-control" placeholder="Usuario del navegante">
+                    <input type="text" name="user" class="form-control" placeholder="Usuario del navegante">
                   </div>
 
                   <div class="col-md-6">
@@ -57,7 +58,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
                   <br><br>
                   <div class="col-md-12">
                     <Label>Foto de perfil</Label>
-                    <input type="file" name="foto" class="form-control">
+                    <input type="file" accept="image/jpg" name="foto" class="form-control">
                   </div>
 
                   <br>
@@ -81,7 +82,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
                   <br>
                   <div class="col-md-6">
                     <Label>Fecha de nacimiento</Label>
-                    <input type="date" name="fecha" class="form-control">
+                    <input type="text" name="fechaNac" class="form-control">
                   </div>
 
                   <br>
@@ -96,16 +97,19 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
                     <input type="text" name="madre" class="form-control" placeholder="Nombre de la madre">
                   </div>
 
+                  <input type="hidden" name="departamento" id="" value="Navegantes" readonly>
+
                 </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Guardar</button>
-              <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+              </div>
+              <div class="modal-footer">
+                <button value="btnAgregar" <?php echo $accionAgregar; ?> class="btn btn-success" type="submit" name="accion">Agregar</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
+
     </div>
 
     <div class="col-xs-12 col-md-12 col-xl-12">
@@ -114,10 +118,12 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
         <thead>
           <tr>
             <th>ID</th>
+            <td>Foto</td>
             <th>Usuario</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
+            <th>Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -126,10 +132,12 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono 
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
               <td><?php echo $datos["id"]; ?></td>
+              <td><img width='100px' src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
               <td><?php echo $datos["user"]; ?></td>
               <td><?php echo $datos["nombre"]; ?></td>
               <td><?php echo $datos["direccion"]; ?></td>
               <td><?php echo $datos["telefono"]; ?></td>
+              <td><input type="button" value="Seleccionar" class="btn btn-primary" name="ACCION"></td>
             </tr>
           <?php
           }

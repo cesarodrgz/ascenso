@@ -18,17 +18,17 @@
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
-                    <img src="../../../img/1.png" alt="T1/Q1" style="width: 125px;">
+                    <img src="../../img/1.png" alt="T1/Q1" style="width: 125px;">
                 </center>
                 <br>
-                <a href="T1.php" class="btn btn-info btn-block">Trimestre 1</a>
+                <a href="A1/trimestre1/seleccionarNav.php" class="btn btn-info btn-block">Trimestre 1</a>
             </div>
         </div><br>
 
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
-                    <img src="../../../img/2.png" alt="T2/Q2" style="width: 125px;">
+                    <img src="../../img/2.png" alt="T2/Q2" style="width: 125px;">
                 </center>
                 <br>
                 <a href="" class="btn btn-info btn-block">Trimestre 2</a>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
-                    <img src="../../../img/3.png" alt="T3/Q3" style="width: 125px;">
+                    <img src="../../img/3.png" alt="T3/Q3" style="width: 125px;">
                 </center>
                 <br>
                 <a href="" class="btn btn-info btn-block">Trimestre 3</a>
@@ -48,14 +48,14 @@
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
-                    <img src="../../../img/4.png" alt="T4/Q4" style="width: 125px;">
+                    <img src="../../img/4.png" alt="T4/Q4" style="width: 125px;">
                 </center>
                 <br>
                 <a href="" class="btn btn-info btn-block">Trimestre 4</a>
             </div>
         </div><br>
 
-        <?php include '../../../templates/footer.php' ?>
+        <?php include '../../templates/footer.php' ?>
 
 
     </div>

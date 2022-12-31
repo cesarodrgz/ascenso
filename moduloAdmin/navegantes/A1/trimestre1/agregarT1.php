@@ -1,5 +1,5 @@
 <?php
-include '../../../templates/conexion.php';
+include '../../../../templates/conexion.php';
 $nombre = $_POST["nombre"]
 ?>
 <!doctype html>
@@ -123,7 +123,7 @@ $nombre = $_POST["nombre"]
                     button: "OK",
                 }).then((result) => {
                     if (result.value) {
-                        window.location.href = 'seleccionarT.php'
+                        window.location.href = '../../agregarPremios.php'
                     }
                 });;
             <?php }

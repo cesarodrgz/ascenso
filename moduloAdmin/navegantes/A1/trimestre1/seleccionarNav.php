@@ -1,5 +1,5 @@
 <?php 
-    include '../../../templates/conexion.php';
+    include '../../../../templates/conexion.php';
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,8 +1,10 @@
 <?php
+//Incluimos la clase de metodos donde tenemos el metodo de agregar mediante PDO
 include 'metodos.php';
+//Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../templates/conexion.php';
-
-$consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono, foto from usuarios WHERE departamento = 'Navegantes'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+//Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
+$consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono, foto from usuarios WHERE departamento = 'Navegantes'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,23 +23,28 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
 <body>
   <br>
   <center>
+    <!-- Logo de navegantes-->
     <img src="../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
   </center>
   <div class="container">
     <div class="col-xs-12 col-md-12 col-xl-12">
+      <!-- Título-->
       <h1 class="text-center">
         Administrar Usuarios
       </h1>
       <br>
+      <!-- Botón modal para agregar nuevos usuarios-->
       <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal">
         Agregar Usuario
       </button>
 
+      <!--Inicio del formulario con "multipart/form-data" para poder incorporar las fotos -->
       <form action="" method="post" enctype="multipart/form-data">
         <div class="modal" id="modal" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
+                <!--Título del modal-->
                 <h5 class="modal-title">Gestión de Usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -45,66 +52,80 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
               </div>
               <div class="modal-body">
                 <div class="form-row">
+                  <!--Input para el ID (oculto para el usuario)-->
                   <input type="hidden" name="id">
 
+                  <!--Input para el usuario-->
                   <div class="col-md-6">
                     <label>Usuario</label>
                     <input type="text" name="user" class="form-control" placeholder="Usuario del navegante">
                   </div>
 
+                  <!--Input para la contraseña-->
                   <div class="col-md-6">
                     <Label>Contraseña</Label>
                     <input type="text" name="pass" class="form-control" placeholder="Contraseña">
                   </div>
 
-                  <br><br>
+                  <!--Input para la foto de perfil-->
+                  <br>
                   <div class="col-md-12">
                     <Label>Foto de perfil</Label>
                     <input type="file" accept="image/jpg" name="foto" class="form-control">
                   </div>
 
+                  <!--Input para el nombre del navegante -->
                   <br>
                   <div class="col-md-12">
                     <Label>Nombre</Label>
                     <input type="text" name="nombre" class="form-control" placeholder="Nombre del navegante">
                   </div>
 
+                  <!--Input para la direccion -->
                   <br>
                   <div class="col-md-12">
                     <Label>Direccion</Label>
                     <input type="text" name="direccion" class="form-control" placeholder="Direccion del navegante">
                   </div>
 
+                  <!--Input para el telefono-->
                   <br>
                   <div class="col-md-6">
                     <Label>Telefono</Label>
                     <input type="tel" name="telefono" class="form-control" placeholder="Telefono">
                   </div>
 
+                  <!--Input para la fecha de nacimiento -->
                   <br>
                   <div class="col-md-6">
                     <Label>Fecha de nacimiento</Label>
                     <input type="date" name="fechaNac" class="form-control">
                   </div>
 
+                  <!--Input para el nombre del padre -->
                   <br>
                   <div class="col-md-6">
                     <Label>Padre</Label>
                     <input type="text" name="padre" class="form-control" placeholder="Nombre del padre">
                   </div>
 
+                  <!--Input para el nombre de la madre-->
                   <br>
                   <div class="col-md-6">
                     <Label>Madre</Label>
                     <input type="text" name="madre" class="form-control" placeholder="Nombre de la madre">
                   </div>
 
+                  <!--Input para el departamento definido en "Navegantes"-->
                   <input type="hidden" name="departamento" id="" value="Navegantes" readonly>
 
                 </div>
               </div>
+              <!--Footer del modal -->
               <div class="modal-footer">
+                <!--Botón para agregar -->
                 <button value="btnAgregar" <?php echo $accionAgregar; ?> class="btn btn-success" type="submit" name="accion">Agregar</button>
+                <!--Botón para cerrar el formulario -->
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
@@ -116,7 +137,9 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
 
     <div class="col-xs-12 col-md-12 col-xl-12">
       <br>
+      <!--Tabla para presentar los usuarios -->
       <table class="table table-striped table-bordered table-responsive" id="table">
+        <!--Encabezado de la tabla-->
         <thead>
           <tr>
             <th>Foto</th>
@@ -128,17 +151,25 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
             <th>Acción</th>
           </tr>
         </thead>
+        <!--Cuerpo de la tabla-->
         <tbody>
           <?php
           //Mostramos los datos que coincidan con la consulta SQL realizada
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
+              <!--Mostramos la foto -->
               <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
+              <!--Mostramos el usuario -->
               <td><?php echo $datos["user"]; ?></td>
+              <!--Mostramos el nombre -->
               <td><?php echo $datos["nombre"]; ?></td>
+              <!--Mostramos la direccion -->
               <td><?php echo $datos["direccion"]; ?></td>
+              <!--Mostramos el telefono -->
               <td><?php echo $datos["telefono"]; ?></td>
+              <!--Mostramos el id -->
               <td><?php echo $datos["id"]; ?></td>
+              <!--Botón para ir a editar-->
               <td><input type="button" value="Editar" class="btn btn-primary"></td>
             </tr>
           <?php
@@ -159,9 +190,8 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
   <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
-  <!-- DataTable Script-->
+  <!-- DataTable Script para español-->
   <script src="../../js/dataTable.js"></script>
-
 
 </body>
 

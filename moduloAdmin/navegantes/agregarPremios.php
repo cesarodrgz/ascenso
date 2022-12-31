@@ -13,6 +13,7 @@
 
 <body> <br>
     <div class="container">
+        <!--Título-->
         <h1 class="text-primary text-center">Agregar Premios</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
@@ -22,16 +23,18 @@
             </div>
         </div>
 
+        <!--Año 1-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
                     <img src="../../img/bronce.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="seleccionarT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="A1/seleccionarT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
             </div>
         </div><br>
 
+        <!--Año 2-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
@@ -42,6 +45,7 @@
             </div>
         </div> <br>
 
+        <!--Año 3-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <center>
@@ -53,6 +57,7 @@
         </div>
     </div> <br>
 
+    <!--Inlcuimos el footer-->
     <?php include '../../templates/footer.php' ?>
 
     <!-- Optional JavaScript -->

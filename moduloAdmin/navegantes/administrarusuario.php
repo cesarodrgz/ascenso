@@ -116,15 +116,15 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
 
     <div class="col-xs-12 col-md-12 col-xl-12">
       <br>
-      <table class="table" id="table">
+      <table class="table table-striped table-bordered table-responsive" id="table">
         <thead>
           <tr>
-            <th>ID</th>
-            <td>Foto</td>
+            <th>Foto</th>
             <th>Usuario</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
+            <th>ID</th>
             <th>Acción</th>
           </tr>
         </thead>
@@ -133,12 +133,12 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
           //Mostramos los datos que coincidan con la consulta SQL realizada
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
-              <td><?php echo $datos["id"]; ?></td>
               <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
               <td><?php echo $datos["user"]; ?></td>
               <td><?php echo $datos["nombre"]; ?></td>
               <td><?php echo $datos["direccion"]; ?></td>
               <td><?php echo $datos["telefono"]; ?></td>
+              <td><?php echo $datos["id"]; ?></td>
               <td><input type="button" value="Editar" class="btn btn-primary"></td>
             </tr>
           <?php

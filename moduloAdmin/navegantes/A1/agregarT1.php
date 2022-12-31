@@ -37,13 +37,44 @@ $nombre = $_POST["nombre"]
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
-                        <input type="text" name="id" value="<?php echo $info["id"] ?>">
-                        <input type="text" name="user" value="<?php echo $info["user"] ?>">
+                        <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
+                        <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <input type="text" name="p1" class="form-control" placeholder="Ingresar Premio 1"> <br>
-                        <input type="text" name="p2" class="form-control" placeholder="Ingresar Premio 2"> <br>
-                        <input type="text" name="p3" class="form-control" placeholder="Ingresar Premio 3"> <br>
-                        <input type="text" name="p4" class="form-control" placeholder="Ingresar Premio 4"> <br>
+                        <p>Asignar Premio 1</p>
+                        <select name="p1" class="form-control">
+                            <option value="Ninguno">Ninguno</option>
+                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
+                            <option value="Gobierno">Gobierno</option>
+                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
+                            <option value="Seguridad">Seguridad</option>
+                        </select> <br>
+
+                        <p>Asignar Premio 2</p>
+                        <select name="p2" class="form-control">
+                            <option value="Ninguno">Ninguno</option>
+                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
+                            <option value="Gobierno">Gobierno</option>
+                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
+                            <option value="Seguridad">Seguridad</option>
+                        </select> <br>
+
+                        <p>Asignar Premio 3</p>
+                        <select name="p3" class="form-control">
+                            <option value="Ninguno">Ninguno</option>
+                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
+                            <option value="Gobierno">Gobierno</option>
+                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
+                            <option value="Seguridad">Seguridad</option>
+                        </select> <br>
+
+                        <p>Asignar Premio 4</p>
+                        <select name="p4" class="form-control">
+                            <option value="Ninguno">Ninguno</option>
+                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
+                            <option value="Gobierno">Gobierno</option>
+                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
+                            <option value="Seguridad">Seguridad</option>
+                        </select>
 
                     <?php endforeach ?>
                     </select>
@@ -87,7 +118,7 @@ $nombre = $_POST["nombre"]
             <?php } else { ?>
                 swal.fire({
                     title: "¡Bien hecho!",
-                    text: "Perfil Actualizado Correctamente",
+                    text: "Premios agregados Correctamente",
                     icon: "success",
                     button: "OK",
                 }).then((result) => {

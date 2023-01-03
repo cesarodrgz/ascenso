@@ -39,7 +39,7 @@
 
     //Iniciamos un switch case
     switch ($accion) {
-        //Cuando el caso sea de agregar
+            //Cuando el caso sea de agregar
         case 'btnAgregar':
 
             //Prepara la sentencia SQL que se utilizará para agregar la información de los usuarios
@@ -65,7 +65,7 @@
             //Si el usuario selecciona una foto entonces
             if ($tmpFoto) {
                 //Se mueve la foto a la carpeta predeterminada y le concatenamos la variable "nombreArchivo" para que se guarde con un nuevo nombre con la fecha y hora
-                move_uploaded_file($tmpFoto, "../../usuarios/" . $nombreArchivo);
+                move_uploaded_file($tmpFoto, "img/" . $nombreArchivo);
             }
 
             $sentencia->bindParam(':foto', $nombreArchivo); //Foto
@@ -94,6 +94,75 @@
     <?php
             }
             break; //Terminamos el caso
+
+        case 'btnModificar':
+
+            $sentencia = $pdo->prepare("UPDATE usuarios SET
+                user=:user,
+                pass=:pass,
+                nombre=:nombre,
+                direccion=:direccion,
+                telefono=:telefono,
+                fechaNac=:fechaNac,
+                padre=:padre,
+                madre=:madre WHERE id=:id");
+
+            //Obtenemos los valores de los txt
+            $sentencia->bindParam(':id', $id); //Usuario 1
+            $sentencia->bindParam(':user', $user); //Usuario 1
+            $sentencia->bindParam(':pass', $pass); //Contraseña 2
+            $sentencia->bindParam(':nombre', $nombre); //Nombre 4
+            $sentencia->bindParam(':direccion', $direccion); //Dirección 5
+            $sentencia->bindParam(':telefono', $telefono); //Telefono 6
+            $sentencia->bindParam(':fechaNac', $fechaNac); //Fecha de nacimiento 7
+            $sentencia->bindParam(':padre', $padre); //Nombre del padre 8
+            $sentencia->bindParam(':madre', $madre); //Nombre de la madre 9
+            $sentencia->execute(); //Ejecutamos la variable sentencia
+
+            //Obtenemos la fecha actual
+            $fecha = new DateTime();
+            //Definimos que la variable "nombreArchivo" va contener la fecha y le concatenamos el nombre de la foto
+            //Si no se selecciona foto colocamos una imagen por defecto en este caso "imagen.png"
+            $nombreArchivo = ($foto != "") ? $fecha->getTimestamp() . "_" . $_FILES["foto"]["name"] : "imagen.png";
+
+            //Obtenemos el nombre temporal de la foto
+            $tmpFoto = $_FILES["foto"]["tmp_name"];
+
+            //Si el usuario selecciona una foto entonces
+            if ($tmpFoto != "") {
+                //Se mueve la foto a la carpeta predeterminada y le concatenamos la variable "nombreArchivo" para que se guarde con un nuevo nombre con la fecha y hora
+                move_uploaded_file($tmpFoto, "img/" . $nombreArchivo);
+
+                $sentencia = $pdo->prepare("SELECT foto FROM usuarios WHERE id=:id");
+                //Obtenemos los valores de los txt
+                $sentencia->bindParam(':id', $id);
+                $sentencia->execute();
+                $busqueda = $sentencia->fetch(PDO::FETCH_LAZY);
+
+                if (isset($busqueda['foto'])) {
+                    if (file_exists("img/" . $busqueda["foto"])) {
+                        if ($empleado['foto'] != "imagen.png") {
+                            unlink("img/" . $busqueda["foto"]);
+                        }
+                    }
+                }
+
+                $sentencia = $pdo->prepare("UPDATE usuarios SET
+                foto=:foto WHERE id=:id");
+
+                $sentencia->bindParam(':foto', $nombreArchivo); //Nombre del padre 8
+                $sentencia->bindParam(':id', $id); //Nombre de la madre 9
+                $sentencia->execute(); //Ejecutamos la variable sentencia
+
+            }
+            else{ ?>
+                <script>
+                    alert("hay algun error bro");
+                </script>
+                <?php
+            }
+            header('Location: administrarusuario.php');
+            break;
     }
     ?>
 </body>

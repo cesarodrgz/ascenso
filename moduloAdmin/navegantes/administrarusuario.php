@@ -4,7 +4,7 @@ include 'metodos.php';
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
-$consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono, foto from usuarios WHERE departamento = 'Navegantes'");
+$consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = 'Navegantes'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -158,7 +158,7 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
               <!--Mostramos la foto -->
-              <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
+              <td><img class="img-fluid img-thumbnail" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt=""></td>
               <!--Mostramos el usuario -->
               <td><?php echo $datos["user"]; ?></td>
               <!--Mostramos el nombre -->
@@ -169,8 +169,14 @@ $consulta = mysqli_query($enlace, "SELECT id, user, nombre, direccion, telefono,
               <td><?php echo $datos["telefono"]; ?></td>
               <!--Mostramos el id -->
               <td><?php echo $datos["id"]; ?></td>
-              <!--Botón para ir a editar-->
-              <td><input type="button" value="Editar" class="btn btn-primary"></td>
+
+              <td>
+                <form action="ActualizarNavegante.php" method="post">
+                  <input type="hidden" name="id" value="<?php echo $datos["id"]; ?>">
+                  <!--Botón para ir a editar-->
+                  <input type="submit" value="Editar" class="btn btn-primary">
+                </form>
+              </td>
             </tr>
           <?php
           }

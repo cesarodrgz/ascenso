@@ -1,5 +1,7 @@
 <?php
+//Inluimos la conexion para realizar el insert de los premios
 include '../../../../templates/conexion.php';
+//Obtenemos el nombre del navegante
 $nombre = $_POST["nombre"]
 ?>
 <!doctype html>
@@ -21,15 +23,18 @@ $nombre = $_POST["nombre"]
 <body>
     <br>
     <div class="container">
+        <!--Encabezado-->
         <h1 class="text-primary text-center">Seleccionar premios - Trimestre 1</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
+                <!--Información complementaria-->
                 <div class="alert alert-success text-center" role="alert">
                     Agregue los premios que desea guardar.
                 </div>
             </div>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
+                <!-- Inicio del formulario-->
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
@@ -37,9 +42,14 @@ $nombre = $_POST["nombre"]
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
+                        <!-- ID invisible -->
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
+                        <!-- usuario invisible-->
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
+                        <!-- Nombre del navegante-->
                         <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
+                        
+                        <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 1</p>
                         <select name="p1" class="form-control">
                             <option value="Ninguno">Ninguno</option>
@@ -49,6 +59,7 @@ $nombre = $_POST["nombre"]
                             <option value="Seguridad">Seguridad</option>
                         </select> <br>
 
+                        <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 2</p>
                         <select name="p2" class="form-control">
                             <option value="Ninguno">Ninguno</option>
@@ -58,6 +69,7 @@ $nombre = $_POST["nombre"]
                             <option value="Seguridad">Seguridad</option>
                         </select> <br>
 
+                        <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 3</p>
                         <select name="p3" class="form-control">
                             <option value="Ninguno">Ninguno</option>
@@ -67,6 +79,7 @@ $nombre = $_POST["nombre"]
                             <option value="Seguridad">Seguridad</option>
                         </select> <br>
 
+                        <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 4</p>
                         <select name="p4" class="form-control">
                             <option value="Ninguno">Ninguno</option>
@@ -80,6 +93,7 @@ $nombre = $_POST["nombre"]
                     </select>
                     <br>
 
+                    <!-- Botón de guardar-->
                     <input type="submit" class="btn btn-success btn-block" value="Guardar" name="send">
                 </form>
             </div>
@@ -87,6 +101,10 @@ $nombre = $_POST["nombre"]
     </div>
 
     <?php
+    /* Mediante el if comprobamos que las variables a insertar no esten vacias
+       mediante el isset, si lo estan tomamos dichas variables de los campos:
+       id, user, nombre, p1, p2, p3, p4
+    */
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $user = $_POST["user"];
@@ -96,8 +114,10 @@ $nombre = $_POST["nombre"]
         $p3 = $_POST["p3"];
         $p4 = $_POST["p4"];
 
+        //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
+            //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
         $insertar = "INSERT INTO navbronce(id, user, nombre, p1, p2, p3, p4) 
-        VALUES('$id',
+        VALUES('$id', 
                 '$user',
                 '$nombre',
                 '$p1',
@@ -105,9 +125,11 @@ $nombre = $_POST["nombre"]
                 '$p3',
                 '$p4')"; 
 
+        //Realizamos la ejecución de la sentencia SQL
         $ejecutar = mysqli_query($enlace, $insertar);
     ?>
         <script>
+            //Si la sentencia SQL no se ejecuta envía un mensaje de error (se utiliza sweetAlert)
             <?php if (!$ejecutar) { ?>
                 swal.fire({
                     title: "Oops...",
@@ -115,6 +137,7 @@ $nombre = $_POST["nombre"]
                     icon: "error",
                     button: "OK",
                 });
+            //Si la sentencia SQL se ejecuta envía un mensaje de error (se utiliza sweetAlert) y redirige a agregar premios
             <?php } else { ?>
                 swal.fire({
                     title: "¡Bien hecho!",

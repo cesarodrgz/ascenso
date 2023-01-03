@@ -19,24 +19,35 @@
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <h1 class="text-center">Opciones</h1>
                 <br>
-                <br>
                 <center>
-                    <img src="../../img/jefe.png" alt="admin" style="width: 150px;">
+                    <img src="../../img/jefe.png" alt="IMG-ADMIN" style="width: 150px;">
                 </center>
                 <a href="administrarusuario.php" class="btn btn-primary btn-block">Administrar Usuario</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <br>
-                <br>
                 <center>
-                    <img src="../../img/agregar.png" alt="AGREGAR-PREMIOS" style="width: 125px;">
+                    <img src="../../img/agregar.png" alt="IMG-AGREGAR-PREMIOS" style="width: 125px;">
                 </center>
                 <br>
                 <a href="agregarPremios.php" class="btn btn-primary btn-block">Agregar Premios</a>
             </div>
+
+            <div class="col-xs-12 col-md-6 col-xl-12">
+                <br>
+                <center>
+                    <img src="../../img/verificar.png" alt="IMG-VERIFICAR" style="width: 125px;">
+                </center>
+                <br>
+                <a href="verificar.php" class="btn btn-primary btn-block">Agregar Premios</a>
+            </div>
         </div>
-    </div>
+    </div> <br>
+
+    <?php
+        include '../../templates/footer.php';
+    ?>
 
 
     <!-- Optional JavaScript -->

@@ -24,13 +24,13 @@ if ($filas > 0) {
 } else {
     /*Comprobamos que el correo y contraseña están o no 
     en la tabla de administradores*/
-    $consulta = "SELECT correo, password FROM administradores WHERE correo = '" . $correo . "' and password = '" . $contra . "'";
+    $consulta = "SELECT user, pass departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administrador'";
     $resultado = mysqli_query($enlace, $consulta);
 
     //Si hay un resultado lo mandamos al index administrativo sino al index general
     $filas = mysqli_num_rows($resultado);
     if ($filas > 0) {
-        header("location:../administrativo/menu/index.php");
+        header("location:../moduloAdmin/navegantes/opciones.php");
     } elseif ($filas < 0) {
         header("location:index.php");
     } else {

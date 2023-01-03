@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CDN SweetAlert 1-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -91,7 +92,7 @@
                     //Si el usuario se agrego enviamos el siguiente mensaje
                     swal("¡Usuario Agregado!", "Presiona en OK para continuar", "success");
                 </script>
-    <?php
+            <?php
             }
             break; //Terminamos el caso
 
@@ -141,7 +142,7 @@
 
                 if (isset($busqueda['foto'])) {
                     if (file_exists("img/" . $busqueda["foto"])) {
-                        if ($empleado['foto'] != "imagen.png") {
+                        if ($busqueda['foto'] != "imagen.png") {
                             unlink("img/" . $busqueda["foto"]);
                         }
                     }
@@ -155,13 +156,32 @@
                 $sentencia->execute(); //Ejecutamos la variable sentencia
 
             }
-            else{ ?>
+            //Mensajes para el administrador de Navegantes
+            if (!$sentencia) {
+            ?>
                 <script>
-                    alert("hay algun error bro");
+                    //Si el usuario no se agrego enviamos el siguiente mensaje
+                    Swal.fire(
+                        'Ups.. Algo salió mal',
+                        'Presiona OK para continuar',
+                        'error'
+                    ).then(function() {
+                        window.location = "ActualizarNavegante.php";
+                    });
                 </script>
-                <?php
+            <?php
+            } else { ?>
+                <script>
+                    Swal.fire(
+                        '¡Buen trabajo!',
+                        'Perfil actualizado correctamente',
+                        'success'
+                    ).then(function() {
+                        window.location = "administrarusuario.php";
+                    });
+                </script>
+    <?php
             }
-            header('Location: administrarusuario.php');
             break;
     }
     ?>

@@ -40,7 +40,7 @@
                     <img src="../../img/verificar.png" alt="IMG-VERIFICAR" style="width: 125px;">
                 </center>
                 <br>
-                <a href="verificar.php" class="btn btn-primary btn-block">Verificar Premios</a>
+                <a href="A1/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
             </div>
         </div>
     </div> <br>

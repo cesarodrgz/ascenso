@@ -25,7 +25,7 @@ $nombre = $_POST["nombre"]
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
-                    Agregue los premios que desea guardar.
+                    Agregue los premios a: <b><?php echo $nombre ?></b>.
                 </div>
             </div>
 
@@ -39,41 +39,41 @@ $nombre = $_POST["nombre"]
                     <?php foreach ($consulta as $info) : ?>
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
-                        <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 1</p>
-                        <select name="p1" class="form-control">
+                        <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
+                        <p>Asignar Premio 5</p>
+                        <select name="p5" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
+                            <option value="Defensor del mundo">Defensor del mundo</option>
+                            <option value="Hacedor del mundo">Hacedor del mundo</option>
+                            <option value="Bandera">Bandera</option>
+                            <option value="Evento deportivo">Evento deportivo</option>
                         </select> <br>
 
-                        <p>Asignar Premio 2</p>
-                        <select name="p2" class="form-control">
+                        <p>Asignar Premio 6</p>
+                        <select name="p6" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
+                            <option value="Defensor del mundo">Defensor del mundo</option>
+                            <option value="Hacedor del mundo">Hacedor del mundo</option>
+                            <option value="Bandera">Bandera</option>
+                            <option value="Evento deportivo">Evento deportivo</option>
                         </select> <br>
 
-                        <p>Asignar Premio 3</p>
-                        <select name="p3" class="form-control">
+                        <p>Asignar Premio 7</p>
+                        <select name="p7" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
+                            <option value="Defensor del mundo">Defensor del mundo</option>
+                            <option value="Hacedor del mundo">Hacedor del mundo</option>
+                            <option value="Bandera">Bandera</option>
+                            <option value="Evento deportivo">Evento deportivo</option>
                         </select> <br>
 
-                        <p>Asignar Premio 4</p>
-                        <select name="p4" class="form-control">
+                        <p>Asignar Premio 8</p>
+                        <select name="p8" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
+                            <option value="Defensor del mundo">Defensor del mundo</option>
+                            <option value="Hacedor del mundo">Hacedor del mundo</option>
+                            <option value="Bandera">Bandera</option>
+                            <option value="Evento deportivo">Evento deportivo</option>
                         </select>
 
                     <?php endforeach ?>
@@ -91,21 +91,15 @@ $nombre = $_POST["nombre"]
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p1 = $_POST["p1"];
-        $p2 = $_POST["p2"];
-        $p3 = $_POST["p3"];
-        $p4 = $_POST["p4"];
+        $p5 = $_POST["p5"];
+        $p6 = $_POST["p6"];
+        $p7 = $_POST["p7"];
+        $p8 = $_POST["p8"];
 
-        $insertar = "INSERT INTO navbronce(id, user, nombre, p1, p2, p3, p4) 
-        VALUES('$id',
-                '$user',
-                '$nombre',
-                '$p1',
-                '$p2',
-                '$p3',
-                '$p4')"; 
+        $actualizar = "UPDATE navbronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7' , p8 = '$p8'
+                        WHERE id = '$id' AND nombre = '$nombre'"; 
 
-        $ejecutar = mysqli_query($enlace, $insertar);
+        $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
         <script>
             <?php if (!$ejecutar) { ?>

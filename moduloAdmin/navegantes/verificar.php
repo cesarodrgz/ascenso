@@ -57,20 +57,32 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                     //Mostramos los datos que coincidan con la consulta SQL realizada
                     while ($datos = mysqli_fetch_array($consulta)) { ?>
                         <tr>
-                            <!--Mostramos el usuario -->
+                            <!--Mostramos el id -->
                             <td><?php echo $datos["id"]; ?></td>
                             <!--Mostramos el nombre -->
                             <td><?php echo $datos["nombre"]; ?></td>
-                            <!--Mostramos la direccion -->
+                            <!--Mostramos la premio 1 -->
                             <td><?php echo $datos["p1"]; ?></td>
-                            <!--Mostramos el telefono -->
+                            <!--Mostramos el premio 2 -->
                             <td><?php echo $datos["p2"]; ?></td>
-                            <!--Mostramos el id -->
+                            <!--Mostramos el premio 3 -->
                             <td><?php echo $datos["p3"]; ?></td>
-                            <!--Mostramos el id -->
+                            <!--Mostramos el premio 4 -->
                             <td><?php echo $datos["p4"]; ?></td>
                             <!--Botón para ir a editar-->
-                            <td><input type="button" value="Editar" class="btn btn-primary"></td>
+                            <td>
+                                <form action="modPremios.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $datos["id"]; ?>">
+                                    <input type="hidden" name="nombre" value="<?php echo $datos["nombre"]; ?>">
+                                    <input type="hidden" name="p1" value="<?php echo $datos["p1"]; ?>">
+                                    <input type="hidden" name="p2" value="<?php echo $datos["p2"]; ?>">
+                                    <input type="hidden" name="p3" value="<?php echo $datos["p3"]; ?>">
+                                    <input type="hidden" name="p4" value="<?php echo $datos["p4"]; ?>">
+                                <input type="submit" value="Editar" class="btn btn-primary">
+
+                                </form>
+
+                            </td>
                         </tr>
                     <?php
                     }

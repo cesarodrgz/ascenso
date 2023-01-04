@@ -27,18 +27,18 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
                 <h1 class="text-center">
                     Editar Perfil
                 </h1>
-                <h4 class="text-center">Foto de Perfil</h4>
+                <div class="col-xs-12 col-md-12 col-xl-12"></div>
                 <center>
                     <?php
                     $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
                     while ($datos = mysqli_fetch_array($consulta)) { ?>
 
-                        <img src="../../img/logo.png" alt="FotoPerfil" style="width: 150px;">
-                        <form action="" method="post">
+                        <p>Foto de perfil actual:</p>
+                        <img class="img-fluid img-thumbnail" style="width: 150px" src="../../moduloAdmin/navegantes/img/<?php echo $datos["foto"] ?>" alt="">
 
-                            <br>
-                            <br>
+                        <form action="" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?php echo $datos["id"] ?>">
+
                             <label for="Nombre">Nombre</label>
                             <input type="text" name="user" readonly class="form-control" value="<?php echo $datos["nombre"] ?>">
 
@@ -82,28 +82,28 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
 
                             $ejecutar = mysqli_query($enlace, $modificar);
                         ?>
-                        <script>
-                            <?php if (!$ejecutar) { ?>
-                                swal.fire({
-                                    title: "Oops...",
-                                    text: "Algo salió mal..",
-                                    icon: "error",
-                                    button: "OK",
-                                });
-                            <?php } else { ?>
-                                swal.fire({
-                                    title: "¡Bien hecho!",
-                                    text: "Perfil Actualizado Correctamente",
-                                    icon: "success",
-                                    button: "OK",
-                                }).then((result) => {
-                                    if (result.value) {
-                                        window.location.href = 'editarPerfil.php'
-                                    }
-                                });;
-                            <?php }
-                        } ?>
-                        </script>
+                            <script>
+                                <?php if (!$ejecutar) { ?>
+                                    swal.fire({
+                                        title: "Oops...",
+                                        text: "Algo salió mal..",
+                                        icon: "error",
+                                        button: "OK",
+                                    });
+                                <?php } else { ?>
+                                    swal.fire({
+                                        title: "¡Bien hecho!",
+                                        text: "Perfil Actualizado Correctamente",
+                                        icon: "success",
+                                        button: "OK",
+                                    }).then((result) => {
+                                        if (result.value) {
+                                            window.location.href = 'editarPerfil.php'
+                                        }
+                                    });;
+                                <?php }
+                            } ?>
+                            </script>
                 </center>
             </div>
         </div>

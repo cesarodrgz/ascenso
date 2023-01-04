@@ -6,7 +6,7 @@ $nombre = $_POST["nombre"]
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 2 - Admin</title>
+    <title>Agregar Trimestre 3 - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,12 +18,12 @@ $nombre = $_POST["nombre"]
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<?php include 'navbar3.php' ?>
+<?php include 'navbar.php' ?>
 
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 2</h1>
+        <h1 class="text-primary text-center">Seleccionar premios - Año 1 | Trimestre 3</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
@@ -42,40 +42,40 @@ $nombre = $_POST["nombre"]
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 5</p>
-                        <select name="p5" class="form-control">
+                        <p>Asignar Premio 9</p>
+                        <select name="p9" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Visitando Lugares">Visitando Lugares</option>
+                            <option value="Guardián de la ley">Guardián de la ley</option>
+                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
+                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
                         </select> <br>
 
-                        <p>Asignar Premio 6</p>
-                        <select name="p6" class="form-control">
+                        <p>Asignar Premio 10</p>
+                        <select name="p10" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Visitando Lugares">Visitando Lugares</option>
+                            <option value="Guardián de la ley">Guardián de la ley</option>
+                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
+                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
                         </select> <br>
 
-                        <p>Asignar Premio 7</p>
-                        <select name="p7" class="form-control">
+                        <p>Asignar Premio 11</p>
+                        <select name="p11" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Visitando Lugares">Visitando Lugares</option>
+                            <option value="Guardián de la ley">Guardián de la ley</option>
+                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
+                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
                         </select> <br>
 
-                        <p>Asignar Premio 8</p>
-                        <select name="p8" class="form-control">
+                        <p>Asignar Premio 12</p>
+                        <select name="p12" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Visitando Lugares">Visitando Lugares</option>
+                            <option value="Guardián de la ley">Guardián de la ley</option>
+                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
+                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
                         </select>
 
                     <?php endforeach ?>
@@ -93,12 +93,12 @@ $nombre = $_POST["nombre"]
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p5 = $_POST["p5"];
-        $p6 = $_POST["p6"];
-        $p7 = $_POST["p7"];
-        $p8 = $_POST["p8"];
+        $p9 = $_POST["p9"];
+        $p10 = $_POST["p10"];
+        $p11 = $_POST["p11"];
+        $p12 = $_POST["p12"];
 
-        $actualizar = "UPDATE navbronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7' , p8 = '$p8'
+        $actualizar = "UPDATE navbronce SET p9 = '$p9', p10 = '$p10', p11 = '$p11' , p12 = '$p12'
                         WHERE id = '$id' AND nombre = '$nombre'"; 
 
         $ejecutar = mysqli_query($enlace, $actualizar);
@@ -126,7 +126,6 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+<?php include 'navBarNav2.php' ?>
+
 <body>
     <br>
     <div class="container">
@@ -41,7 +43,7 @@
                     <img src="../../../img/3.png" alt="T3/Q3" style="width: 125px;">
                 </center>
                 <br>
-                <a href="" class="btn btn-info btn-block">Trimestre 3</a>
+                <a href="trimestre3/seleccionarNav.php" class="btn btn-info btn-block">Trimestre 3</a>
             </div>
         </div><br>
 

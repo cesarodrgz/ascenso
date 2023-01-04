@@ -18,7 +18,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 </head>
 
-<?php include 'navbar1.php' ?>
+<?php include 'navbarT2.php' ?>
 
 <body>
     <br>
@@ -30,7 +30,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
             <h1 class="text-center text-primary">
-                Verificar premios
+                Editar premios
             </h1>
             <br>
         </div>
@@ -42,7 +42,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 1</h4>
+                <h4>Trimestre 2</h4>
             </div>
         </div>
 
@@ -73,22 +73,22 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                             <!--Mostramos el nombre -->
                             <td><?php echo $datos["nombre"]; ?></td>
                             <!--Mostramos la premio 1 -->
-                            <td><?php echo $datos["p1"]; ?></td>
+                            <td><?php echo $datos["p5"]; ?></td>
                             <!--Mostramos el premio 2 -->
-                            <td><?php echo $datos["p2"]; ?></td>
+                            <td><?php echo $datos["p6"]; ?></td>
                             <!--Mostramos el premio 3 -->
-                            <td><?php echo $datos["p3"]; ?></td>
+                            <td><?php echo $datos["p7"]; ?></td>
                             <!--Mostramos el premio 4 -->
-                            <td><?php echo $datos["p4"]; ?></td>
+                            <td><?php echo $datos["p8"]; ?></td>
                             <!--Botón para ir a editar-->
                             <td>
                                 <form action="modPremios.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $datos["id"]; ?>">
                                     <input type="hidden" name="nombre" value="<?php echo $datos["nombre"]; ?>">
-                                    <input type="hidden" name="p1" value="<?php echo $datos["p1"]; ?>">
-                                    <input type="hidden" name="p2" value="<?php echo $datos["p2"]; ?>">
-                                    <input type="hidden" name="p3" value="<?php echo $datos["p3"]; ?>">
-                                    <input type="hidden" name="p4" value="<?php echo $datos["p4"]; ?>">
+                                    <input type="hidden" name="p5" value="<?php echo $datos["p5"]; ?>">
+                                    <input type="hidden" name="p6" value="<?php echo $datos["p6"]; ?>">
+                                    <input type="hidden" name="p7" value="<?php echo $datos["p7"]; ?>">
+                                    <input type="hidden" name="p8" value="<?php echo $datos["p8"]; ?>">
                                 <input type="submit" value="Editar" class="btn btn-primary">
 
                                 </form>

@@ -1,12 +1,11 @@
-<?php
-//Inluimos la conexion para realizar el insert de los premios
-include '../../../../templates/conexion.php';
+<?php 
+    include '../../../../templates/conexion.php';
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Trimestre 1 - Admin</title>
+    <title>Trimestre 3 - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,16 +14,13 @@ include '../../../../templates/conexion.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-
-<?php include 'navbar2.php' ?>
+<?php include 'navbar.php' ?>
 
 <body>
     <br>
     <div class="container">
-        <!-- Encabezado -->
-        <h1 class="text-primary text-center">Seleccionar Navegante - Año 1 | Trimestre 1</h1>
+        <h1 class="text-primary text-center">Seleccionar Navegante - Trimestre 3</h1>
         <div class="row">
-            <!-- Informacón adicional -->
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
                     Seleccione el Navegante y presione continuar.
@@ -32,26 +28,22 @@ include '../../../../templates/conexion.php';
             </div>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <!-- Inicio del formulario-->
-                <form action="agregarT1.php" method="post">
-                    <select name="nombre" id="" class="form-control">
+                <form action="agregarT3.php" method="post">
+                    <select name="nombre" class="form-control">
                         <option value="Seleccionar">Seleccionar</option>
-                        <?php
-                        //Realizamos una búsqueda SQL en la tabla usuarios donde los usuario sean todos igual al departamento de Navegantes
-                        $consulta = mysqli_query($enlace, "SELECT nombre from usuarios WHERE departamento = 'Navegantes'");
+                        <?php 
+                        //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+                        $consulta = mysqli_query($enlace, "SELECT nombre from usuarios WHERE departamento = 'Navegantes'"); 
                         ?>
-
-                        <?php foreach ($consulta as $info) : ?>
-                            <!-- Se presenta los usuarios que cumplen con la sentencia SQL-->
+                        
+                        <?php foreach($consulta as $info): ?>
                             <option value="<?php echo $info['nombre'] ?>"> <?php echo  $info['nombre'] ?> </option>
                         <?php endforeach ?>
                     </select>
                     <br>
 
                     <input type="submit" class="btn btn-primary" value="Continuar">
-                    <!-- Fin del formulario-->
                 </form>
-
             </div>
         </div>
     </div>

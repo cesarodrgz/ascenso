@@ -20,6 +20,8 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 </head>
 
+<?php include 'navBarNav.php' ?>
+
 <body>
   <br>
   <center>

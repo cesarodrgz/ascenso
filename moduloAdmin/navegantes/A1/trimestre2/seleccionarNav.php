@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+<?php include 'navbar3.php' ?>
+
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar Navegante - Trimestre 2</h1>
+        <h1 class="text-primary text-center">Seleccionar Navegante - Año 1 | Trimestre 2</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
@@ -45,7 +47,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

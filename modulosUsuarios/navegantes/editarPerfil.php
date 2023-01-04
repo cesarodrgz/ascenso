@@ -1,7 +1,9 @@
 <?php
+include '../../templates/actualizar.php';
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 session_start(); //Iniciamos la variable de sesión
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,87 +29,98 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
                 <h1 class="text-center">
                     Editar Perfil
                 </h1>
-                <div class="col-xs-12 col-md-12 col-xl-12"></div>
-                <center>
-                    <?php
-                    $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                    while ($datos = mysqli_fetch_array($consulta)) { ?>
+                <div class="col-xs-12 col-md-12 col-xl-12">
+                    <div class="alert alert-info text-center" role="alert">
+                        Algunos campos no se pueden editar debido a que asi lo decidio el administrador.
+                    </div>
+                </div>
+            </div>
 
-                        <p>Foto de perfil actual:</p>
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <?php
+                //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
+                $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE user = '$user'");
+                while ($datos = mysqli_fetch_array($consulta)) {
+                ?>
+                    <center>
+                        <p>Foto actual:</p>
                         <img class="img-fluid img-thumbnail" style="width: 150px" src="../../moduloAdmin/navegantes/img/<?php echo $datos["foto"] ?>" alt="">
+                    </center>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-row">
 
-                        <form action="" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?php echo $datos["id"] ?>">
 
-                            <label for="Nombre">Nombre</label>
-                            <input type="text" name="user" readonly class="form-control" value="<?php echo $datos["nombre"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-12">
+                                <P>Seleccionar Nueva foto</P>
+                                <input type="file" name="foto" value="<?php echo $datos["foto"] ?>">
+                            </div>
 
-                            <br>
-                            <label for="Direccion">Direccion</label>
-                            <input type="text" name="direccion" class="form-control" value="<?php echo $datos["direccion"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label for="">Usuario:</label>
+                                <input type="text" name="user" class="form-control" value="<?php echo $datos["user"] ?>" readonly>
+                            </div>
 
-                            <br>
-                            <label for="Telefono">Telefono</label>
-                            <input type="tel" name="telefono" class="form-control" value="<?php echo $datos["telefono"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Contraseña:</label>
+                                <input type="text" name="pass" class="form-control" value="<?php echo $datos["pass"] ?>">
+                            </div>
 
-                            <br>
-                            <label for="Fecha de nacimiento">Fecha de nacimiento</label>
-                            <input type="varchar" name="fecha de nacimiento" readonly class="form-control" value="<?php echo $datos["fechaNac"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Usuario:</label>
+                                <input type="text" name="nombre" class="form-control" value="<?php echo $datos["nombre"] ?>" readonly>
+                            </div>
 
-                            <br>
-                            <label for="Padre">Padre</label>
-                            <input type="text" name="padre" readonly class="form-control" value="<?php echo $datos["padre"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Dirección:</label>
+                                <input type="text" name="direccion" class="form-control" value="<?php echo $datos["direccion"] ?>">
+                            </div>
 
-                            <br>
-                            <label for="Madre">Madre</label>
-                            <input type="text" name="madre" readonly class="form-control" value="<?php echo $datos["madre"] ?>">
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Telefono:</label>
+                                <input type="text" name="telefono" class="form-control" value="<?php echo $datos["telefono"] ?>">
+                            </div>
 
-                        <?php
-                    }
-                        ?>
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Fecha de nacimiento:</label>
+                                <input type="date" name="fechaNac" class="form-control" value="<?php echo $datos["fechaNac"] ?>" readonly>
+                            </div>
 
-                        <br>
-                        <input type="submit" value="GUARDAR" class="btn btn-success btn-block" name="send">
-                        </form>
-                        <?php
-                        if (isset($_POST["send"])) {
-                            $id = $_POST["id"];
-                            $direccion = $_POST["direccion"];
-                            $telefono = $_POST["telefono"];
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Padre:</label>
+                                <input type="text" name="padre" class="form-control" value="<?php echo $datos["padre"] ?>" readonly>
+                            </div>
 
-                            $modificar = "UPDATE usuarios SET 
-                                            direccion = '" . $direccion . "',
-                                            telefono = '" . $telefono . "'
-                                            WHERE id = " . $id . ";";
+                            <!--Input para el usuario-->
+                            <div class="col-md-6">
+                                <label>Madre:</label>
+                                <input type="text" name="madre" class="form-control" value="<?php echo $datos["madre"] ?>" readonly>
+                            </div>
 
-                            $ejecutar = mysqli_query($enlace, $modificar);
-                        ?>
-                            <script>
-                                <?php if (!$ejecutar) { ?>
-                                    swal.fire({
-                                        title: "Oops...",
-                                        text: "Algo salió mal..",
-                                        icon: "error",
-                                        button: "OK",
-                                    });
-                                <?php } else { ?>
-                                    swal.fire({
-                                        title: "¡Bien hecho!",
-                                        text: "Perfil Actualizado Correctamente",
-                                        icon: "success",
-                                        button: "OK",
-                                    }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = 'editarPerfil.php'
-                                        }
-                                    });;
-                                <?php }
-                            } ?>
-                            </script>
-                </center>
+                            <!--Input para el usuario-->
+                            <div class="col-md-12">
+                                <br>
+                                <button type="submit" value="btnModificar" name="accion" class="btn btn-warning btn-block">Actualizar</button>
+                            </div>
+
+                        </div>
+                    <?php
+                }
+                    ?>
+                    </form>
             </div>
+
         </div>
     </div>
+
 
     <br>
     <?php

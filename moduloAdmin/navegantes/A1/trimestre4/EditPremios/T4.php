@@ -18,7 +18,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 </head>
 
-<?php include 'navbar.php' ?>
+<?php include 'navbar1.php' ?>
 
 <body>
     <br>
@@ -30,7 +30,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
             <h1 class="text-center text-primary">
-                Editar premios
+                Verificar premios
             </h1>
             <br>
         </div>
@@ -42,7 +42,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 2</h4>
+                <h4>Trimestre 1</h4>
             </div>
         </div>
 
@@ -73,23 +73,23 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                             <!--Mostramos el nombre -->
                             <td><?php echo $datos["nombre"]; ?></td>
                             <!--Mostramos la premio 1 -->
-                            <td><?php echo $datos["p9"]; ?></td>
+                            <td><?php echo $datos["p13"]; ?></td>
                             <!--Mostramos el premio 2 -->
-                            <td><?php echo $datos["p10"]; ?></td>
+                            <td><?php echo $datos["p14"]; ?></td>
                             <!--Mostramos el premio 3 -->
-                            <td><?php echo $datos["p11"]; ?></td>
+                            <td><?php echo $datos["p15"]; ?></td>
                             <!--Mostramos el premio 4 -->
-                            <td><?php echo $datos["p12"]; ?></td>
+                            <td><?php echo $datos["p16"]; ?></td>
                             <!--Botón para ir a editar-->
                             <td>
                                 <form action="modPremios.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $datos["id"]; ?>">
                                     <input type="hidden" name="nombre" value="<?php echo $datos["nombre"]; ?>">
-                                    <input type="hidden" name="p9" value="<?php echo $datos["p9"]; ?>">
-                                    <input type="hidden" name="p10" value="<?php echo $datos["p10"]; ?>">
-                                    <input type="hidden" name="p11" value="<?php echo $datos["p11"]; ?>">
-                                    <input type="hidden" name="p12" value="<?php echo $datos["p12"]; ?>">
-                                    <input type="submit" value="Editar" class="btn btn-primary">
+                                    <input type="hidden" name="p13" value="<?php echo $datos["p13"]; ?>">
+                                    <input type="hidden" name="p14" value="<?php echo $datos["p14"]; ?>">
+                                    <input type="hidden" name="p15" value="<?php echo $datos["p15"]; ?>">
+                                    <input type="hidden" name="p16" value="<?php echo $datos["p16"]; ?>">
+                                <input type="submit" value="Editar" class="btn btn-primary">
 
                                 </form>
 
@@ -101,18 +101,18 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                 </tbody>
             </table>
         </div> <br><br>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- DataTable -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp16YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p15pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- DataTable -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
-        <!-- DataTable Script para español-->
-        <script src="../../../../../js/dataTable.js"></script>
+    <!-- DataTable Script para español-->
+    <script src="../../../../../js/dataTable.js"></script>
 
 </body>
 

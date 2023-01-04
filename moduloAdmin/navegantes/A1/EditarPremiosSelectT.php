@@ -57,7 +57,7 @@
                     <img src="../../../img/4.png" alt="T4/Q4" style="width: 125px;">
                 </center>
                 <br>
-                <a href="" class="btn btn-info btn-block">Trimestre 4</a>
+                <a href="trimestre4/EditPremios/T4.php" class="btn btn-info btn-block">Trimestre 4</a>
             </div>
         </div><br>
 

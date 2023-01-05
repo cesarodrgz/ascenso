@@ -8,11 +8,14 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
 <!doctype html>
 <html lang="en">
 
+<?php include 'navbarNU.php' ?>
+
 <head>
   <title>Inicio - Navegantes</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../../css/foot.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -67,7 +70,7 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
   </div>
 <br><br>
   <?php 
-    include '../../templates/footer.php' //Incluimos el footer
+    include '../../templates/foot2.php' //Incluimos el footer
   ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

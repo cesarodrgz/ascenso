@@ -12,10 +12,10 @@ $nombre = $_POST["nombre"]
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -50,7 +50,7 @@ $nombre = $_POST["nombre"]
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <!-- Nombre del navegante-->
                         <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        
+
                         <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 1</p>
                         <select name="p1" class="form-control">
@@ -117,7 +117,7 @@ $nombre = $_POST["nombre"]
         $p4 = $_POST["p4"];
 
         //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
-            //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
+        //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
         $insertar = "INSERT INTO navbronce(id, user, nombre, p1, p2, p3, p4) 
         VALUES('$id', 
                 '$user',
@@ -125,7 +125,7 @@ $nombre = $_POST["nombre"]
                 '$p1',
                 '$p2',
                 '$p3',
-                '$p4')"; 
+                '$p4')";
 
         //Realizamos la ejecución de la sentencia SQL
         $ejecutar = mysqli_query($enlace, $insertar);
@@ -139,7 +139,7 @@ $nombre = $_POST["nombre"]
                     icon: "error",
                     button: "OK",
                 });
-            //Si la sentencia SQL se ejecuta envía un mensaje de error (se utiliza sweetAlert) y redirige a agregar premios
+                //Si la sentencia SQL se ejecuta envía un mensaje de error (se utiliza sweetAlert) y redirige a agregar premios
             <?php } else { ?>
                 swal.fire({
                     title: "¡Bien hecho!",
@@ -156,6 +156,7 @@ $nombre = $_POST["nombre"]
         </script>
 
         <br><br>
+        <?php include '../../../../templates/foot2.php' ?>
 
 
         <!-- Optional JavaScript -->

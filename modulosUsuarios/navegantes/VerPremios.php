@@ -13,10 +13,13 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
+<?php include 'navbarNU.php' ?>
 
 <body> <br>
     <div class="container">
@@ -24,9 +27,9 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <h3 class="text-center text-success">Premios obtenidos en el trimestre 1</h3>
                 <div class="table-responsive-md">
-                    <table class="table table-hover">
+                    <table class="table table-dark" >
                         <tr>
-                            <thead class="table table-dark">
+                            <thead>
                                 <td>Premio 1</td>
                                 <td>Premio 2</td>
                                 <td>Premio 3</td>
@@ -35,7 +38,6 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
                         </tr>
                         <tbody>
                             <?php
-                            echo $user;
                             //Mostramos los datos que coincidan con la consulta SQL realizada
                             while ($datos = mysqli_fetch_array($consulta)) { ?>
                                 <tr>
@@ -47,7 +49,7 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
                             <?php
                             }
                             ?>
-                                
+
                         </tbody>
                     </table>
                 </div>
@@ -60,9 +62,9 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <h3 class="text-center text-success">Premios obtenidos en el trimestre 2</h3>
                 <div class="table-responsive-md">
-                    <table class="table table-hover">
+                    <table class="table table-dark">
                         <tr>
-                            <thead class="table table-dark">
+                            <thead>
                                 <td>Premio 1</td>
                                 <td>Premio 2</td>
                                 <td>Premio 3</td>
@@ -83,7 +85,7 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
                             <?php
                             }
                             ?>
-                                
+
                         </tbody>
                     </table>
                 </div>
@@ -96,9 +98,9 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <h3 class="text-center text-success">Premios obtenidos en el trimestre 3</h3>
                 <div class="table-responsive-md">
-                    <table class="table table-hover">
+                    <table class="table table-dark">
                         <tr>
-                            <thead class="table table-dark">
+                            <thead>
                                 <td>Premio 1</td>
                                 <td>Premio 2</td>
                                 <td>Premio 3</td>
@@ -119,7 +121,7 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
                             <?php
                             }
                             ?>
-                                
+
                         </tbody>
                     </table>
                 </div>
@@ -130,11 +132,11 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h3 class="text-center text-success">Premios obtenidos en el trimestre 2</h3>
+                <h3 class="text-center text-success">Premios obtenidos en el trimestre 4</h3>
                 <div class="table-responsive-md">
-                    <table class="table table-hover">
+                    <table class="table table-dark">
                         <tr>
-                            <thead class="table table-dark">
+                            <thead>
                                 <td>Premio 1</td>
                                 <td>Premio 2</td>
                                 <td>Premio 3</td>
@@ -155,7 +157,7 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
                             <?php
                             }
                             ?>
-                                
+
                         </tbody>
                     </table>
                 </div>
@@ -164,7 +166,7 @@ $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4 from navbronce WHERE us
     </div>
 
     <?php
-    include '../../templates/footer.php'
+    include '../../templates/foot2.php'
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

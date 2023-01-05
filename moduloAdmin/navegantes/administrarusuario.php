@@ -18,16 +18,19 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- DataTable CSS-->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <!--Estilos del footer -->
+  <link rel="stylesheet" href="../../css/foot.css">
 </head>
 
 <?php include 'navBarNav.php' ?>
 
 <body>
   <br>
-  <center>
+  <div class="text-center">
     <!-- Logo de navegantes-->
     <img src="../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
-  </center>
+  </div>
+
   <div class="container">
     <div class="col-xs-12 col-md-12 col-xl-12">
       <!-- Título-->
@@ -186,7 +189,9 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
         </tbody>
       </table>
     </div>
-  </div>
+  </div> <br><br>
+
+  <?php include '../../templates/foot2.php' ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

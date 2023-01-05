@@ -16,7 +16,8 @@ include '../../../../../templates/conexion.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Estilos footer-->
+    <link rel="stylesheet" href="../../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -120,6 +121,7 @@ include '../../../../../templates/conexion.php';
         </script>
 
         <br><br>
+        <?php include '../../../../../templates/foot2.php' ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

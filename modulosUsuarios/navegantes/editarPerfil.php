@@ -19,7 +19,11 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
 
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../css/foot.css">
 </head>
+
+<?php include 'navbarNU.php' ?>
 
 <body>
     <br>
@@ -124,7 +128,7 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
 
     <br>
     <?php
-    include '../../templates/footer.php'
+    include '../../templates/foot2.php'
     ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

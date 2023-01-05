@@ -10,7 +10,8 @@ $nombre = $_POST["nombre"]
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -99,7 +100,7 @@ $nombre = $_POST["nombre"]
         $p12 = $_POST["p12"];
 
         $actualizar = "UPDATE navbronce SET p9 = '$p9', p10 = '$p10', p11 = '$p11' , p12 = '$p12'
-                        WHERE id = '$id' AND nombre = '$nombre'"; 
+                        WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
@@ -125,6 +126,10 @@ $nombre = $_POST["nombre"]
             <?php }
         } ?>
         </script>
+
+        <br><br>
+
+        <?php include '../../../../templates/foot2.php' ?>
 
 
         <!-- Optional JavaScript -->

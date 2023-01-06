@@ -14,5 +14,20 @@ $(document).ready(function () {
         previous: "Anterior",
       },
     },
+    dom: "Bfrtilp",
+    buttons: [
+      {
+        extend: "pdfHtml5",
+        titleAttr: "PDF",
+        footer: true,
+        text: '<input type="button" class="btn btn-danger" value="Exportar PDF">'
+      },
+      {
+        extend: "excel",
+        titleAttr: "Excel",
+        footer: true,
+        text: '<input type="button" class="btn btn-outline-success" value="Exportar EXCEL">'
+      }
+    ],
   });
 });

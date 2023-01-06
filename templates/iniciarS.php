@@ -23,8 +23,8 @@ if ($filas > 0) {
     header("location:index.php");
 } else {
     /*Comprobamos que el correo y contraseña están o no 
-    en la tabla de administradores*/
-    $consulta = "SELECT user, pass departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administrador'";
+    en la tabla de usuarios*/
+    $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorNav'";
     $resultado = mysqli_query($enlace, $consulta);
 
     //Si hay un resultado lo mandamos al index administrativo sino al index general
@@ -35,9 +35,9 @@ if ($filas > 0) {
         header("location:index.php");
     } else {
         /*Comprobamos que el correo y contraseña están o no 
-        en la tabla de administradores*/
-        $empleados = "SELECT usuario, password FROM empleado WHERE usuario = '" . $correo . "' and password = '" . $contra . "'";
-        $resultado = mysqli_query($enlace, $empleados);
+        en la tabla de usuarios*/
+        $consulta = "SELECT user, pass, FROM usuarios WHERE user = '" . $correo . "' and password = '" . $contra . "' and departamento = 'administradorEx";
+        $resultado = mysqli_query($enlace, $consulta);
 
         //Si hay un resultado lo mandamos al index administrativo sino al index general
         $filas = mysqli_num_rows($resultado);

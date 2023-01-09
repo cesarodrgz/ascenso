@@ -40,7 +40,7 @@ $nombre = $_POST["nombre"]
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Navegantes' and nombre = '$nombre'");
+                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Exploradores' and nombre = '$nombre'");
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
@@ -55,41 +55,8 @@ $nombre = $_POST["nombre"]
                         <p>Asignar Premio 1</p>
                         <select name="p1" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
+                            <option value="Medicina">Medicina</option>
                         </select> <br>
-
-                        <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 2</p>
-                        <select name="p2" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
-                        </select> <br>
-
-                        <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 3</p>
-                        <select name="p3" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
-                        </select> <br>
-
-                        <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 4</p>
-                        <select name="p4" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                            <option value="Gobierno">Gobierno</option>
-                            <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                            <option value="Seguridad">Seguridad</option>
-                        </select>
 
                     <?php endforeach ?>
                     </select>
@@ -112,20 +79,14 @@ $nombre = $_POST["nombre"]
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
         $p1 = $_POST["p1"];
-        $p2 = $_POST["p2"];
-        $p3 = $_POST["p3"];
-        $p4 = $_POST["p4"];
 
         //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
         //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
-        $insertar = "INSERT INTO navbronce(id, user, nombre, p1, p2, p3, p4) 
+        $insertar = "INSERT INTO explobronce(id, user, nombre, p1) 
         VALUES('$id', 
                 '$user',
                 '$nombre',
-                '$p1',
-                '$p2',
-                '$p3',
-                '$p4')";
+                '$p1')";
 
         //Realizamos la ejecución de la sentencia SQL
         $ejecutar = mysqli_query($enlace, $insertar);
@@ -155,7 +116,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
+        <br><br><br><br>
         <?php include '../../../../templates/foot2.php' ?>
 
 

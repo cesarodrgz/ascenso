@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CDN SweetAlert 1-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -80,20 +79,33 @@
             $sentencia->execute(); //Ejecutamos la variable sentencia
 
             //Mensajes para el administrador de Navegantes
+            //Mensajes para el administrador de Navegantes
             if (!$sentencia) {
     ?>
                 <script>
                     //Si el usuario no se agrego enviamos el siguiente mensaje
-                    swal("Ups, algo anda mal...", "Presiona en OK para continuar", "error");
+                    Swal.fire(
+                        'Ups.. Algo salió mal',
+                        'Presiona OK para continuar',
+                        'error'
+                    ).then(function() {
+                        window.location = "ActualizarNavegante.php";
+                    });
                 </script>
             <?php
             } else { ?>
                 <script>
-                    //Si el usuario se agrego enviamos el siguiente mensaje
-                    swal("¡Usuario Agregado!", "Presiona en OK para continuar", "success");
+                    Swal.fire(
+                        '¡Buen trabajo!',
+                        'Usuario agregado correctamente',
+                        'success'
+                    ).then(function() {
+                        window.location = "administrarusuario.php";
+                    });
                 </script>
             <?php
             }
+            break;
             break; //Terminamos el caso
 
         case 'btnModificar':

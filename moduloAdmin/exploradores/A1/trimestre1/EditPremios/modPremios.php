@@ -2,9 +2,6 @@
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
 $premio1 = $_POST["p1"];
-$premio2 = $_POST["p2"];
-$premio3 = $_POST["p3"];
-$premio4 = $_POST["p4"];
 
 include '../../../../../templates/conexion.php';
 ?>
@@ -44,44 +41,17 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 1</p>
                     <select name="p1" id="" class="form-control">
                         <option value="<?php echo $premio1 ?>"> Premio actual asignado: <?php echo  $premio1 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
-                    </select> <br>
-
-                    <p>Premio 2 - Trimestre 1</p>
-                    <select name="p2" id="" class="form-control">
-                        <option value="<?php echo $premio2 ?>"> Premio actual asignado: <?php echo  $premio2 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
-                    </select> <br>
-
-                    <p>Premio 3 - Trimestre 1</p>
-                    <select name="p3" id="" class="form-control">
-                        <option value="<?php echo $premio3 ?>"> Premio actual asignado: <?php echo  $premio3 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
-                    </select> <br>
-
-                    <p>Premio 4 - Trimestre 1</p>
-                    <select name="p4" id="" class="form-control">
-                        <option value="<?php echo $premio4 ?>"> Premio actual asignado: <?php echo  $premio4 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
+                        <option value="Medicina">Medicina</option>
+                        <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">
                 </form>
             </div>
         </div>
-    </div> <br><br>
+    </div>
+
+    <div class="espacio"></div>
 
     <?php include '../../../../../templates/foot2.php' ?>
 
@@ -90,11 +60,8 @@ include '../../../../../templates/conexion.php';
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
         $p1 = $_POST["p1"];
-        $p2 = $_POST["p2"];
-        $p3 = $_POST["p3"];
-        $p4 = $_POST["p4"];
 
-        $actualizar = "UPDATE navbronce SET p1 = '$p1', p2 = '$p2', p3 = '$p3', p4 = '$p4' WHERE id = '$id'";
+        $actualizar = "UPDATE explobronce SET p1 = '$p1' WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>

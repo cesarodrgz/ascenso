@@ -2,7 +2,7 @@
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
-$consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = 'Navegantes'");
+$consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = 'Exploradores'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,7 +26,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
     <br>
     <div class="text-center">
         <!-- Logo de navegantes-->
-        <img src="../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
     </div>
 
     <div class="container">

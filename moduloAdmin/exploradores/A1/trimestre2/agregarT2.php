@@ -35,48 +35,18 @@ $nombre = $_POST["nombre"]
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Navegantes' and nombre = '$nombre'");
+                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Exploradores' and nombre = '$nombre'");
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 5</p>
-                        <select name="p5" class="form-control">
+                        <p>Asignar Premio 2</p>
+                        <select name="p2" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Salud Pública">Salud Pública</option>
                         </select> <br>
-
-                        <p>Asignar Premio 6</p>
-                        <select name="p6" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
-                        </select> <br>
-
-                        <p>Asignar Premio 7</p>
-                        <select name="p7" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
-                        </select> <br>
-
-                        <p>Asignar Premio 8</p>
-                        <select name="p8" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
-                        </select>
 
                     <?php endforeach ?>
                     </select>
@@ -93,12 +63,10 @@ $nombre = $_POST["nombre"]
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p5 = $_POST["p5"];
-        $p6 = $_POST["p6"];
-        $p7 = $_POST["p7"];
-        $p8 = $_POST["p8"];
+        $p2 = $_POST["p2"];
 
-        $actualizar = "UPDATE navbronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7' , p8 = '$p8'
+
+        $actualizar = "UPDATE explobronce SET p2 = '$p2'
                         WHERE id = '$id' AND nombre = '$nombre'"; 
 
         $ejecutar = mysqli_query($enlace, $actualizar);
@@ -126,7 +94,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
+        <div class="espacio"></div>
 
         <?php include '../../../../templates/foot2.php' ?>
 

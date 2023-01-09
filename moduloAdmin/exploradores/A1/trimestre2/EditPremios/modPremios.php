@@ -1,10 +1,7 @@
 <?php
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
-$premio5 = $_POST["p5"];
-$premio6 = $_POST["p6"];
-$premio7 = $_POST["p7"];
-$premio8 = $_POST["p8"];
+$premio2 = $_POST["p2"];
 
 include '../../../../../templates/conexion.php';
 ?>
@@ -43,40 +40,11 @@ include '../../../../../templates/conexion.php';
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <input type="hidden" name="nombre" value="<?php echo $nombre ?>">
 
-                    <p>Premio 1 - Trimestre 1</p>
-                    <select name="p5" id="" class="form-control">
-                        <option value="<?php echo $premio5 ?>"> Premio actual asignado: <?php echo  $premio5 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
-                    </select> <br>
-
-                    <p>Premio 2 - Trimestre 1</p>
-                    <select name="p6" id="" class="form-control">
-                        <option value="<?php echo $premio6 ?>"> Premio actual asignado: <?php echo  $premio6 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
-                    </select> <br>
-
-                    <p>Premio 3 - Trimestre 1</p>
-                    <select name="p7" id="" class="form-control">
-                        <option value="<?php echo $premio7 ?>"> Premio actual asignado: <?php echo  $premio7 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
-                    </select> <br>
-
-                    <p>Premio 4 - Trimestre 1</p>
-                    <select name="p8" id="" class="form-control">
-                        <option value="<?php echo $premio8 ?>"> Premio actual asignado: <?php echo  $premio8 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
+                    <p>Premio 1 - Trimestre 2</p>
+                    <select name="p2" id="" class="form-control">
+                        <option value="<?php echo $premio2 ?>"> Premio actual asignado: <?php echo  $premio2 ?> </option>
+                        <option value="Salud Pública">Salud Pública</option>
+                        <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">
@@ -89,12 +57,9 @@ include '../../../../../templates/conexion.php';
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
-        $p5 = $_POST["p5"];
-        $p6 = $_POST["p6"];
-        $p7 = $_POST["p7"];
-        $p8 = $_POST["p8"];
+        $p2 = $_POST["p2"];
 
-        $actualizar = "UPDATE navbronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7', p8 = '$p8' WHERE id = '$id' AND nombre = '$nombre'";
+        $actualizar = "UPDATE explobronce SET p2 = '$p2' WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
@@ -120,8 +85,8 @@ include '../../../../../templates/conexion.php';
             <?php }
         } ?>
         </script>
-
-        <br><br>
+        
+        <div class="espacio"></div>
         <?php include '../../../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->

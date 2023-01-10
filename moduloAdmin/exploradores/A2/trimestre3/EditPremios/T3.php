@@ -2,7 +2,7 @@
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
-$consulta = mysqli_query($enlace, "SELECT * from explobronce");
+$consulta = mysqli_query($enlace, "SELECT * from exploplata");
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,7 +38,7 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
         </div>
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-info text-center" role="alert">
-                <h2>Año 1 - Plata</h2>
+                <h2>Año 2 - Plata</h2>
             </div>
         </div>
 

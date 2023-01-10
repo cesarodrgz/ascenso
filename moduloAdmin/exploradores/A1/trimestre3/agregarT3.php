@@ -67,7 +67,7 @@ $nombre = $_POST["nombre"]
         $nombre = $_POST["nombre"];
         $p3 = $_POST["p3"];
 
-        $actualizar = "UPDATE explobronce SET p3 = '$p3', p4 = '$p4'
+        $actualizar = "UPDATE explobronce SET p3 = '$p3'
                         WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);

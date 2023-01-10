@@ -41,7 +41,7 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 3</p>
                     <select name="p3" id="" class="form-control">
                         <option value="<?php echo $p3 ?>"> Premio actual asignado: <?php echo  $p3 ?> </option>
-                        <option value="Plomería">Plomería</option>
+                        <option value="Economía">Economía</option>
                         <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
@@ -57,7 +57,7 @@ include '../../../../../templates/conexion.php';
         $nombre = $_POST["nombre"];
         $p3 = $_POST["p3"];
 
-        $actualizar = "UPDATE explobronce SET p3 = '$p3' WHERE id = '$id' AND nombre = '$nombre'";
+        $actualizar = "UPDATE exploplata SET p3 = '$p3' WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>

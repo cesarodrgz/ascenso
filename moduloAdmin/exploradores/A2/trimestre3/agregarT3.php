@@ -24,7 +24,7 @@ $nombre = $_POST["nombre"]
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar premios - Año 1 | Trimestre 3</h1>
+        <h1 class="text-primary text-center">Seleccionar premios - Año 2 | Trimestre 3</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
@@ -46,8 +46,7 @@ $nombre = $_POST["nombre"]
                         <p>Asignar Premio 3</p>
                         <select name="p3" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Plomería">Plomería</option>
-                            <option value="Ciudadanía">Ciudadanía</option>
+                            <option value="Economía">Economía</option>
                         </select> <br>
 
                     <?php endforeach ?>
@@ -67,7 +66,7 @@ $nombre = $_POST["nombre"]
         $nombre = $_POST["nombre"];
         $p3 = $_POST["p3"];
 
-        $actualizar = "UPDATE explobronce SET p3 = '$p3', p4 = '$p4'
+        $actualizar = "UPDATE exploplata SET p3 = '$p3'
                         WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
@@ -95,8 +94,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
-
+        <div class="espacio"></div>
         <?php include '../../../../templates/foot2.php' ?>
 
 

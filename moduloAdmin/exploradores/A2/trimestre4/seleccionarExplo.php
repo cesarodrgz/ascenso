@@ -23,7 +23,7 @@ include '../../../../templates/conexion.php';
     <br>
     <div class="container">
         <!-- Encabezado -->
-        <h1 class="text-primary text-center">Seleccionar Explorador - Año 1 | Trimestre 4</h1>
+        <h1 class="text-primary text-center">Seleccionar Explorador - Año 2 | Trimestre 4</h1>
         <div class="row">
             <!-- Informacón adicional -->
             <div class="col-xs-12 col-md-12 col-xl-12">

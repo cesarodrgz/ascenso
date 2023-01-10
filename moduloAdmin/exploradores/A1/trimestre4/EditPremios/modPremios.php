@@ -1,10 +1,9 @@
 <?php
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
-$premio1 = $_POST["p13"];
-$premio2 = $_POST["p14"];
-$premio3 = $_POST["p15"];
-$premio4 = $_POST["p16"];
+$p5 = $_POST["p5"];
+$p6 = $_POST["p6"];
+$p7 = $_POST["p7"];
 
 include '../../../../../templates/conexion.php';
 ?>
@@ -19,6 +18,8 @@ include '../../../../../templates/conexion.php';
 
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="../../../../../css/foot.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -42,39 +43,26 @@ include '../../../../../templates/conexion.php';
                     <input type="hidden" name="nombre" value="<?php echo $nombre ?>">
 
                     <p>Premio 1 - Trimestre 4</p>
-                    <select name="p13" id="" class="form-control">
-                        <option value="<?php echo $premio1 ?>"> Premio actual asignado: <?php echo  $premio1 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                    <select name="p5" id="" class="form-control">
+                        <option value="<?php echo $p5 ?>"> Premio actual asignado: <?php echo  $p5 ?> </option>
+                        <option value="Dibujantes">Dibujantes</option>
+                        <option value="Ciudadanía">Ciudadanía</option>
+                        <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
                     <p>Premio 2 - Trimestre 4</p>
-                    <select name="p14" id="" class="form-control">
-                        <option value="<?php echo $premio2 ?>"> Premio actual asignado: <?php echo  $premio2 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                    <select name="p6" id="" class="form-control">
+                        <option value="<?php echo $p6 ?>"> Premio actual asignado: <?php echo  $p6 ?> </option>
+                        <option value="Dibujantes">Dibujantes</option>
+                        <option value="Ciudadanía">Ciudadanía</option>
+                        <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
                     <p>Premio 3 - Trimestre 4</p>
-                    <select name="p15" id="" class="form-control">
-                        <option value="<?php echo $premio3 ?>"> Premio actual asignado: <?php echo  $premio3 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
-                    </select> <br>
-
-                    <p>Premio 4 - Trimestre 4</p>
-                    <select name="p16" id="" class="form-control">
-                        <option value="<?php echo $premio4 ?>"> Premio actual asignado: <?php echo  $premio4 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                    <select name="p7" id="" class="form-control">
+                        <option value="<?php echo $p7 ?>"> Premio actual asignado: <?php echo  $p7 ?> </option>
+                        <option value="Premio de liderazgo 301">Premio de liderazgo 301</option>
+                        <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">
@@ -87,12 +75,11 @@ include '../../../../../templates/conexion.php';
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
-        $p13 = $_POST["p13"];
-        $p14 = $_POST["p14"];
-        $p15 = $_POST["p15"];
-        $p16 = $_POST["p16"];
+        $p5 = $_POST["p5"];
+        $p6 = $_POST["p6"];
+        $p7 = $_POST["p7"];
 
-        $actualizar = "UPDATE navbronce SET p13 = '$p13', p14 = '$p14', p15 = '$p15', p16 = '$p16' WHERE id = '$id'";
+        $actualizar = "UPDATE explobronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7' WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
@@ -120,12 +107,13 @@ include '../../../../../templates/conexion.php';
         </script>
 
         <br><br>
+        <?php include '../../../../../templates/foot2.php' ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp16YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p15pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp16YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p7pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

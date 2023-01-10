@@ -12,7 +12,7 @@ $nombre = $_POST["nombre"]
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -26,7 +26,7 @@ $nombre = $_POST["nombre"]
     <br>
     <div class="container">
         <!--Encabezado-->
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 1</h1>
+        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 4</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->
@@ -40,7 +40,7 @@ $nombre = $_POST["nombre"]
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Navegantes' and nombre = '$nombre'");
+                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Exploradores' and nombre = '$nombre'");
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
@@ -52,44 +52,27 @@ $nombre = $_POST["nombre"]
                         <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 1</p>
-                        <select name="p13" class="form-control">
+                        <p>Asignar Premio 5</p>
+                        <select name="p5" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Dibujantes">Dibujantes</option>
+                            <option value="Ciudadanía">Ciudadanía</option>
                         </select> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 2</p>
-                        <select name="p14" class="form-control">
+                        <p>Asignar Premio 6</p>
+                        <select name="p6" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Dibujantes">Dibujantes</option>
+                            <option value="Ciudadanía">Ciudadanía</option>
                         </select> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 3</p>
-                        <select name="p15" class="form-control">
+                        <p>Asignar Premio de Liderazgo</p>
+                        <select name="p7" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Premio de liderazgo 301">Premio de liderazgo 301</option>
                         </select> <br>
-
-                        <!-- Información de que premio agregará más los premios disponibles-->
-                        <p>Asignar Premio 4</p>
-                        <select name="p16" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
-                        </select>
 
                     <?php endforeach ?>
                     </select>
@@ -105,20 +88,19 @@ $nombre = $_POST["nombre"]
     <?php
     /* Mediante el if comprobamos que las variables a insertar no esten vacias
        mediante el isset, si lo estan tomamos dichas variables de los campos:
-       id, user, nombre, p13, p14, p15, p16
+       id, user, nombre, p5, p6, p7, p16
     */
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p13 = $_POST["p13"];
-        $p14 = $_POST["p14"];
-        $p15 = $_POST["p15"];
-        $p16 = $_POST["p16"];
+        $p5 = $_POST["p5"];
+        $p6 = $_POST["p6"];
+        $p7 = $_POST["p7"];
 
         //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
-        //Insertamos los valores de id, user, nombre, p13, p14, p15 y p16
-        $actualizar = "UPDATE navbronce SET p13 = '$p13', p14 = '$p14', p15 = '$p15' , p16 = '$p16'
+        //Insertamos los valores de id, user, nombre, p5, p6, p7 y p16
+        $actualizar = "UPDATE explobronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7'
                         WHERE id = '$id' AND nombre = '$nombre'";
 
         //Realizamos la ejecución de la sentencia SQL
@@ -150,13 +132,12 @@ $nombre = $_POST["nombre"]
         </script>
 
         <br><br>
-
-
+        <?php include '../../../../templates/foot2.php' ?>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp16YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p15pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p7pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

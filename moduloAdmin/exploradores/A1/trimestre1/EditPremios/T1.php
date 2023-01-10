@@ -28,7 +28,7 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
     <br>
     <center>
         <!-- Logo de navegantes-->
-        <img src="../../../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
     </center>
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">

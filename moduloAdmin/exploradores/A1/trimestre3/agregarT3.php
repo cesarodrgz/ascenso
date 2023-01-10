@@ -36,48 +36,26 @@ $nombre = $_POST["nombre"]
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Navegantes' and nombre = '$nombre'");
+                    $consulta = mysqli_query($enlace, "SELECT id, user, nombre from usuarios WHERE departamento = 'Exploradores' and nombre = '$nombre'");
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 9</p>
-                        <select name="p9" class="form-control">
+                        <p>Asignar Premio 3</p>
+                        <select name="p3" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Plomería">Plomería</option>
+                            <option value="Ciudadanía">Ciudadanía</option>
                         </select> <br>
 
-                        <p>Asignar Premio 10</p>
-                        <select name="p10" class="form-control">
+                        <p>Asignar Premio 4</p>
+                        <select name="p4" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Plomería">Plomería</option>
+                            <option value="Ciudadanía">Ciudadanía</option>
                         </select> <br>
-
-                        <p>Asignar Premio 11</p>
-                        <select name="p11" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
-                        </select> <br>
-
-                        <p>Asignar Premio 12</p>
-                        <select name="p12" class="form-control">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
-                        </select>
 
                     <?php endforeach ?>
                     </select>
@@ -94,12 +72,10 @@ $nombre = $_POST["nombre"]
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p9 = $_POST["p9"];
-        $p10 = $_POST["p10"];
-        $p11 = $_POST["p11"];
-        $p12 = $_POST["p12"];
+        $p3 = $_POST["p3"];
+        $p4 = $_POST["p4"];
 
-        $actualizar = "UPDATE navbronce SET p9 = '$p9', p10 = '$p10', p11 = '$p11' , p12 = '$p12'
+        $actualizar = "UPDATE explobronce SET p3 = '$p3', p4 = '$p4'
                         WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);

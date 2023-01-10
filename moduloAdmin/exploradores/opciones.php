@@ -28,14 +28,14 @@
             <div class="col-xs-12 col-md-6 col-xl-12 text-center">
                 <br>
                     <img src="../../img/agregar.png" alt="IMG-AGREGAR-PREMIOS" style="width: 125px;">
-                <br>
+                <br><br>
                 <a href="agregarPremios.php" class="btn btn-primary btn-block">Agregar Premios</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12 text-center">
                 <br>
                     <img src="../../img/verificar.png" alt="IMG-VERIFICAR" style="width: 125px;">
-                <br>
+                <br><br>
                 <a href="A1/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
             </div>
 

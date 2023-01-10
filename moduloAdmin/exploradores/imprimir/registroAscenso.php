@@ -2,13 +2,13 @@
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
-$consulta = mysqli_query($enlace, "SELECT * from navbronce");
+$consulta = mysqli_query($enlace, "SELECT * from explobronce");
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Imprimir ascenso - Admin</title>
+    <title>Registro de Ascenso Exploradores</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
     <br>
     <div class="text-center">
         <!-- Logo de navegantes-->
-        <img src="../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
     </div>
 
     <div class="container">
@@ -35,7 +35,6 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
             <h1 class="text-center">
                 Imprimir Ascenso
             </h1>
-            <br>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <br>
@@ -52,15 +51,6 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                             <th>Premio 5</th>
                             <th>Premio 5</th>
                             <th>Premio 7</th>
-                            <th>Premio 8</th>
-                            <th>Premio 9</th>
-                            <th>Premio 10</th>
-                            <th>Premio 11</th>
-                            <th>Premio 12</th>
-                            <th>Premio 13</th>
-                            <th>Premio 14</th>
-                            <th>Premio 15</th>
-                            <th>Premio 16</th>
                         </tr>
                     </thead>
                     <!--Cuerpo de la tabla-->
@@ -85,24 +75,6 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
                                 <td><?php echo $datos["p6"]; ?></td>
                                 <!--Mostramos el usuario -->
                                 <td><?php echo $datos["p7"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p8"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p9"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p10"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p11"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p12"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p13"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p14"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p15"]; ?></td>
-                                <!--Mostramos el usuario -->
-                                <td><?php echo $datos["p16"]; ?></td>
                             </tr>
                         <?php
                         }

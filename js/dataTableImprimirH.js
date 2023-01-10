@@ -22,13 +22,13 @@ $(document).ready(function () {
           orientation: 'landscape',
           pageSize: 'LEGAL',
           footer: true,
-          text: '<input type="button" class="btn btn-danger" value="Exportar PDF">'
+          className: 'btn btn-danger'
         },
         {
           extend: "excel",
           titleAttr: "Excel",
           footer: true,
-          text: '<input type="button" class="btn btn-outline-success" value="Exportar EXCEL">'
+          className: 'btn btn-success'
         }
       ],
     });

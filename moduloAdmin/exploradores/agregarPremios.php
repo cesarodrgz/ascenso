@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-secondary text-center" role="alert">
-                    Seleccione el año al que desea agregar premios al Navegante
+                    Seleccione el año al que desea agregar premios al Explorador
                 </div>
             </div>
         </div>

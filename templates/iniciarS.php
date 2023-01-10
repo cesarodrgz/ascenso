@@ -46,7 +46,20 @@ if ($filas > 0) {
         } elseif ($filas < 0) {
             header("location:../index.php");
         } else {
-            # code...
+            /*Comprobamos que el correo y contraseña están o no 
+            en la tabla de usuarios*/
+            $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Exploradores'";
+            $resultado = mysqli_query($enlace, $consulta);
+            //Si hay un resultado lo mandamos al index administrativo sino al index general
+            $filas = mysqli_num_rows($resultado);
+
+            if ($filas > 0) {
+                header("location:../modulosUsuarios/exploradores/exploradores.php");
+            } elseif ($filas < 0) {
+                header("location:index.php");
+            } else {
+                # code...
+            }
         }
     }
 }

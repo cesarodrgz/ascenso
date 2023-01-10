@@ -1,38 +1,42 @@
 <?php
+//Inluimos la conexion para realizar el insert de los premios
 include '../../../../templates/conexion.php';
+//Obtenemos el nombre del navegante
 $nombre = $_POST["nombre"]
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 3 - Admin</title>
+    <title>Agregar Trimestre 2 - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Estilos del footer -->
-    <link rel="stylesheet" href="../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<?php include 'navbar.php' ?>
+<?php include 'navbar2.php' ?>
 
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar premios - Año 1 | Trimestre 3</h1>
+        <!--Encabezado-->
+        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 1</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
+                <!--Información complementaria-->
                 <div class="alert alert-success text-center" role="alert">
-                    Agregue los premios a: <b><?php echo $nombre ?></b>.
+                    Agregue los premios que desea guardar.
                 </div>
             </div>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
+                <!-- Inicio del formulario-->
                 <form action="" method="post">
                     <?php
                     //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
@@ -40,20 +44,25 @@ $nombre = $_POST["nombre"]
                     ?>
 
                     <?php foreach ($consulta as $info) : ?>
+                        <!-- ID invisible -->
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
+                        <!-- usuario invisible-->
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
-                        <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 3</p>
-                        <select name="p3" class="form-control">
+                        <!-- Nombre del navegante-->
+                        <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
+
+                        <!-- Información de que premio agregará más los premios disponibles-->
+                        <p>Asignar Premio 1</p>
+                        <select name="p1" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Plomería">Plomería</option>
-                            <option value="Ciudadanía">Ciudadanía</option>
+                            <option value="Seguridad en el tráfico">Seguridad en el tráfico</option>
                         </select> <br>
 
                     <?php endforeach ?>
                     </select>
                     <br>
 
+                    <!-- Botón de guardar-->
                     <input type="submit" class="btn btn-success btn-block" value="Guardar" name="send">
                 </form>
             </div>
@@ -61,18 +70,29 @@ $nombre = $_POST["nombre"]
     </div>
 
     <?php
+    /* Mediante el if comprobamos que las variables a insertar no esten vacias
+       mediante el isset, si lo estan tomamos dichas variables de los campos:
+       id, user, nombre, p1, p2, p3, p4
+    */
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p3 = $_POST["p3"];
+        $p1 = $_POST["p1"];
 
-        $actualizar = "UPDATE explobronce SET p3 = '$p3', p4 = '$p4'
-                        WHERE id = '$id' AND nombre = '$nombre'";
+        //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
+        //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
+        $insertar = "INSERT INTO exploplata(id, user, nombre, p1) 
+        VALUES('$id', 
+                '$user',
+                '$nombre',
+                '$p1')";
 
-        $ejecutar = mysqli_query($enlace, $actualizar);
+        //Realizamos la ejecución de la sentencia SQL
+        $ejecutar = mysqli_query($enlace, $insertar);
     ?>
         <script>
+            //Si la sentencia SQL no se ejecuta envía un mensaje de error (se utiliza sweetAlert)
             <?php if (!$ejecutar) { ?>
                 swal.fire({
                     title: "Oops...",
@@ -80,6 +100,7 @@ $nombre = $_POST["nombre"]
                     icon: "error",
                     button: "OK",
                 });
+                //Si la sentencia SQL se ejecuta envía un mensaje de error (se utiliza sweetAlert) y redirige a agregar premios
             <?php } else { ?>
                 swal.fire({
                     title: "¡Bien hecho!",
@@ -95,8 +116,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
-
+        <br><br><br><br>
         <?php include '../../../../templates/foot2.php' ?>
 
 

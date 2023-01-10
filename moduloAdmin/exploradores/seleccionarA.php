@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Agregar premios exploradores - Admin</title>
+    <title>Editar premios - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,14 +17,15 @@
 <body> <br>
     <div class="container">
         <!--Título-->
-        <h1 class="text-primary text-center">Agregar Premios</h1>
+        <h1 class="text-primary text-center">Verificar Premios</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-secondary text-center" role="alert">
-                    Seleccione el año al que desea agregar premios al Explorador
+                    Seleccione el año al que desea verificar
                 </div>
             </div>
         </div>
+
 
         <!--Año 1-->
         <div class="row">
@@ -33,7 +34,7 @@
                     <img src="../../img/bronce.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="A1/seleccionarT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="A1/EditarPremiosSelectT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
             </div>
         </div><br>
 
@@ -44,7 +45,7 @@
                     <img src="../../img/plata.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="A2/seleccionarT.php" class="btn btn-info btn-block">Año 2 - Plata</a>
+                <a href="A2/EditarPremiosSelectT.php" class="btn btn-info btn-block">Año 2 - Plata</a>
             </div>
         </div> <br>
 
@@ -55,7 +56,7 @@
                     <img src="../../img/oro.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="EditarPremiosSelectT.php" class="btn btn-info btn-block">Año 3 - Oro</a>
             </div>
         </div>
     </div> <br>

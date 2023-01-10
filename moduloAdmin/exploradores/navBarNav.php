@@ -16,9 +16,9 @@
                     Agregar Premios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="a1/seleccionarT.php">Año 1</a>
+                    <a class="dropdown-item" href="../exploradores/A1/seleccionarT.php">Año 1</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Año 2</a>
+                    <a class="dropdown-item" href="../exploradores/A2/EditarPremiosSelectT.php">Año 2</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Año 3</a>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="A1/EditarPremiosSelectT.php">Año 1</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Año 2</a>
+                    <a class="dropdown-item" href="A2/EditarPremiosSelectT.php">Año 2</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Año 3</a>
                 </div>

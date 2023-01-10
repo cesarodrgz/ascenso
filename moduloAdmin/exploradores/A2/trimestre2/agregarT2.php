@@ -6,25 +6,24 @@ $nombre = $_POST["nombre"]
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 3 - Admin</title>
+    <title>Agregar Trimestre 2 - Admin</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Estilos del footer -->
-    <link rel="stylesheet" href="../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<?php include 'navbar.php' ?>
+<?php include 'navbar3.php' ?>
 
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar premios - Año 1 | Trimestre 3</h1>
+        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 2</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
@@ -43,11 +42,10 @@ $nombre = $_POST["nombre"]
                         <input type="hidden" name="id" value="<?php echo $info["id"] ?>">
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
-                        <p>Asignar Premio 3</p>
-                        <select name="p3" class="form-control">
+                        <p>Asignar Premio 2</p>
+                        <select name="p2" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Plomería">Plomería</option>
-                            <option value="Ciudadanía">Ciudadanía</option>
+                            <option value="Electricidad">Electricidad</option>
                         </select> <br>
 
                     <?php endforeach ?>
@@ -65,10 +63,11 @@ $nombre = $_POST["nombre"]
         $id = $_POST["id"];
         $user = $_POST["user"];
         $nombre = $_POST["nombre"];
-        $p3 = $_POST["p3"];
+        $p2 = $_POST["p2"];
 
-        $actualizar = "UPDATE explobronce SET p3 = '$p3', p4 = '$p4'
-                        WHERE id = '$id' AND nombre = '$nombre'";
+
+        $actualizar = "UPDATE exploplata SET p2 = '$p2'
+                        WHERE id = '$id' AND nombre = '$nombre'"; 
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
@@ -95,10 +94,9 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br>
+        <div class="espacio"></div>
 
         <?php include '../../../../templates/foot2.php' ?>
-
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

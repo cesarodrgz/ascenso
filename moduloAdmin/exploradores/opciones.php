@@ -36,7 +36,7 @@
                 <br>
                     <img src="../../img/verificar.png" alt="IMG-VERIFICAR" style="width: 125px;">
                 <br><br>
-                <a href="A1/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
+                <a href="seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12 text-center">

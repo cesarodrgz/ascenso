@@ -88,7 +88,7 @@ $nombre = $_POST["nombre"]
     <?php
     /* Mediante el if comprobamos que las variables a insertar no esten vacias
        mediante el isset, si lo estan tomamos dichas variables de los campos:
-       id, user, nombre, p4, p5, p6, p16
+       id, user, nombre, p4, p5, p6
     */
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
@@ -99,7 +99,7 @@ $nombre = $_POST["nombre"]
         $p6 = $_POST["p6"];
 
         //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
-        //Insertamos los valores de id, user, nombre, p4, p5, p6 y p16
+        //Insertamos los valores de id, user, nombre, p4, p5, p6
         $actualizar = "UPDATE exploplata SET p4 = '$p4', p5 = '$p5', p6 = '$p6'
                         WHERE id = '$id' AND nombre = '$nombre'";
 

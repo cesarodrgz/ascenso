@@ -46,37 +46,37 @@ $nombre = $_POST["nombre"]
                         <p>Asignar Premio 9</p>
                         <select name="p9" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                            <option value="Historia Familiar">Historia Familiar</option>
+                            <option value="Bombero">Bombero</option>
+                            <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                         </select> <br>
 
                         <p>Asignar Premio 10</p>
                         <select name="p10" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                            <option value="Historia Familiar">Historia Familiar</option>
+                            <option value="Bombero">Bombero</option>
+                            <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                         </select> <br>
 
                         <p>Asignar Premio 11</p>
                         <select name="p11" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                            <option value="Historia Familiar">Historia Familiar</option>
+                            <option value="Bombero">Bombero</option>
+                            <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                         </select> <br>
 
                         <p>Asignar Premio 12</p>
                         <select name="p12" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Visitando Lugares">Visitando Lugares</option>
-                            <option value="Guardián de la ley">Guardián de la ley</option>
-                            <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                            <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                            <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                            <option value="Historia Familiar">Historia Familiar</option>
+                            <option value="Bombero">Bombero</option>
+                            <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                         </select>
 
                     <?php endforeach ?>

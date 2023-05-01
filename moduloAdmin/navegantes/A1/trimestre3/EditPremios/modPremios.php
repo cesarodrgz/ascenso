@@ -45,37 +45,37 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 3</p>
                     <select name="p9" id="" class="form-control">
                         <option value="<?php echo $premio5 ?>"> Premio actual asignado: <?php echo  $premio5 ?> </option>
-                        <option value="Visitando Lugares">Visitando Lugares</option>
-                        <option value="Guardián de la ley">Guardián de la ley</option>
-                        <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                        <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                        <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                        <option value="Historia Familiar">Historia Familiar</option>
+                        <option value="Bombero">Bombero</option>
+                        <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                     </select> <br>
 
                     <p>Premio 2 - Trimestre 3</p>
                     <select name="p10" id="" class="form-control">
                         <option value="<?php echo $premio6 ?>"> Premio actual asignado: <?php echo  $premio6 ?> </option>
-                        <option value="Visitando Lugares">Visitando Lugares</option>
-                        <option value="Guardián de la ley">Guardián de la ley</option>
-                        <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                        <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                        <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                        <option value="Historia Familiar">Historia Familiar</option>
+                        <option value="Bombero">Bombero</option>
+                        <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                     </select> <br>
 
                     <p>Premio 3 - Trimestre 3</p>
                     <select name="p11" id="" class="form-control">
                         <option value="<?php echo $premio7 ?>"> Premio actual asignado: <?php echo  $premio7 ?> </option>
-                        <option value="Visitando Lugares">Visitando Lugares</option>
-                        <option value="Guardián de la ley">Guardián de la ley</option>
-                        <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                        <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                        <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                        <option value="Historia Familiar">Historia Familiar</option>
+                        <option value="Bombero">Bombero</option>
+                        <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                     </select> <br>
 
                     <p>Premio 4 - Trimestre 3</p>
                     <select name="p12" id="" class="form-control">
                         <option value="<?php echo $premio8 ?>"> Premio actual asignado: <?php echo  $premio8 ?> </option>
-                        <option value="Visitando Lugares">Visitando Lugares</option>
-                        <option value="Guardián de la ley">Guardián de la ley</option>
-                        <option value="Ayudante en el manejo de dinero">Ayudante en el manejo de dinero</option>
-                        <option value="Ayudante de patrulla">Ayudante de patrulla</option>
+                        <option value="Cuerpo Limpio">Cuerpo Limpio</option>
+                        <option value="Historia Familiar">Historia Familiar</option>
+                        <option value="Bombero">Bombero</option>
+                        <option value="Ayudante de Hogar">Ayudante de Hogar</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">

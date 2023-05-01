@@ -44,37 +44,37 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 1</p>
                     <select name="p1" id="" class="form-control">
                         <option value="<?php echo $premio1 ?>"> Premio actual asignado: <?php echo  $premio1 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
+                        <option value="Ayudante de Iglesia">Ayudante de Iglesia</option>
+                        <option value="Historia de la Iglesia">Historia de la Iglesia</option>
+                        <option value="Clamor de Gozo">Clamor de Gozo</option>
+                        <option value="Escuela Dominical">Escuela Dominical</option>
                     </select> <br>
 
                     <p>Premio 2 - Trimestre 1</p>
                     <select name="p2" id="" class="form-control">
                         <option value="<?php echo $premio2 ?>"> Premio actual asignado: <?php echo  $premio2 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
+                        <option value="Ayudante de Iglesia">Ayudante de Iglesia</option>
+                        <option value="Historia de la Iglesia">Historia de la Iglesia</option>
+                        <option value="Clamor de Gozo">Clamor de Gozo</option>
+                        <option value="Escuela Dominical">Escuela Dominical</option>
                     </select> <br>
 
                     <p>Premio 3 - Trimestre 1</p>
                     <select name="p3" id="" class="form-control">
                         <option value="<?php echo $premio3 ?>"> Premio actual asignado: <?php echo  $premio3 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
+                        <option value="Ayudante de Iglesia">Ayudante de Iglesia</option>
+                        <option value="Historia de la Iglesia">Historia de la Iglesia</option>
+                        <option value="Clamor de Gozo">Clamor de Gozo</option>
+                        <option value="Escuela Dominical">Escuela Dominical</option>
                     </select> <br>
 
                     <p>Premio 4 - Trimestre 1</p>
                     <select name="p4" id="" class="form-control">
                         <option value="<?php echo $premio4 ?>"> Premio actual asignado: <?php echo  $premio4 ?> </option>
-                        <option value="Ayudante de Comunidad">Ayudante de Comunidad</option>
-                        <option value="Gobierno">Gobierno</option>
-                        <option value="Ayuda a un vecino">Ayuda a un vecino</option>
-                        <option value="Seguridad">Seguridad</option>
+                        <option value="Ayudante de Iglesia">Ayudante de Iglesia</option>
+                        <option value="Historia de la Iglesia">Historia de la Iglesia</option>
+                        <option value="Clamor de Gozo">Clamor de Gozo</option>
+                        <option value="Escuela Dominical">Escuela Dominical</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">

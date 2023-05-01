@@ -55,40 +55,40 @@ $nombre = $_POST["nombre"]
                         <p>Asignar Premio 1</p>
                         <select name="p13" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Arca de Noé">Arca de Noé</option>
+                            <option value="De Paseo">De Paseo</option>
+                            <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                         </select> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 2</p>
                         <select name="p14" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Arca de Noé">Arca de Noé</option>
+                            <option value="De Paseo">De Paseo</option>
+                            <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                         </select> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 3</p>
                         <select name="p15" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Arca de Noé">Arca de Noé</option>
+                            <option value="De Paseo">De Paseo</option>
+                            <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                         </select> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 4</p>
                         <select name="p16" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Cocinando">Cocinando</option>
-                            <option value="Día de campamento">Día de campamento</option>
-                            <option value="Folclore">Folclore</option>
-                            <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                            <option value="Juego">Juego</option>
+                            <option value="Arca de Noé">Arca de Noé</option>
+                            <option value="De Paseo">De Paseo</option>
+                            <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                         </select>
 
                     <?php endforeach ?>

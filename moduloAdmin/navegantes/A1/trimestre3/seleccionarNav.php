@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="espacio2"></div>
+    <div class="espacio"></div>
 
     <?php include '../../../../templates/foot2.php' ?>
 

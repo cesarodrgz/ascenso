@@ -46,37 +46,37 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 1</p>
                     <select name="p5" id="" class="form-control">
                         <option value="<?php echo $premio5 ?>"> Premio actual asignado: <?php echo  $premio5 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
+                        <option value="Manualidad">Manualidad</option>
+                        <option value="Ayuda al comandante">Ayuda al comandante</option>
+                        <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                        <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                     </select> <br>
 
                     <p>Premio 2 - Trimestre 1</p>
                     <select name="p6" id="" class="form-control">
                         <option value="<?php echo $premio6 ?>"> Premio actual asignado: <?php echo  $premio6 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
+                        <option value="Manualidad">Manualidad</option>
+                        <option value="Ayuda al comandante">Ayuda al comandante</option>
+                        <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                        <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                     </select> <br>
 
                     <p>Premio 3 - Trimestre 1</p>
                     <select name="p7" id="" class="form-control">
                         <option value="<?php echo $premio7 ?>"> Premio actual asignado: <?php echo  $premio7 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
+                        <option value="Manualidad">Manualidad</option>
+                        <option value="Ayuda al comandante">Ayuda al comandante</option>
+                        <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                        <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                     </select> <br>
 
                     <p>Premio 4 - Trimestre 1</p>
                     <select name="p8" id="" class="form-control">
                         <option value="<?php echo $premio8 ?>"> Premio actual asignado: <?php echo  $premio8 ?> </option>
-                        <option value="Defensor del mundo">Defensor del mundo</option>
-                        <option value="Hacedor del mundo">Hacedor del mundo</option>
-                        <option value="Bandera">Bandera</option>
-                        <option value="Evento deportivo">Evento deportivo</option>
+                        <option value="Manualidad">Manualidad</option>
+                        <option value="Ayuda al comandante">Ayuda al comandante</option>
+                        <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                        <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">

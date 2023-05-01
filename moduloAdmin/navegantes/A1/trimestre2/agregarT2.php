@@ -45,37 +45,37 @@ $nombre = $_POST["nombre"]
                         <p>Asignar Premio 5</p>
                         <select name="p5" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Manualidad">Manualidad</option>
+                            <option value="Ayuda al comandante">Ayuda al comandante</option>
+                            <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                            <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                         </select> <br>
 
                         <p>Asignar Premio 6</p>
                         <select name="p6" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Manualidad">Manualidad</option>
+                            <option value="Ayuda al comandante">Ayuda al comandante</option>
+                            <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                            <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                         </select> <br>
 
                         <p>Asignar Premio 7</p>
                         <select name="p7" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Manualidad">Manualidad</option>
+                            <option value="Ayuda al comandante">Ayuda al comandante</option>
+                            <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                            <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                         </select> <br>
 
                         <p>Asignar Premio 8</p>
                         <select name="p8" class="form-control">
                             <option value="Ninguno">Ninguno</option>
-                            <option value="Defensor del mundo">Defensor del mundo</option>
-                            <option value="Hacedor del mundo">Hacedor del mundo</option>
-                            <option value="Bandera">Bandera</option>
-                            <option value="Evento deportivo">Evento deportivo</option>
+                            <option value="Manualidad">Manualidad</option>
+                            <option value="Ayuda al comandante">Ayuda al comandante</option>
+                            <option value="Cuerpo Fuerte">Cuerpo Fuerte</option>
+                            <option value="¿Qué hay en la tele?">¿Qué hay en la tele?</option>
                         </select>
 
                     <?php endforeach ?>

@@ -38,13 +38,13 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
         </div>
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-info text-center" role="alert">
-                <h2>Año 1 - Plata</h2>
+                <h2>Año 1 - Bronce</h2>
             </div>
         </div>
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 2</h4>
+                <h4>Trimestre 3</h4>
             </div>
         </div>
 

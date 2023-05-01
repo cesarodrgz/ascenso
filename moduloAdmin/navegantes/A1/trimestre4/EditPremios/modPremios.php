@@ -44,37 +44,37 @@ include '../../../../../templates/conexion.php';
                     <p>Premio 1 - Trimestre 4</p>
                     <select name="p13" id="" class="form-control">
                         <option value="<?php echo $premio1 ?>"> Premio actual asignado: <?php echo  $premio1 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                        <option value="Juego">Juego</option>
+                        <option value="Arca de Noé">Arca de Noé</option>
+                        <option value="De Paseo">De Paseo</option>
+                        <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                     </select> <br>
 
                     <p>Premio 2 - Trimestre 4</p>
                     <select name="p14" id="" class="form-control">
                         <option value="<?php echo $premio2 ?>"> Premio actual asignado: <?php echo  $premio2 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                        <option value="Juego">Juego</option>
+                        <option value="Arca de Noé">Arca de Noé</option>
+                        <option value="De Paseo">De Paseo</option>
+                        <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                     </select> <br>
 
                     <p>Premio 3 - Trimestre 4</p>
                     <select name="p15" id="" class="form-control">
                         <option value="<?php echo $premio3 ?>"> Premio actual asignado: <?php echo  $premio3 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                        <option value="Juego">Juego</option>
+                        <option value="Arca de Noé">Arca de Noé</option>
+                        <option value="De Paseo">De Paseo</option>
+                        <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                     </select> <br>
 
                     <p>Premio 4 - Trimestre 4</p>
                     <select name="p16" id="" class="form-control">
                         <option value="<?php echo $premio4 ?>"> Premio actual asignado: <?php echo  $premio4 ?> </option>
-                        <option value="Cocinando">Cocinando</option>
-                        <option value="Día de campamento">Día de campamento</option>
-                        <option value="Folclore">Folclore</option>
-                        <option value="Cuidando el mundo de Dios">Cuidando el mundo de Dios</option>
+                        <option value="Juego">Juego</option>
+                        <option value="Arca de Noé">Arca de Noé</option>
+                        <option value="De Paseo">De Paseo</option>
+                        <option value="Exploradores por el pueblo">Exploradores por el pueblo</option>
                     </select> <br>
 
                     <input type="submit" class="btn btn-success btn-block" value="Actualizar premios" name="send">

@@ -15,6 +15,8 @@ $filas = mysqli_num_rows($resultado);
 
 /////////////////VALIDACIÓN DE LOS LOGIN/////////////////
 
+    /////////////////VALIDACIÓN NAVEGANTES/////////////////
+
 //Si existe un número mayor que cero, enviamos al usuario a la web de opciones
 if ($filas > 0) {
     header("location:../modulosUsuarios/navegantes/navegantes.php");
@@ -34,6 +36,9 @@ if ($filas > 0) {
     } elseif ($filas < 0) {
         header("location:index.php");
     } else {
+
+        /////////////////VALIDACIÓN EXPLORADORES/////////////////
+
         /*Comprobamos que el correo y contraseña están o no 
         en la tabla de usuarios*/
         $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorEx'";

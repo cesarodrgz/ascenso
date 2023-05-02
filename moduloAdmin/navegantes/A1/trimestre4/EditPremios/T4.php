@@ -42,7 +42,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 1</h4>
+                <h4>Trimestre 4</h4>
             </div>
         </div>
 

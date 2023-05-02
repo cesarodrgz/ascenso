@@ -31,7 +31,7 @@ $nombre = $_POST["nombre"]
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->
                 <div class="alert alert-success text-center" role="alert">
-                    Agregue los premios que desea guardar.
+                    Está agregando premios a: <b><?php echo $nombre ?></b>.
                 </div>
             </div>
 
@@ -49,7 +49,7 @@ $nombre = $_POST["nombre"]
                         <!-- usuario invisible-->
                         <input type="hidden" name="user" value="<?php echo $info["user"] ?>">
                         <!-- Nombre del navegante-->
-                        <input type="text" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
+                        <input type="hidden" name="nombre" class="form-control" value="<?php echo $info["nombre"] ?>" readonly> <br>
 
                         <!-- Información de que premio agregará más los premios disponibles-->
                         <p>Asignar Premio 1</p>
@@ -116,7 +116,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <br><br><br><br>
+        <div class="espacio"></div>
         <?php include '../../../../templates/foot2.php' ?>
 
 

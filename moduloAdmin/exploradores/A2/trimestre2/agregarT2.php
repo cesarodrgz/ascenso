@@ -27,7 +27,7 @@ $nombre = $_POST["nombre"]
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
-                    Agregue los premios a: <b><?php echo $nombre ?></b>.
+                    Está agregando premios a: <b><?php echo $nombre ?></b>.
                 </div>
             </div>
 
@@ -67,7 +67,7 @@ $nombre = $_POST["nombre"]
 
 
         $actualizar = "UPDATE exploplata SET p2 = '$p2'
-                        WHERE id = '$id' AND nombre = '$nombre'"; 
+                        WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>

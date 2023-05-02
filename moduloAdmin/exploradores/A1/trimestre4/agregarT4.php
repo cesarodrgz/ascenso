@@ -31,7 +31,7 @@ $nombre = $_POST["nombre"]
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->
                 <div class="alert alert-success text-center" role="alert">
-                    Agregue los premios a: <b><?php echo $nombre ?></b>.
+                    Está agregando premios a: <b><?php echo $nombre ?></b>.
                 </div>
             </div>
 

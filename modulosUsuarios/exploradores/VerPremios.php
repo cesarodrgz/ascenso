@@ -62,7 +62,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata WHERE user = '$user
 
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h3 class="text-center text-success">Premios obtenidos en el Año 1</h3>
+                <h3 class="text-center text-success">Premios obtenidos en el Año 2</h3>
                 <div class="table-responsive-md">
                     <table class="table">
                         <tr>

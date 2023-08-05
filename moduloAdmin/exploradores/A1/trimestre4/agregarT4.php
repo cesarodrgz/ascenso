@@ -26,7 +26,7 @@ $nombre = $_POST["nombre"]
     <br>
     <div class="container">
         <!--Encabezado-->
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 4</h1>
+        <h1 class="text-primary text-center">Trimestre 4</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->

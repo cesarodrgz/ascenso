@@ -8,7 +8,7 @@ $consulta = mysqli_query($enlace, "SELECT * from exploplata");
 <html lang="en">
 
 <head>
-    <title>Editar premios - Admin</title>
+    <title>Actualizar premios</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

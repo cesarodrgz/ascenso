@@ -6,7 +6,7 @@ include '../../../../templates/conexion.php';
 <html lang="en">
 
 <head>
-    <title>Trimestre 1 - Exploradores - Admin</title>
+    <title>Seleccionar Explorador</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

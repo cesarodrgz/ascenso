@@ -8,7 +8,7 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
 <html lang="en">
 
 <head>
-    <title>Administrar Usuarios - Admin</title>
+    <title>Actualizar premios T2|A1</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,25 +26,20 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
     <br>
     <center>
         <!-- Logo de navegantes-->
-        <img src="../../../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 100px;">
     </center>
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
-            <h1 class="text-center text-primary">
-                Editar premios
-            </h1>
+            <h2 class="text-center text-primary">
+                Actualizar premios
+            </h2>
             <br>
-        </div>
-        <div class="col-xs-12 col-md-12 col-xl-12">
-            <div class="alert alert-info text-center" role="alert">
-                <h2>Año 1 - Plata</h2>
-            </div>
         </div>
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 2</h4>
+                <h4>Año 1 | Trimestre 2</h4>
             </div>
         </div>
 

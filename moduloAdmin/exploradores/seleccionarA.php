@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Editar premios - Admin</title>
+    <title>Actualizar premios - Año</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,11 +17,11 @@
 <body> <br>
     <div class="container">
         <!--Título-->
-        <h1 class="text-primary text-center">Verificar Premios</h1>
+        <h2 class="text-primary text-center">Actualizar Premios</h2>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-secondary text-center" role="alert">
-                    Seleccione el año al que desea verificar
+                    Seleccione el año al que desea actualizar
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
                     <img src="../../img/oro.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="EditarPremiosSelectT.php" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="A3/EditarPremiosSelectT.php" class="btn btn-info btn-block">Año 3 - Oro</a>
             </div>
         </div>
     </div> <br>

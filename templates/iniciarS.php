@@ -15,7 +15,7 @@ $filas = mysqli_num_rows($resultado);
 
 /////////////////VALIDACIÓN DE LOS LOGIN/////////////////
 
-    /////////////////VALIDACIÓN NAVEGANTES/////////////////
+/////////VALIDACIÓN NAVEGANTES/////////
 
 //Si existe un número mayor que cero, enviamos al usuario a la web de opciones
 if ($filas > 0) {
@@ -51,19 +51,32 @@ if ($filas > 0) {
         } elseif ($filas < 0) {
             header("location:../index.php");
         } else {
+
+            ////////////LOGIN ADMIN GENERAL///////////
             /*Comprobamos que el correo y contraseña están o no 
             en la tabla de usuarios*/
-            $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Exploradores'";
+            $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'AdminGen'";
             $resultado = mysqli_query($enlace, $consulta);
             //Si hay un resultado lo mandamos al index administrativo sino al index general
             $filas = mysqli_num_rows($resultado);
 
             if ($filas > 0) {
-                header("location:../modulosUsuarios/exploradores/exploradores.php");
+                header("location:../adming/index.php");
             } elseif ($filas < 0) {
                 header("location:index.php");
             } else {
-                # code...
+                $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Exploradores'";
+                $resultado = mysqli_query($enlace, $consulta);
+
+                //Si hay un resultado lo mandamos al index administrativo sino al index general
+                $filas = mysqli_num_rows($resultado);
+                if ($filas > 0) {
+                    header("location:../modulosUsuarios/exploradores/exploradores.php");
+                } elseif ($filas < 0) {
+                    header("location:../index.php");
+                } else {
+                    # code...
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
 <html lang="en">
 
 <head>
-  <title>Administrar Usuarios Exploradores - Admin</title>
+  <title>Admin Usuarios Exploradores</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
   <br>
   <div class="text-center">
     <!-- Logo de Exploradors-->
-    <img src="../../img/Exploradores.png" alt="LOGO-ExploradorS" style="width: 150px;">
+    <img src="../../img/Exploradores.png" alt="LOGO-ExploradorS" style="width: 100px;">
   </div>
 
   <div class="container">
@@ -152,7 +152,6 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
-            <th>ID</th>
             <th>Acción</th>
           </tr>
         </thead>
@@ -172,8 +171,6 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
               <td><?php echo $datos["direccion"]; ?></td>
               <!--Mostramos el telefono -->
               <td><?php echo $datos["telefono"]; ?></td>
-              <!--Mostramos el id -->
-              <td><?php echo $datos["id"]; ?></td>
 
               <td>
                 <form action="ActualizarExplorador.php" method="post">

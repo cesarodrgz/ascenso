@@ -22,9 +22,9 @@ $id = $_POST["id"];
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h1 class="text-center">
+                <h3 class="text-center">
                     Editar Perfil Explorador (Administrador)
-                </h1>
+                </h3>
             </div>
         </div>
 
@@ -36,7 +36,7 @@ $id = $_POST["id"];
             ?>
                 <center>
                     <p>Foto actual:</p>
-                    <img class="img-fluid img-thumbnail" style="width: 150px" src="img/<?php echo $datos["foto"] ?>" alt="">
+                    <img class="img-fluid img-thumbnail" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt="">
                 </center>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">

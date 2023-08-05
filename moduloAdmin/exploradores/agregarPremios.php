@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Agregar premios exploradores - Admin</title>
+    <title>Seleccionar Año</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -55,7 +55,7 @@
                     <img src="../../img/oro.png" alt="A1-BRONCE" style="width: 125px;">
                 </center>
                 <br>
-                <a href="" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="A3/seleccionarT.php" class="btn btn-info btn-block">Año 3 - Oro</a>
             </div>
         </div>
     </div> <br>

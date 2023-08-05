@@ -3,7 +3,6 @@ $id = $_POST["id"];
 $nombre = $_POST["nombre"];
 $p5 = $_POST["p5"];
 $p6 = $_POST["p6"];
-$p7 = $_POST["p7"];
 
 include '../../../../../templates/conexion.php';
 ?>
@@ -50,17 +49,9 @@ include '../../../../../templates/conexion.php';
                         <option value="Ninguno">Ninguno</option>
                     </select> <br>
 
-                    <p>Premio 2 - Trimestre 4</p>
+                    <p>Premio 3 - Trimestre 4</p>
                     <select name="p6" id="" class="form-control">
                         <option value="<?php echo $p6 ?>"> Premio actual asignado: <?php echo  $p6 ?> </option>
-                        <option value="Dibujantes">Dibujantes</option>
-                        <option value="Ciudadanía">Ciudadanía</option>
-                        <option value="Ninguno">Ninguno</option>
-                    </select> <br>
-
-                    <p>Premio 3 - Trimestre 4</p>
-                    <select name="p7" id="" class="form-control">
-                        <option value="<?php echo $p7 ?>"> Premio actual asignado: <?php echo  $p7 ?> </option>
                         <option value="Premio de liderazgo 301">Premio de liderazgo 301</option>
                         <option value="Ninguno">Ninguno</option>
                     </select> <br>
@@ -69,7 +60,7 @@ include '../../../../../templates/conexion.php';
                 </form>
             </div>
         </div>
-    </div>
+    </div> <br>
 
     <?php
     if (isset($_POST["send"])) {
@@ -77,9 +68,8 @@ include '../../../../../templates/conexion.php';
         $nombre = $_POST["nombre"];
         $p5 = $_POST["p5"];
         $p6 = $_POST["p6"];
-        $p7 = $_POST["p7"];
 
-        $actualizar = "UPDATE explobronce SET p5 = '$p5', p6 = '$p6', p7 = '$p7' WHERE id = '$id' AND nombre = '$nombre'";
+        $actualizar = "UPDATE exploplata SET p5 = '$p5', p6 = '$p6' WHERE id = '$id' AND nombre = '$nombre'";
 
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>

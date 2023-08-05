@@ -2,7 +2,7 @@
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
-$consulta = mysqli_query($enlace, "SELECT * from explobronce");
+$consulta = mysqli_query($enlace, "SELECT * from exploplata");
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,7 +57,6 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
                         <th>Nombre</th>
                         <th>Premio 1</th>
                         <th>Premio 2</th>
-                        <th>Premio 3</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -75,8 +74,6 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
                             <td><?php echo $datos["p5"]; ?></td>
                             <!--Mostramos el premio 2 -->
                             <td><?php echo $datos["p6"]; ?></td>
-                            <!--Mostramos el premio 3 -->
-                            <td><?php echo $datos["p7"]; ?></td>
                             <!--Botón para ir a editar-->
                             <td>
                                 <form action="modPremios.php" method="post">
@@ -84,7 +81,6 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
                                     <input type="hidden" name="nombre" value="<?php echo $datos["nombre"]; ?>">
                                     <input type="hidden" name="p5" value="<?php echo $datos["p5"]; ?>">
                                     <input type="hidden" name="p6" value="<?php echo $datos["p6"]; ?>">
-                                    <input type="hidden" name="p7" value="<?php echo $datos["p7"]; ?>">
                                 <input type="submit" value="Editar" class="btn btn-primary">
 
                                 </form>

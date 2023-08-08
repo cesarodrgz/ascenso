@@ -10,7 +10,7 @@ include '../../../../../templates/conexion.php';
 <html lang="en">
 
 <head>
-    <title>Editar Premios - Admin</title>
+    <title>Actualizar T4|A2</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,10 +29,10 @@ include '../../../../../templates/conexion.php';
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccione los premios que desea actualizar</h1>
+        <h2 class="text-primary text-center">Actualizar premios</h2>
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-info text-center" role="alert">
-                Trimestre 1 - <?php echo $nombre ?>
+                Está actualizando los premios de: <b><?php echo $nombre ?></b>
             </div>
         </div>
         <div class="row">

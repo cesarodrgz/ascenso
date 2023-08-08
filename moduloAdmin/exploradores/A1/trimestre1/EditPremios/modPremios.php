@@ -29,7 +29,7 @@ include '../../../../../templates/conexion.php';
         <h2 class="text-primary text-center">Actualizar premios</h2>
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-info text-center" role="alert">
-                Esta actualizando los premios de: <?php echo $nombre ?>
+                Esta actualizando los premios de: <b><?php echo $nombre ?></b>
             </div>
         </div>
         <div class="row">

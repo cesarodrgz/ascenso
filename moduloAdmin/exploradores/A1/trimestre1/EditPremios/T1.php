@@ -36,7 +36,6 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
             <h2 class="text-center text-primary">
                 Actualizar premios
             </h2>
-            <br>
         </div>
 
         <div class="col-xs-12 col-md-12 col-xl-12">
@@ -89,7 +88,7 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
         </div>
     </div><br><br>
 
-    
+
 
     <?php include '../../../../../templates/foot2.php' ?>
 

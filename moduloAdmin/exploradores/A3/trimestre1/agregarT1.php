@@ -8,7 +8,7 @@ $nombre = $_POST["nombre"]
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 1|A3 - Admin</title>
+    <title>T1 | A3 Agregar</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@ $nombre = $_POST["nombre"]
     <br>
     <div class="container">
         <!--Encabezado-->
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 1 | A3</h1>
+        <h1 class="text-primary text-center">Trimestre 1</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->
@@ -116,7 +116,7 @@ $nombre = $_POST["nombre"]
         } ?>
         </script>
 
-        <div class="espacio"></div>
+        <br><br><br><br><br>
         <?php include '../../../../templates/foot2.php' ?>
 
 

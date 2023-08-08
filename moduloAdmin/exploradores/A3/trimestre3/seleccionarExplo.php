@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>LDJ - A3 | T2</title>
+    <title>T3 | A3 - Exploradores</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar Explorador - Trimestre 3 | A3</h1>
+        <h2 class="text-primary text-center">Año 3 | Trimestre 3</h2>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">

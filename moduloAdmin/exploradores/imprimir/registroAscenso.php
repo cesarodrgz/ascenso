@@ -4,6 +4,8 @@ include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
 $consulta = mysqli_query($enlace, "SELECT * from explobronce");
 
+$consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,21 +29,17 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
     <br>
     <div class="text-center">
         <!-- Logo de navegantes-->
-        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 100px;">
     </div>
 
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
-            <h1 class="text-center">
-                Imprimir Ascenso
-            </h1>
+            <h2 class="text-center">
+                Guardar Ascenso
+            </h2>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <br>
-                <div class="alert alert-primary text-center" role="alert">
-                    <h1>Año 1</h1>
-                </div>
                 <!--Tabla para presentar los usuarios -->
                 <table class="table table-striped table-bordered table-responsive" id="tableH">
                     <!--Encabezado de la tabla-->
@@ -81,16 +79,36 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
                         <?php
                         }
                         ?>
+                         <?php
+                        //Mostramos los datos que coincidan con la consulta SQL realizada
+                        while ($datos = mysqli_fetch_array($consulta2)) { ?>
+                            <tr>
+                                <!--Mostramos el nombre -->
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <!--Mostramos la direccion -->
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <!--Mostramos el telefono -->
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <!--Mostramos el id -->
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p6"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
-            <br>
-            <a href="registroAscensoA2.php" class="btn btn-warning btn-block">Imprimir año 2</a>
         </div>
     </div> <br><br>
 
-    
-
+    <!--Footer-->
     <?php include '../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->

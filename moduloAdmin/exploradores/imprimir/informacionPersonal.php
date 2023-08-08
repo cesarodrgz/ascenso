@@ -26,7 +26,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
     <br>
     <div class="text-center">
         <!-- Logo de navegantes-->
-        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 100px;">
     </div>
 
     <div class="container">

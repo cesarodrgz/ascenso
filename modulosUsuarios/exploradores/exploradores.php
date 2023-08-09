@@ -11,7 +11,7 @@ $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$us
 <?php include 'navbarNU.php' ?>
 
 <head>
-  <title>Inicio - Navegantes</title>
+  <title>Inicio - Exploradores</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

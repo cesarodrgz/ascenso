@@ -18,7 +18,14 @@ $consulta3 = mysqli_query($enlace, "SELECT * from explooro WHERE user = '$user'"
     <!--Estilos del footer -->
     <link rel="stylesheet" href="../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        table thead {
+            background-color: #22a593;
+            color: white;
+        }
+    </style>
 </head>
 
 <?php include 'navbarNU.php' ?>
@@ -132,9 +139,6 @@ $consulta3 = mysqli_query($enlace, "SELECT * from explooro WHERE user = '$user'"
         </div>
     </div>
 
-
-
-    <div class="espacio"></div><br><br><br>
     <?php
     include '../../templates/foot2.php'
     ?>

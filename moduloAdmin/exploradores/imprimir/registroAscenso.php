@@ -1,11 +1,12 @@
 <?php
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../templates/conexion.php';
-//Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
+//Realizamos una búsqueda SQL para los premios del año 1
 $consulta = mysqli_query($enlace, "SELECT * from explobronce");
-
+//Realizamos una búsqueda SQL para los premios del año 2
 $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
-
+//Realizamos una búsqueda SQL para los premios del año 3
+$consulta3 = mysqli_query($enlace, "SELECT * from explooro");
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,6 +22,15 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <!--Estilos del footer -->
     <link rel="stylesheet" href="../../../css/foot.css">
+
+    <style>
+        table th {
+            background-color: #22a593;
+            color: white;
+        }
+    </style>
+
+
 </head>
 
 <?php include 'navbar.php' ?>
@@ -29,7 +39,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
     <br>
     <div class="text-center">
         <!-- Logo de navegantes-->
-        <img src="../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 100px;">
+        <img src="../../../img/exploradores.png" alt="LOGO" style="width: 100px;">
     </div>
 
     <div class="container">
@@ -79,7 +89,8 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
                         <?php
                         }
                         ?>
-                         <?php
+                        <!--Año 2-->
+                        <?php
                         //Mostramos los datos que coincidan con la consulta SQL realizada
                         while ($datos = mysqli_fetch_array($consulta2)) { ?>
                             <tr>
@@ -98,6 +109,29 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
                                 <td><?php echo $datos["p5"]; ?></td>
                                 <!--Mostramos el usuario -->
                                 <td><?php echo $datos["p6"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <!--Año 3-->
+                        <?php
+                        //Mostramos los datos que coincidan con la consulta SQL realizada
+                        while ($datos = mysqli_fetch_array($consulta3)) { ?>
+                            <tr>
+                                <!--Mostramos el nombre -->
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <!--Mostramos la direccion -->
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <!--Mostramos el telefono -->
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <!--Mostramos el id -->
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <td></td>
                             </tr>
                         <?php
                         }
@@ -125,7 +159,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
 
     <!-- DataTable Script para español-->
     <script src="../../../js/dataTableImprimirH.js"></script>

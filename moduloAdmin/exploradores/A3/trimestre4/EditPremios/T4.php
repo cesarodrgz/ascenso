@@ -8,12 +8,14 @@ $consulta = mysqli_query($enlace, "SELECT * from explooro");
 <html lang="en">
 
 <head>
-    <title>Administrar Usuarios - Admin</title>
+    <title>Actualizar premios T4|A3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Estilos footer-->
+    <link rel="stylesheet" href="../../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- DataTable CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 </head>
@@ -22,27 +24,19 @@ $consulta = mysqli_query($enlace, "SELECT * from explooro");
 
 <body>
     <br>
-    <center>
-        <!-- Logo de navegantes-->
-        <img src="../../../../../img/exploradores.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
-    </center>
+    <!-- Logo de exploradores-->
+    <img src="../../../../../img/exploradores.png" class="mx-auto d-block" alt="LOGO" style="width: 100px;">
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
-            <h1 class="text-center text-primary">
-                Verificar premios
-            </h1>
-            <br>
-        </div>
-        <div class="col-xs-12 col-md-12 col-xl-12">
-            <div class="alert alert-info text-center" role="alert">
-                <h2>Año 3 - Plata</h2>
-            </div>
+            <h2 class="text-center text-primary">
+                Actualizar premios
+            </h2>
         </div>
 
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 4</h4>
+                <h4>Año 3 | Trimestre 4</h4>
             </div>
         </div>
 
@@ -81,7 +75,7 @@ $consulta = mysqli_query($enlace, "SELECT * from explooro");
                                     <input type="hidden" name="nombre" value="<?php echo $datos["nombre"]; ?>">
                                     <input type="hidden" name="p4" value="<?php echo $datos["p4"]; ?>">
                                     <input type="hidden" name="p5" value="<?php echo $datos["p5"]; ?>">
-                                <input type="submit" value="Editar" class="btn btn-primary">
+                                    <input type="submit" value="Editar" class="btn btn-primary">
 
                                 </form>
 
@@ -92,7 +86,11 @@ $consulta = mysqli_query($enlace, "SELECT * from explooro");
                     ?>
                 </tbody>
             </table>
-        </div> <br><br>
+        </div>
+    </div> <br><br>
+
+    <?php include '../../../../../templates/foot2.php' ?>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp16YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

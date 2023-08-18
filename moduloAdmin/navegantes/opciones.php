@@ -21,42 +21,33 @@
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <h1 class="text-center">Opciones</h1>
                 <br>
-                <center>
-                    <img src="../../img/jefe.png" alt="IMG-ADMIN" style="width: 150px;">
-                </center>
+
+                <img src="../../img/jefe.png" class="rounded mx-auto d-block" alt="IMG-ADMIN" style="width: 150px;">
                 <a href="administrarusuario.php" class="btn btn-primary btn-block">Administrar Usuario</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <br>
-                <center>
-                    <img src="../../img/agregar.png" alt="IMG-AGREGAR-PREMIOS" style="width: 125px;">
-                </center>
-                <br>
+                <img src="../../img/agregar.png" class="rounded mx-auto d-block" alt="IMG-AGREGAR-PREMIOS" style="width: 125px;">
                 <a href="agregarPremios.php" class="btn btn-primary btn-block">Agregar Premios</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <br>
-                <center>
-                    <img src="../../img/verificar.png" alt="IMG-VERIFICAR" style="width: 125px;">
-                </center>
-                <br>
-                <a href="A1/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
+                <img src="../../img/verificar.png" class="rounded mx-auto d-block" alt="IMG-VERIFICAR" style="width: 125px;">
+                <a href="A2/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12 text-center">
                 <br>
-                    <img src="../../img/imprimir.png" alt="IMG-VERIFICAR" style="width: 125px;">
-                <br>
-                <br>
+                <img src="../../img/imprimir.png" class="rounded mx-auto d-block" alt="IMG-VERIFICAR" style="width: 125px;">
                 <a href="imprimir/seleccionar.php" class="btn btn-primary btn-block">Imprimir</a>
             </div>
         </div>
     </div> <br>
 
     <?php
-        include '../../templates/foot2.php';
+    include '../../templates/foot2.php';
     ?>
 
 

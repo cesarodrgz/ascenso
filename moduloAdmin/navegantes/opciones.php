@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Opciones Administrador</title>
+    <title>Opciones Navegantes Administrador</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

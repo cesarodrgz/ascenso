@@ -6,7 +6,7 @@ $nombre = $_POST["nombre"]
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 2 - Admin</title>
+    <title>Agregar Trimestre 2</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@ $nombre = $_POST["nombre"]
     <!--Estilos del footer -->
     <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <?php include 'navbar3.php' ?>
@@ -23,7 +23,7 @@ $nombre = $_POST["nombre"]
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 2</h1>
+        <h1 class="text-primary text-center">Trimestre 2</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">

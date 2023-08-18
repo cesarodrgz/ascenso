@@ -6,13 +6,14 @@ include '../../../../templates/conexion.php';
 <html lang="en">
 
 <head>
-    <title>Trimestre 3 - Admin</title>
+    <title>Trimestre 4 - Navegantes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 
@@ -22,7 +23,7 @@ include '../../../../templates/conexion.php';
     <br>
     <div class="container">
         <!-- Encabezado -->
-        <h1 class="text-primary text-center">Seleccionar Navegante - Año 1 | Trimestre 4</h1>
+        <h2 class="text-primary text-center">Año 1 | Trimestre 4</h2>
         <div class="row">
             <!-- Informacón adicional -->
             <div class="col-xs-12 col-md-12 col-xl-12">
@@ -55,7 +56,9 @@ include '../../../../templates/conexion.php';
             </div>
         </div>
     </div>
+    <br><br><br><br><br><br><br><br><br>
 
+    <?php include '../../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

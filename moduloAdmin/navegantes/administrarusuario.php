@@ -10,12 +10,12 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
 <html lang="en">
 
 <head>
-  <title>Administrar Usuarios - Admin</title>
+  <title>Administrar Usuarios - Navegantes</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- DataTable CSS-->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
   <!--Estilos del footer -->
@@ -28,7 +28,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
   <br>
   <div class="text-center">
     <!-- Logo de navegantes-->
-    <img src="../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
+    <img src="../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 100px;">
   </div>
 
   <div class="container">

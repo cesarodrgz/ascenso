@@ -8,16 +8,17 @@ $nombre = $_POST["nombre"]
 <html lang="en">
 
 <head>
-    <title>Agregar Trimestre 1 - Admin</title>
+    <title>Agregar Trimestre 4</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--Estilos del footer -->
+    <link rel="stylesheet" href="../../../../css/foot.css">
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <?php include 'navbar2.php' ?>
@@ -26,7 +27,7 @@ $nombre = $_POST["nombre"]
     <br>
     <div class="container">
         <!--Encabezado-->
-        <h1 class="text-primary text-center">Seleccionar premios - Trimestre 1</h1>
+        <h1 class="text-primary text-center">Trimestre 4</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!--Información complementaria-->
@@ -100,7 +101,9 @@ $nombre = $_POST["nombre"]
                 </form>
             </div>
         </div>
-    </div>
+    </div> <br><br>
+
+    <?php include '../../../../templates/foot2.php' ?>
 
     <?php
     /* Mediante el if comprobamos que las variables a insertar no esten vacias
@@ -148,8 +151,6 @@ $nombre = $_POST["nombre"]
             <?php }
         } ?>
         </script>
-
-        <br><br>
 
 
         <!-- Optional JavaScript -->

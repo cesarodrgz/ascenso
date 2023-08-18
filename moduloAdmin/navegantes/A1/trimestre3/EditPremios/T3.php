@@ -8,7 +8,7 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 <html lang="en">
 
 <head>
-    <title>Administrar Usuarios - Admin</title>
+    <title>Actualizar premios A1|T3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,27 +24,18 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 
 <body>
     <br>
-    <center>
-        <!-- Logo de navegantes-->
-        <img src="../../../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
-    </center>
+    <!-- Logo de navegantes-->
+    <img src="../../../../../img/navegantes.png" class="rounded mx-auto d-block" alt="LOGO-NAVEGANTES" style="width: 100px;">
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
-            <h1 class="text-center text-primary">
-                Editar premios
-            </h1>
-            <br>
+            <h2 class="text-center text-primary">
+                Actualizar premios
+            </h2>
         </div>
-        <div class="col-xs-12 col-md-12 col-xl-12">
-            <div class="alert alert-info text-center" role="alert">
-                <h2>Año 1 - Bronce</h2>
-            </div>
-        </div>
-
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 3</h4>
+                <h4>Año 1 | Trimestre 3</h4>
             </div>
         </div>
 
@@ -105,20 +96,20 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
         </div>
     </div> <br><br>
 
-        <?php include '../../../../../templates/foot2.php' ?>
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- DataTable -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+    <?php include '../../../../../templates/foot2.php' ?>
 
-        <!-- DataTable Script para español-->
-        <script src="../../../../../js/dataTable.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- DataTable -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+
+    <!-- DataTable Script para español-->
+    <script src="../../../../../js/dataTable.js"></script>
 
 </body>
 

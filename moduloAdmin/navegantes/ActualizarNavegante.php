@@ -7,7 +7,7 @@ $id = $_POST["id"];
 <html lang="en">
 
 <head>
-    <title>Actualizar Naveante - Administrador</title>
+    <title>Actualizar Navegantes - Administrador</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,9 +22,9 @@ $id = $_POST["id"];
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h1 class="text-center">
+                <h2 class="text-center">
                     Editar Perfil Navegante (Administrador)
-                </h1>
+                </h2>
             </div>
         </div>
 
@@ -34,10 +34,8 @@ $id = $_POST["id"];
             $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE id = '$id'");
             while ($datos = mysqli_fetch_array($consulta)) {
             ?>
-                <center>
-                    <p>Foto actual:</p>
-                    <img class="img-fluid img-thumbnail" style="width: 150px" src="img/<?php echo $datos["foto"] ?>" alt="">
-                </center>
+                <p class="text-center">Foto actual:</p>
+                <img class="img-fluid img-thumbnail mx-auto d-block" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt="">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">
 

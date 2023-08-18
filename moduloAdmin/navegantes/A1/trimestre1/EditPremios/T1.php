@@ -8,14 +8,14 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 <html lang="en">
 
 <head>
-    <title>Administrar Usuarios - Admin</title>
+    <title>Actualizar premios T1|A1</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Estilos footer-->
     <link rel="stylesheet" href="../../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- DataTable CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
@@ -26,27 +26,18 @@ $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 
 <body>
     <br>
-    <center>
         <!-- Logo de navegantes-->
-        <img src="../../../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
-    </center>
+        <img src="../../../../../img/navegantes.png" alt="LOGO-NAVEGANTES" class="rounded mx-auto d-block" style="width: 100px;">
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->
-            <h1 class="text-center text-primary">
-                Verificar premios
-            </h1>
-            <br>
+            <h2 class="text-center text-primary">
+                Actualizar premios
+            </h2>
         </div>
-        <div class="col-xs-12 col-md-12 col-xl-12">
-            <div class="alert alert-info text-center" role="alert">
-                <h2>Año 1 - Bronce</h2>
-            </div>
-        </div>
-
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-warning text-center" role="alert">
-                <h4>Trimestre 1</h4>
+                <h4>Año 1 | Trimestre 1</h4>
             </div>
         </div>
 

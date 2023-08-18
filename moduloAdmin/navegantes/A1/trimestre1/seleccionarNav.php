@@ -6,7 +6,7 @@ include '../../../../templates/conexion.php';
 <html lang="en">
 
 <head>
-    <title>Trimestre 1 - Admin</title>
+    <title>Trimestre 1 - Navegantes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +23,7 @@ include '../../../../templates/conexion.php';
     <br>
     <div class="container">
         <!-- Encabezado -->
-        <h1 class="text-primary text-center">Seleccionar Navegante - Año 1 | Trimestre 1</h1>
+        <h2 class="text-primary text-center">Año 1 | Trimestre 1</h2>
         <div class="row">
             <!-- Informacón adicional -->
             <div class="col-xs-12 col-md-12 col-xl-12">

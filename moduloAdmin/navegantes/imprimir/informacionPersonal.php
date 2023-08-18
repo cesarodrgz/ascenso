@@ -8,12 +8,12 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
 <html lang="en">
 
 <head>
-    <title>Imprimir informacion personal - Admin</title>
+    <title>Informacion personal Navegantes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- DataTable CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <!--Estilos del footer -->
@@ -24,10 +24,8 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
 
 <body>
     <br>
-    <div class="text-center">
-        <!-- Logo de navegantes-->
-        <img src="../../../img/navegantes.png" alt="LOGO-NAVEGANTES" style="width: 150px;">
-    </div>
+    <!-- Logo de navegantes-->
+    <img src="../../../img/navegantes.png" class="rounded mx-auto d-block" alt="LOGO-NAVEGANTES" style="width: 100px;">
 
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
@@ -35,7 +33,6 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
             <h1 class="text-center">
                 Imprimir información
             </h1>
-            <br>
 
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <br>

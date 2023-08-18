@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>Trimestre 2 - Admin</title>
+    <title>Trimestre 2 - Navegantes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccionar Navegante - Año 1 | Trimestre 2</h1>
+        <h2 class="text-primary text-center">Año 1 | Trimestre 2</h2>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <div class="alert alert-success text-center" role="alert">
@@ -49,7 +49,8 @@
         </div>
     </div>
 
-    <div class="espacio"></div>
+    <br><br><br><br><br><br><br><br><br>
+
     <?php include '../../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->

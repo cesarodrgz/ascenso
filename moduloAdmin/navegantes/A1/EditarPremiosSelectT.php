@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Editar Premios A1 - Admin</title>
+    <title>Actualizar premios - Trimestre</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
 <body>
     <br>
     <div class="container">
-        <h1 class="text-primary text-center">Seleccione el Trimestre</h1>
+        <h2 class="text-primary text-center">Seleccione el Trimestre</h2>
         <div class="alert alert-secondary text-center" role="alert">
             Seleccione el trimestre en el cual desea modificar los premios
         </div>

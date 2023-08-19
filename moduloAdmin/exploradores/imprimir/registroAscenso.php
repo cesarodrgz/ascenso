@@ -142,6 +142,8 @@ $consulta3 = mysqli_query($enlace, "SELECT * from explooro");
         </div>
     </div> <br><br>
 
+
+
     <!--Footer-->
     <?php include '../../../templates/foot2.php' ?>
 

@@ -2,60 +2,68 @@
 <html lang="en">
 
 <head>
-    <title>Seleccionar año</title>
+    <title>Actualizar premios - Trimestre</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Estilos del footer -->
-    <link rel="stylesheet" href="../../css/foot.css">
+    <link rel="stylesheet" href="../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<?php include 'navBarNav.php' ?>
+<?php include 'navBarNav2.php' ?>
 
-<body> <br>
+<body>
+    <br>
     <div class="container">
-        <!--Título-->
-        <h1 class="text-primary text-center">Agregar Premios</h1>
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-xl-12">
-                <div class="alert alert-secondary text-center" role="alert">
-                    Seleccione el año al que desea agregar premios al Navegante
-                </div>
-            </div>
+        <h2 class="text-primary text-center">Seleccione el Trimestre</h2>
+        <div class="alert alert-secondary text-center" role="alert">
+            Seleccione el trimestre en el cual desea modificar los premios
         </div>
 
-        <!--Año 1-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../img/bronce.png" class="rounded mx-auto d-block" alt="A1-BRONCE" style="width: 125px;">
+                <center>
+                    <img src="../../../img/1.png" alt="T1/Q1" style="width: 125px;">
+                </center>
                 <br>
-                <a href="A1/seleccionarT.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="trimestre1/EditPremios/T1.php" class="btn btn-info btn-block">Trimestre 1</a>
             </div>
         </div><br>
 
-        <!--Año 2-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../img/plata.png" class="rounded mx-auto d-block" alt="A2-PLATA" style="width: 125px;">
+                <center>
+                    <img src="../../../img/2.png" alt="T2/Q2" style="width: 125px;">
+                </center>
                 <br>
-                <a href="A2/seleccionarT.php" class="btn btn-info btn-block">Año 2 - Plata</a>
+                <a href="trimestre2/EditPremios/T2.php" class="btn btn-info btn-block">Trimestre 2</a>
             </div>
-        </div> <br>
+        </div><br>
 
-        <!--Año 3-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../img/oro.png" class="rounded mx-auto d-block" alt="A3-ORO" style="width: 125px;">
+                <center>
+                    <img src="../../../img/3.png" alt="T3/Q3" style="width: 125px;">
+                </center>
                 <br>
-                <a href="A3/seleccionarT.php" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="trimestre3/EditPremios/T3.php" class="btn btn-info btn-block">Trimestre 3</a>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <center>
+                    <img src="../../../img/4.png" alt="T4/Q4" style="width: 125px;">
+                </center>
+                <br>
+                <a href="trimestre4/EditPremios/T4.php" class="btn btn-info btn-block">Trimestre 4</a>
             </div>
         </div>
-    </div> <br>
+    </div> <br><br>
 
-    <!--Inlcuimos el footer-->
-    <?php include '../../templates/foot2.php' ?>
+    <?php include '../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

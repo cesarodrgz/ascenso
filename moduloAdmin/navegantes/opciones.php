@@ -35,7 +35,7 @@
             <div class="col-xs-12 col-md-6 col-xl-12">
                 <br>
                 <img src="../../img/verificar.png" class="rounded mx-auto d-block" alt="IMG-VERIFICAR" style="width: 125px;">
-                <a href="A2/seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
+                <a href="seleccionarA.php" class="btn btn-primary btn-block">Actualizar Premios</a>
             </div>
 
             <div class="col-xs-12 col-md-6 col-xl-12 text-center">

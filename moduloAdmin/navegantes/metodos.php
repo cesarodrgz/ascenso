@@ -144,7 +144,7 @@
             //Si el usuario selecciona una foto entonces
             if ($tmpFoto != "") {
                 //Se mueve la foto a la carpeta predeterminada y le concatenamos la variable "nombreArchivo" para que se guarde con un nuevo nombre con la fecha y hora
-                move_uploaded_file($tmpFoto, "img/" . $nombreArchivo);
+                move_uploaded_file($tmpFoto, "../../img/usuarios/" . $nombreArchivo);
 
                 $sentencia = $pdo->prepare("SELECT foto FROM usuarios WHERE id=:id");
                 //Obtenemos los valores de los txt
@@ -155,7 +155,7 @@
                 if (isset($busqueda['foto'])) {
                     if (file_exists("img/" . $busqueda["foto"])) {
                         if ($busqueda['foto'] != "imagen.png") {
-                            unlink("img/" . $busqueda["foto"]);
+                            unlink("../../img/usuarios/" . $busqueda["foto"]);
                         }
                     }
                 }

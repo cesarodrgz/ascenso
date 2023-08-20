@@ -61,7 +61,12 @@ if ($filas > 0) {
             if ($filas > 0) {
                 header("location:../moduloAdmin/exploradores/opciones.php");
             } else {
-                header("location:baduser.php");
+                /////////VALIDACIÓN ADMIN GENERAL/////////
+                if ($correo == "admin-general@ldj.com" && $contra == "12345") {
+                    header("location: ../moduloGen/index.php");
+                } else {
+                    header("location:baduser.php");
+                }
             }
         }
     }

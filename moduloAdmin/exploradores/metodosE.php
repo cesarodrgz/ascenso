@@ -65,7 +65,7 @@
             //Si el usuario selecciona una foto entonces
             if ($tmpFoto) {
                 //Se mueve la foto a la carpeta predeterminada y le concatenamos la variable "nombreArchivo" para que se guarde con un nuevo nombre con la fecha y hora
-                move_uploaded_file($tmpFoto, "img/" . $nombreArchivo);
+                move_uploaded_file($tmpFoto, "../../img/usuarios/" . $nombreArchivo);
             }
 
             $sentencia->bindParam(':foto', $nombreArchivo); //Foto

@@ -163,7 +163,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE departamento = '
           while ($datos = mysqli_fetch_array($consulta)) { ?>
             <tr>
               <!--Mostramos la foto -->
-              <td><img class="img-fluid img-thumbnail" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt=""></td>
+              <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
               <!--Mostramos el usuario -->
               <td><?php echo $datos["user"]; ?></td>
               <!--Mostramos el nombre -->

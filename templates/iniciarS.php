@@ -22,7 +22,7 @@ if ($filas > 0) {
     header("location:../modulosUsuarios/navegantes/navegantes.php");
     //Si el usuario no esta lo enviamos al index nuevamente, es decir el usuario no existe.
 } elseif ($filas < 0) {
-    header("location:index.php");
+    header("location:../login.php");
 } else {
     /*Comprobamos que el correo y contraseña están o no 
     en la tabla de usuarios*/
@@ -34,7 +34,7 @@ if ($filas > 0) {
     if ($filas > 0) {
         header("location:../moduloAdmin/navegantes/opciones.php");
     } elseif ($filas < 0) {
-        header("location:index.php");
+        header("location:../index.php");
     } else {
 
         /////////////////VALIDACIÓN EXPLORADORES/////////////////
@@ -63,20 +63,9 @@ if ($filas > 0) {
             if ($filas > 0) {
                 header("location:../adming/index.php");
             } elseif ($filas < 0) {
-                header("location:index.php");
+                header("location:../index.php");
             } else {
-                $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Exploradores'";
-                $resultado = mysqli_query($enlace, $consulta);
-
-                //Si hay un resultado lo mandamos al index administrativo sino al index general
-                $filas = mysqli_num_rows($resultado);
-                if ($filas > 0) {
-                    header("location:../modulosUsuarios/exploradores/exploradores.php");
-                } elseif ($filas < 0) {
-                    header("location:../index.php");
-                } else {
-                    # code...
-                }
+                
             }
         }
     }

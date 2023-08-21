@@ -153,7 +153,7 @@
                 $busqueda = $sentencia->fetch(PDO::FETCH_LAZY);
 
                 if (isset($busqueda['foto'])) {
-                    if (file_exists("img/" . $busqueda["foto"])) {
+                    if (file_exists("../../img/usuarios/" . $busqueda["foto"])) {
                         if ($busqueda['foto'] != "imagen.png") {
                             unlink("../../img/usuarios/" . $busqueda["foto"]);
                         }

@@ -1,6 +1,8 @@
 <?php
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../templates/conexion.php';
+//
+include 'metodos.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de Exploradors
 $consulta = mysqli_query($enlace, "SELECT * from usuarios");
 ?>
@@ -15,6 +17,8 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
     <link rel="stylesheet" href="../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- DataTable CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
     <style>
         img {
@@ -32,7 +36,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <!-- Botón modal para agregar nuevos usuarios-->
                 <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal">
-                    Agregar Usuario
+                    Agregar explorador
                 </button>
 
                 <!--Inicio del formulario con "multipart/form-data" para poder incorporar las fotos -->
@@ -66,9 +70,21 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
 
                                         <!--Input para la foto de perfil-->
                                         <br>
-                                        <div class="col-md-12">
-                                            <Label>Foto de perfil</Label>
+                                        <div class="col-md-6">
+                                            <Label>Foto</Label>
                                             <input type="file" accept="image/jpg" name="foto" class="form-control">
+                                        </div>
+
+                                        <!--Input para el departamento-->
+                                        <br>
+                                        <div class="col-md-6">
+                                            <Label>Departamento</Label>
+                                            <select name="departamento" id="" class="form-control">
+                                                <option value="Navegantes">Navegantes</option>
+                                                <option value="Pioneros">Pioneros</option>
+                                                <option value="Seguidores">Seguidores</option>
+                                                <option value="Exploradores">Exploradores</option>
+                                            </select>
                                         </div>
 
                                         <!--Input para el nombre del Explorador -->
@@ -114,7 +130,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
                                         </div>
 
                                         <!--Input para el departamento definido en "Exploradors"-->
-                                        <input type="hidden" name="departamento" id="" value="Exploradores" readonly>
+                                        <input type="hidden" name="departamentoL" id="" value="Exploradores" readonly>
 
                                     </div>
                                 </div>
@@ -122,6 +138,90 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
                                 <div class="modal-footer">
                                     <!--Botón para agregar -->
                                     <button value="btnAgregar" <?php echo $accionAgregar; ?> class="btn btn-success" type="submit" name="accion">Agregar</button>
+                                    <!--Botón para cerrar el formulario -->
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <br>
+
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <!-- Botón modal para agregar nuevos usuarios-->
+                <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#administrador">
+                    Agregar administrador departamento
+                </button>
+
+                <!--Inicio del formulario con "multipart/form-data" para poder incorporar las fotos -->
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="modal" id="administrador" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!--Título del modal-->
+                                    <h5 class="modal-title">Gestión de administradores</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        <!--Input para el ID (oculto para el usuario)-->
+                                        <input type="hidden" name="id">
+
+                                        <!--Input para el usuario-->
+                                        <div class="col-md-6">
+                                            <label>Usuario</label>
+                                            <input type="text" name="user" class="form-control" placeholder="Usuario del líder">
+                                        </div>
+
+                                        <!--Input para la contraseña-->
+                                        <div class="col-md-6">
+                                            <Label>Contraseña</Label>
+                                            <input type="text" name="pass" class="form-control" placeholder="Contraseña">
+                                        </div>
+
+                                        <!--Input para la foto de perfil-->
+                                        <br>
+                                        <div class="col-md-6">
+                                            <Label>Foto</Label>
+                                            <input type="file" accept="image/jpg" name="foto" class="form-control">
+                                        </div>
+
+                                        <!--Input para la fecha de nacimiento -->
+                                        <br>
+                                        <div class="col-md-6">
+                                            <Label>Fecha de nacimiento</Label>
+                                            <input type="date" name="fechaNac" class="form-control">
+                                        </div>
+
+                                        <!--Input para el nombre del Explorador -->
+                                        <br>
+                                        <div class="col-md-12">
+                                            <Label>Nombre</Label>
+                                            <input type="text" name="nombre" class="form-control" placeholder="Nombre del líder">
+                                        </div>
+
+                                        <!--Input para la direccion -->
+                                        <br>
+                                        <div class="col-md-12">
+                                            <Label>Departamento</Label>
+                                            <select name="departamento" id="" class="form-control">
+                                                <option value="administradorNav">Navegantes</option>
+                                                <option value="administradorPi">Pioneros</option>
+                                                <option value="administradorSe">Seguidores</option>
+                                                <option value="administradorEx">Exploradores</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer del modal -->
+                                <div class="modal-footer">
+                                    <!--Botón para agregar -->
+                                    <button value="btnAgregarL" <?php echo $accionAgregar; ?> class="btn btn-success" type="submit" name="accion">Agregar</button>
                                     <!--Botón para cerrar el formulario -->
                                     <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -144,6 +244,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
                             <th>Nombre</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
+                            <th>Departamento</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
@@ -154,7 +255,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
                         while ($datos = mysqli_fetch_array($consulta)) { ?>
                             <tr>
                                 <!--Mostramos la foto -->
-                                <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../img/usuarios/<?php echo $datos["foto"] ?>"  alt=""></td>
+                                <td><img class="img-fluid img-thumbnail" style="width: 100px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt=""></td>
                                 <!--Mostramos el usuario -->
                                 <td><?php echo $datos["user"]; ?></td>
                                 <!--Mostramos el nombre -->
@@ -163,9 +264,10 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
                                 <td><?php echo $datos["direccion"]; ?></td>
                                 <!--Mostramos el telefono -->
                                 <td><?php echo $datos["telefono"]; ?></td>
+                                <td><?php echo $datos["departamento"]; ?></td>
 
                                 <td>
-                                    <form action="ActualizarExplorador.php" method="post">
+                                    <form action="Actualizar.php" method="post">
                                         <input type="hidden" name="id" value="<?php echo $datos["id"]; ?>">
                                         <!--Botón para ir a editar-->
                                         <input type="submit" value="Editar" class="btn btn-primary">
@@ -196,13 +298,7 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
 
     <!-- DataTable Script para español-->
     <script src="../../js/dataTable.js"></script>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

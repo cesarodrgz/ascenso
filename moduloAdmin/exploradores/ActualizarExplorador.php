@@ -36,7 +36,7 @@ $id = $_POST["id"];
             ?>
                 <center>
                     <p>Foto actual:</p>
-                    <img class="img-fluid img-thumbnail" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt="">
+                    <img class="img-fluid img-thumbnail" style="width: 100px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt="">
                 </center>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">

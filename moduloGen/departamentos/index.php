@@ -20,6 +20,10 @@
             background-color: #228B22;
             color: black;
         }
+
+        img {
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -38,22 +42,30 @@
 
         <div class="select">
             <div class="navegantes">
-                <a href="premiosNav.php" class="btn btn-warning btn-block">Navegantes</a>
+                <a href="premiosNav.php">
+                    <img src="../../img/navegantes.png" class="mx-auto d-block">
+                </a>
             </div> <br>
 
             <div class="Pioneros">
-                <a href="#" class="btn btn-danger btn-block">Pioneros</a>
+                <a href="#">
+                    <img src="../../img/pioneros.png" class="mx-auto d-block">
+                </a>
             </div> <br>
 
             <div class="Seguidores">
-                <a href="#" class="btn btn-block" id="seguidores">Seguidores</a>
+                <a href="#" class="btn btn-block">
+                    <img src="../../img/seguidores.png" class="mx-auto d-block">
+                </a>
             </div> <br>
 
             <div class="Exploradores">
-                <a href="#" class="btn btn-block" id="exploradores">Exploradores</a>
+                <a href="premiosEx.php">
+                    <img src="../../img/exploradores.png" class="mx-auto d-block">
+                </a>
             </div> 
         </div>
-    </div><br><br><br><br><br><br><br><br>
+    </div> <br>
 
     <?php include '../../templates/foot2.php' ?>
 

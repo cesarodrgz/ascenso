@@ -2,9 +2,9 @@
 //Incluimos la clase conexión para realizar busquedas SQL
 include "../../templates/conexion.php";
 //Consulta para mostrar los premios
-$consulta = mysqli_query($enlace, "SELECT * from navbronce");
-$consulta2 = mysqli_query($enlace, "SELECT * from navplata");
-$consulta3 = mysqli_query($enlace, "SELECT * from navoro");
+$consulta = mysqli_query($enlace, "SELECT * from explobronce");
+$consulta2 = mysqli_query($enlace, "SELECT * from exploplata");
+$consulta3 = mysqli_query($enlace, "SELECT * from explooro");
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,7 +22,7 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
 
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <title>Premios Navegantes</title>
+    <title>Premios Exploradores</title>
 
     <style>
         table thead {
@@ -32,8 +32,8 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
 </head>
 
 <body> <br>
-    <img src="../../img/navegantes.png" class="mx-auto d-block" style="width: 100px;">
-    <h1 class="text-center">Premios de navegantes</h1>
+    <img src="../../img/exploradores.png" class="mx-auto d-block" style="width: 100px;">
+    <h1 class="text-center">Premios de Exploradores</h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -47,16 +47,6 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                             <th>Premio 4</th>
                             <th>Premio 5</th>
                             <th>Premio 6</th>
-                            <th>Premio 7</th>
-                            <th>Premio 8</th>
-                            <th>Premio 9</th>
-                            <th>Premio 10</th>
-                            <th>Premio 11</th>
-                            <th>Premio 12</th>
-                            <th>Premio 13</th>
-                            <th>Premio 14</th>
-                            <th>Premio 15</th>
-                            <th>Premio 16</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,19 +57,10 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                                 <td><?php echo $datos["p1"]; ?></td>
                                 <td><?php echo $datos["p2"]; ?></td>
                                 <td><?php echo $datos["p3"]; ?></td>
-                                <td><?php echo $datos["p4"]; ?></td>
                                 <td><?php echo $datos["p5"]; ?></td>
                                 <td><?php echo $datos["p6"]; ?></td>
                                 <td><?php echo $datos["p7"]; ?></td>
-                                <td><?php echo $datos["p8"]; ?></td>
-                                <td><?php echo $datos["p9"]; ?></td>
-                                <td><?php echo $datos["p10"]; ?></td>
-                                <td><?php echo $datos["p11"]; ?></td>
-                                <td><?php echo $datos["p12"]; ?></td>
-                                <td><?php echo $datos["p13"]; ?></td>
-                                <td><?php echo $datos["p14"]; ?></td>
-                                <td><?php echo $datos["p15"]; ?></td>
-                                <td><?php echo $datos["p16"]; ?></td>
+
                             </tr>
                         <?php
                         }
@@ -96,16 +77,6 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                                 <td><?php echo $datos["p4"]; ?></td>
                                 <td><?php echo $datos["p5"]; ?></td>
                                 <td><?php echo $datos["p6"]; ?></td>
-                                <td><?php echo $datos["p7"]; ?></td>
-                                <td><?php echo $datos["p8"]; ?></td>
-                                <td><?php echo $datos["p9"]; ?></td>
-                                <td><?php echo $datos["p10"]; ?></td>
-                                <td><?php echo $datos["p11"]; ?></td>
-                                <td><?php echo $datos["p12"]; ?></td>
-                                <td><?php echo $datos["p13"]; ?></td>
-                                <td><?php echo $datos["p14"]; ?></td>
-                                <td><?php echo $datos["p15"]; ?></td>
-                                <td><?php echo $datos["p16"]; ?></td>
                             </tr>
                         <?php
                         }
@@ -121,17 +92,7 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                                 <td><?php echo $datos["p3"]; ?></td>
                                 <td><?php echo $datos["p4"]; ?></td>
                                 <td><?php echo $datos["p5"]; ?></td>
-                                <td><?php echo $datos["p6"]; ?></td>
-                                <td><?php echo $datos["p7"]; ?></td>
-                                <td><?php echo $datos["p8"]; ?></td>
-                                <td><?php echo $datos["p9"]; ?></td>
-                                <td><?php echo $datos["p10"]; ?></td>
-                                <td><?php echo $datos["p11"]; ?></td>
-                                <td><?php echo $datos["p12"]; ?></td>
-                                <td><?php echo $datos["p13"]; ?></td>
-                                <td><?php echo $datos["p14"]; ?></td>
-                                <td><?php echo $datos["p15"]; ?></td>
-                                <td><?php echo $datos["p16"]; ?></td>
+                                <td></td>
                             </tr>
                         <?php
                         }

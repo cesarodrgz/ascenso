@@ -23,7 +23,7 @@
             </div> <br>
 
             <div class="departamentos">
-                <a href="#" class="btn btn-warning btn-block">Administrar departamentos</a>
+                <a href="departamentos/index.php" class="btn btn-warning btn-block">Premios</a>
             </div>
         </div>
     </div> <br><br><br><br><br><br><br><br><br><br><br><br><br>

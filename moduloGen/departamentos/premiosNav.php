@@ -13,6 +13,8 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--CSS FOOTER-->
+    <link rel="stylesheet" href="../../css/foot.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -31,7 +33,27 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
     </style>
 </head>
 
-<body> <br>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="../index.php">Opciones</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../usuarios/index.php">Gestionar usuarios <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../departamentos/index.php" tabindex="-1" aria-disabled="true">Ver premios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disable" href="../../templates/cerrarS.php" tabindex="-1" aria-disabled="true">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav> <br><br><br>
+
     <img src="../../img/navegantes.png" class="mx-auto d-block" style="width: 100px;">
     <h1 class="text-center">Premios de navegantes</h1>
     <div class="container">
@@ -111,7 +133,7 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                         }
 
                         ?>
-                        <!--AÑO 2-->
+                        <!--AÑO 3-->
                         <?php
                         while ($datos = mysqli_fetch_array($consulta3)) { ?>
                             <tr>
@@ -141,9 +163,9 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
                 </table>
             </div>
         </div>
-    </div>
+    </div> <br>
 
-
+    <?php include '../../templates/foot2.php'; ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -157,9 +179,7 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
     <!-- extension responsive -->
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-    <!-- Buttons -->
-
-
+    <!-- Buttons y traducción DataTables -->
     <script>
         $(document).ready(function() {
             $('#example').DataTable({

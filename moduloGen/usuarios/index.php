@@ -28,7 +28,29 @@ $consulta = mysqli_query($enlace, "SELECT * from usuarios");
 </head>
 
 <body> <br>
+    <!--Navbar-->
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="../index.php">Opciones</a>
+            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Gestionar usuarios <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disable" href="../departamentos/index.php" tabindex="-1" aria-disabled="true">Ver premios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disable" href="../../templates/cerrarS.php" tabindex="-1" aria-disabled="true">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> <br><br><br>
+
+        <!--Inicio del body-->
         <img src="../../img/logo.png" class="rounded mx-auto d-block">
         <h2 class="text-center text-primary">Gestión de usuarios <br> (Administrador general)</h2> <br>
 

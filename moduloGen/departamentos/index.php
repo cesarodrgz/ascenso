@@ -11,23 +11,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        #seguidores {
-            background-color: #BDB76B;
-            color: black;
-        }
-
-        #exploradores {
-            background-color: #228B22;
-            color: black;
-        }
-
         img {
             width: 100px;
         }
     </style>
 </head>
 
-<body> <br>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="../index.php">Opciones</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item disable">
+                    <a class="nav-link" href="../usuarios/index.php">Gestionar usuarios <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php" tabindex="-1" aria-disabled="true">Ver premios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disable" href="../../templates/cerrarS.php" tabindex="-1" aria-disabled="true">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav> <br><br><br>
 
     <div class="container">
         <div class="departamento">
@@ -63,7 +72,7 @@
                 <a href="premiosEx.php">
                     <img src="../../img/exploradores.png" class="mx-auto d-block">
                 </a>
-            </div> 
+            </div>
         </div>
     </div> <br>
 

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CDN SweetAlert 1-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -40,6 +39,74 @@
 
     //Iniciamos un switch case
     switch ($accion) {
+            //Cuando el caso sea de agregar
+        case 'btnAgregar':
+
+            //Prepara la sentencia SQL que se utilizará para agregar la información de los usuarios
+            //No agregamos el ID porque este la BBDD lo genera automaticamente
+            $sentencia = $pdo->prepare("INSERT INTO usuarios (user, pass, foto, nombre, direccion, telefono, fechaNac, padre, madre, departamento) 
+        VALUES (:user, :pass, :foto, :nombre, :direccion, :telefono, :fechaNac, :padre, :madre, :departamento)");
+
+            //Obtenemos los valores de los txt
+            $sentencia->bindParam(':user', $user); //Usuario
+            $sentencia->bindParam(':pass', $pass); //Contraseña
+
+            //ANTES DE AGREGAR LA FOTO//
+
+            //Obtenemos la fecha actual
+            $fecha = new DateTime();
+            //Definimos que la variable "nombreArchivo" va contener la fecha y le concatenamos el nombre de la foto
+            //Si no se selecciona foto colocamos una imagen por defecto en este caso "imagen.png"
+            $nombreArchivo = ($foto != "") ? $fecha->getTimestamp() . "_" . $_FILES["foto"]["name"] : "imagen.png";
+
+            //Obtenemos el nombre temporal de la foto
+            $tmpFoto = $_FILES["foto"]["tmp_name"];
+
+            //Si el usuario selecciona una foto entonces
+            if ($tmpFoto) {
+                //Se mueve la foto a la carpeta predeterminada y le concatenamos la variable "nombreArchivo" para que se guarde con un nuevo nombre con la fecha y hora
+                move_uploaded_file($tmpFoto, "../../img/usuarios/" . $nombreArchivo);
+            }
+
+            $sentencia->bindParam(':foto', $nombreArchivo); //Foto
+            $sentencia->bindParam(':nombre', $nombre); //Nombre
+            $sentencia->bindParam(':direccion', $direccion); //Dirección
+            $sentencia->bindParam(':telefono', $telefono); //Telefono
+            $sentencia->bindParam(':fechaNac', $fechaNac); //Fecha de nacimiento
+            $sentencia->bindParam(':padre', $padre); //Nombre del padre
+            $sentencia->bindParam(':madre', $madre); //Nombre de la madre
+            $sentencia->bindParam(':departamento', $departamento); //Departamento
+            $sentencia->execute(); //Ejecutamos la variable sentencia
+
+            //Mensajes para el administrador de Navegantes
+            //Mensajes para el administrador de Navegantes
+            if (!$sentencia) {
+    ?>
+                <script>
+                    //Si el usuario no se agrego enviamos el siguiente mensaje
+                    Swal.fire(
+                        'Ups.. Algo salió mal',
+                        'Presiona OK para continuar',
+                        'error'
+                    ).then(function() {
+                        window.location = "administrarseg.php";
+                    });
+                </script>
+            <?php
+            } else { ?>
+                <script>
+                    Swal.fire(
+                        '¡Buen trabajo!',
+                        'Usuario agregado correctamente',
+                        'success'
+                    ).then(function() {
+                        window.location = "administrarseg.php";
+                    });
+                </script>
+            <?php
+            }
+            break;
+            break; //Terminamos el caso
 
         case 'btnModificar':
 
@@ -111,7 +178,7 @@
                         'Presiona OK para continuar',
                         'error'
                     ).then(function() {
-                        window.location = "navegantes.php";
+                        window.location = "index.php";
                     });
                 </script>
             <?php
@@ -122,7 +189,7 @@
                         'Perfil actualizado correctamente',
                         'success'
                     ).then(function() {
-                        window.location = "navegantes.php";
+                        window.location = "administrarseg.php";
                     });
                 </script>
     <?php

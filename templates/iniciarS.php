@@ -48,7 +48,7 @@ if ($filas > 0) {
         if ($filas > 0) {
             header("location:../modulosUsuarios/exploradores/exploradores.php");
         } else {
-            /////////VALIDACIÓN ADMIN NAVEGANTES/////////
+            /////////VALIDACIÓN ADMIN EXPLORADORES/////////
 
             //Consulta SQL que usaremos para buscar en la base de datos el usuario
             $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorEx'";
@@ -65,7 +65,34 @@ if ($filas > 0) {
                 if ($correo == "admin-general@ldj.com" && $contra == "12345") {
                     header("location: ../moduloGen/index.php");
                 } else {
-                    header("location:baduser.php");
+                    /////////VALIDACIÓN ADMIN SEGUIDORES/////////
+
+                    //Consulta SQL que usaremos para buscar en la base de datos el usuario
+                    $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorSe'";
+                    $resultado = mysqli_query($enlace, $consulta);
+
+                    //Obtenemos el resultados mediante las filas
+                    $filas = mysqli_num_rows($resultado);
+
+                    if ($filas > 0) {
+                        header("location: ../moduloAdmin/seguidores/index.php");
+                    } else {
+                        /////////VALIDACIÓN SEGUIDORES/////////
+
+                        //Consulta SQL que usaremos para buscar en la base de datos el usuario
+                        $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Seguidores'";
+                        $resultado = mysqli_query($enlace, $consulta);
+
+                        //Obtenemos el resultados mediante las filas
+                        $filas = mysqli_num_rows($resultado);
+
+                        //Si el usuario existe lo manda al modulo correspondiente
+                        if ($filas > 0) {
+                            header("location: ../modulosUsuarios/seguidores/index.php");
+                        } else {
+                            header("location: baduser.php");
+                        }
+                    }
                 }
             }
         }

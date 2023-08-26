@@ -111,7 +111,7 @@
                         'Presiona OK para continuar',
                         'error'
                     ).then(function() {
-                        window.location = "navegantes.php";
+                        window.location = "index.php";
                     });
                 </script>
             <?php
@@ -122,7 +122,7 @@
                         'Perfil actualizado correctamente',
                         'success'
                     ).then(function() {
-                        window.location = "navegantes.php";
+                        window.location = "index.php";
                     });
                 </script>
     <?php

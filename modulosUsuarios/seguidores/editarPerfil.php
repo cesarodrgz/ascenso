@@ -1,5 +1,5 @@
 <?php
-include '../../templates/actualizarE.php';
+include '../../templates/actualizarS.php';
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 session_start(); //Iniciamos la variable de sesión
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
@@ -9,13 +9,13 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
 <html lang="en">
 
 <head>
-    <title>Editar Perfil - Navegantes</title>
+    <title>Editar Perfil - Seguidores</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -23,7 +23,8 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
     <link rel="stylesheet" href="../../css/foot.css">
 </head>
 
-<?php include 'navbarNU.php' ?>
+<!--Navbar-->
+<?php include '../../templates/seguidores/nav8.php' ?>
 
 <body>
     <br>
@@ -42,14 +43,12 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
 
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <?php
-                //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
+                //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de Seguidores
                 $consulta = mysqli_query($enlace, "SELECT * from usuarios WHERE user = '$user'");
                 while ($datos = mysqli_fetch_array($consulta)) {
                 ?>
-                    <center>
-                        <p>Foto actual:</p>
-                        <img class="img-fluid img-thumbnail" style="width: 150px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt="">
-                    </center>
+                    <p class="text-center">Foto actual:</p>
+                    <img class="rounded mx-auto d-block" style="width: 200px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt="">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-row">
 

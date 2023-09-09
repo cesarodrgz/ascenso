@@ -6,6 +6,7 @@ include 'templates/conexion.php' //Crea conexion
 
 <head>
     <title>Login</title>
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,19 +26,20 @@ include 'templates/conexion.php' //Crea conexion
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1 class="text-primary">Inciar sesión</h1>
+                <?php include "templates/iniciarS.php" ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <form action="templates/iniciarS.php" method="post">
+                <form action="" method="post">
                     <label for="user">Usuario</label>
-                    <input type="text" name="user" id="user" class="form-control" placeholder="Ingrese su usuario">
+                    <input type="text" name="usuario" id="user" class="form-control" placeholder="Ingrese su usuario">
                     <br>
                     <label for="pass">Contraseña</label>
-                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Ingrese su contraseña">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña">
                     <br>
-                    <input type="submit" class="btn btn-success btn-block" value="ENTRAR">
+                    <input type="submit" class="btn btn-success btn-block" name="btningresar" value="ENTRAR">
                 </form>
             </div>
         </div>

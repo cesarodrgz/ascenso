@@ -1,11 +1,21 @@
 <?php
-include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
-session_start(); //Iniciamos la variable de sesión
-$user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
-
-$consulta = mysqli_query($enlace, "SELECT * from explobronce WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla de los premios del año 1
-$consulta2 = mysqli_query($enlace, "SELECT * from exploplata WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla de los premios del año 2
-$consulta3 = mysqli_query($enlace, "SELECT * from explooro WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla de los premios del año 3
+ //Incluimos la clase conexión para realizar busquedas SQL
+include "../../templates/conexion.php";
+//Iniciamos la variable de sesión
+session_start(); 
+//Obtenemos de Inciar sesion el user que esta entrando
+$user = $_SESSION['user']; 
+ //Realizamos una búsqueda SQL en la tabla de los premios de los 3 años
+$consulta = mysqli_query($enlace, "SELECT * from explobronce WHERE user = '$user'"); 
+$consulta2 = mysqli_query($enlace, "SELECT * from exploplata WHERE user = '$user'"); 
+$consulta3 = mysqli_query($enlace, "SELECT * from explooro WHERE user = '$user'");
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

@@ -35,6 +35,11 @@
                     <a class="dropdown-item" href="#">Año 3</a>
                 </div>
             </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link" href="../../../../templates/cerrarS.php">
+                    Cerrar sesión
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

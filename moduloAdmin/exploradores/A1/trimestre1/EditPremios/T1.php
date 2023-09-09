@@ -3,6 +3,15 @@
 include '../../../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
 $consulta = mysqli_query($enlace, "SELECT * from explobronce");
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,6 +29,12 @@ $consulta = mysqli_query($enlace, "SELECT * from explobronce");
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <!--Estilos de los titulos de la tabla-->
+    <style>
+        th {
+            background-color: #98FB98;
+        }
+    </style>
 </head>
 
 <?php include 'navbar1.php' ?>

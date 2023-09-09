@@ -2,6 +2,15 @@
 include '../../templates/conexion.php';
 include 'metodos.php';
 $id = $_POST["id"];
+//Iniamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +25,8 @@ $id = $_POST["id"];
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<h3>AGREGAR NAVBAR</h3>
+<!--NavBar-->
+<?php include '../../templates/seguidores/nav1.php' ?>
 
 <body> <br>
     <div class="container">

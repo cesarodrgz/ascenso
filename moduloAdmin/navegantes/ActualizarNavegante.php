@@ -1,6 +1,15 @@
 <?php
 include '../../templates/conexion.php';
 include 'metodos.php';
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../index.php");
+}
 $id = $_POST["id"];
 ?>
 <!doctype html>
@@ -35,7 +44,7 @@ $id = $_POST["id"];
             while ($datos = mysqli_fetch_array($consulta)) {
             ?>
                 <p class="text-center">Foto actual:</p>
-                <img class="img-fluid img-thumbnail mx-auto d-block" style="width: 100px" src="img/<?php echo $datos["foto"] ?>" alt="">
+                <img class="img-fluid img-thumbnail mx-auto d-block" style="width: 100px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt="">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">
 

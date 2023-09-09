@@ -2,8 +2,15 @@
 include '../../templates/actualizar.php';
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 session_start(); //Iniciamos la variable de sesión
-$user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
-
+//Obtenemos de Inciar sesion el user que esta entrando
+$user = $_SESSION['user']; 
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,7 +22,7 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!--Sweet Alert CDN-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -48,7 +55,7 @@ $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrand
                 ?>
                     <center>
                         <p>Foto actual:</p>
-                        <img class="img-fluid img-thumbnail" style="width: 150px" src="../../moduloAdmin/navegantes/img/<?php echo $datos["foto"] ?>" alt="">
+                        <img class="img-fluid img-thumbnail" style="width: 150px" src="../../img/usuarios/<?php echo $datos["foto"] ?>" alt="">
                     </center>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="form-row">

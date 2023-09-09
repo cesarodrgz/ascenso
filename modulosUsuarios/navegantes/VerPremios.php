@@ -2,11 +2,18 @@
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 session_start(); //Iniciamos la variable de sesión
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
-
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 $consulta = mysqli_query($enlace, "SELECT p1, p2, p3, p4, p5, p6, p7, p8 from navbronce WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
 $consulta2 = mysqli_query($enlace, "SELECT p9, p10, p11, p12, p13, p14, p15, p16 from navbronce WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
 $consulta3 = mysqli_query($enlace, "SELECT p1, p2, p3, p4, p5, p6, p7, p8 from navplata WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
 $consulta4 = mysqli_query($enlace, "SELECT p9, p10, p11, p12, p13, p14, p15, p16 from navplata WHERE user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+
 ?>
 <!doctype html>
 <html lang="en">

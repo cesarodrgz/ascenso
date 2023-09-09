@@ -1,8 +1,19 @@
+<?php
+//Iniamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../../index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Actualizar premios - Seleccionar trimestre</title>
+    <title>Seleccionar año</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,57 +21,75 @@
     <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!--Imagenes-->
-    <style>
-        img {
-            width: 100px;
-        }
-    </style>
 </head>
 
-<!--Navbar-->
-<?php include '../../../../templates/seguidores/nav5.php' ?>
+<!--NavBar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="../../index.php">
+        <img src="../../../../img/seguidores.png" alt="LOGO-SEGUIDORES" style="width: 30px;">
+    </a>
+    <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="my-nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Año 1</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="A2/index.php">Año 2</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Año 3</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../../../../templates/cerrarS.php">Cerrar sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<body>
+<body> <br>
     <div class="container">
-        <h2 class="text-primary text-center">Seleccione el Trimestre</h2>
-        <div class="alert alert-secondary text-center" role="alert">
-            Seleccione el trimestre en el cual desea modificar los premios
-        </div>
-
+        <!--Título-->
+        <h1 class="text-primary text-center">Actualizar Premios</h1>
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../../img/1.png" alt="T1/Q1" class="mx-auto d-block">
-                <br>
-                <a href="A2/trimestre1/index.php" class="btn btn-info btn-block">Trimestre 1</a>
-            </div>
-        </div><br>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../../img/2.png" alt="T2/Q2" class="mx-auto d-block">
-                <br>
-                <a href="A2/trimestre2/index.php" class="btn btn-info btn-block">Trimestre 2</a>
-            </div>
-        </div><br>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../../img/3.png" alt="T3/Q3" class="mx-auto d-block">
-                <br>
-                <a href="A2/trimestre3/index.php" class="btn btn-info btn-block">Trimestre 3</a>
-            </div>
-        </div><br>
-
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../../img/4.png" alt="T4/Q4" class="mx-auto d-block">
-                <br>
-                <a href="A2/trimestre4/index.php" class="btn btn-info btn-block">Trimestre 4</a>
+                <div class="alert alert-secondary text-center" role="alert">
+                    Seleccione el año al que desea agregar premios al Seguidor
+                </div>
             </div>
         </div>
-    </div> <br><br>
 
+        <!--Año 1-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <img src="../../../../img/bronce.png" class="rounded mx-auto d-block" alt="A1-BRONCE" style="width: 125px;">
+                <br>
+                <a href="#" class="btn btn-info btn-block">Año 1 - Bronce</a>
+            </div>
+        </div><br>
+
+        <!--Año 2-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <img src="../../../../img/plata.png" class="rounded mx-auto d-block" alt="A2-PLATA" style="width: 125px;">
+                <br>
+                <a href="A2/index.php" class="btn btn-info btn-block">Año 2 - Plata</a>
+            </div>
+        </div> <br>
+
+        <!--Año 3-->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <img src="../../../../img/oro.png" class="rounded mx-auto d-block" alt="A3-ORO" style="width: 125px;">
+                <br>
+                <a href="#" class="btn btn-info btn-block">Año 3 - Oro</a>
+            </div>
+        </div>
+    </div> <br>
+
+    <!--Inlcuimos el footer-->
     <?php include '../../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->

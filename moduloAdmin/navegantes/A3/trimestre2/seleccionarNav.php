@@ -1,5 +1,14 @@
-<?php 
-    include '../../../../templates/conexion.php';
+<?php
+include '../../../../templates/conexion.php';
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,12 +41,12 @@
                 <form action="agregarT2.php" method="post">
                     <select name="nombre" class="form-control">
                         <option value="Seleccionar">Seleccionar</option>
-                        <?php 
+                        <?php
                         //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
-                        $consulta = mysqli_query($enlace, "SELECT nombre from usuarios WHERE departamento = 'Navegantes'"); 
+                        $consulta = mysqli_query($enlace, "SELECT nombre from usuarios WHERE departamento = 'Navegantes'");
                         ?>
-                        
-                        <?php foreach($consulta as $info): ?>
+
+                        <?php foreach ($consulta as $info) : ?>
                             <option value="<?php echo $info['nombre'] ?>"> <?php echo  $info['nombre'] ?> </option>
                         <?php endforeach ?>
                     </select>

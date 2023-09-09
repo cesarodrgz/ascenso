@@ -1,109 +1,139 @@
 <?php
-//Incluimos la clase conexión para utilizar la base de datos
-include 'conexion.php';
-
-//Obtenemos los valores de los inputs
-$correo = $_POST['user']; //input del correo que llamaremos usuario
-$contra = $_POST['pass']; //input de la contraseña
-
-/////////////////VALIDACIÓN DE LOS LOGIN/////////////////
-
-/////////VALIDACIÓN NAVEGANTES/////////
-
-//Consulta SQL que usaremos para buscar en la base de datos el usuario
-$consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Navegantes'";
-$resultado = mysqli_query($enlace, $consulta);
-
-//Obtenemos el resultados mediante las filas
-$filas = mysqli_num_rows($resultado);
-
-//Si el usuario existe lo manda al modulo correspondiente.
-if ($filas > 0) {
-    header("location:../modulosUsuarios/navegantes/navegantes.php");
-} else {
-    /////////VALIDACIÓN ADMIN NAVEGANTES/////////
-
-    //Consulta SQL que usaremos para buscar en la base de datos el usuario
-    $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorNav'";
-    $resultado = mysqli_query($enlace, $consulta);
-
-    //Obtenemos el resultados mediante las filas
-    $filas = mysqli_num_rows($resultado);
-
-    //Si el usuario existe lo manda al modulo correspondiente.
-    if ($filas > 0) {
-        header("location:../moduloAdmin/navegantes/opciones.php");
-    } else {
-
-        /////////VALIDACIÓN EXPLORADORES/////////
-
-        //Consulta SQL que usaremos para buscar en la base de datos el usuario
-        $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Exploradores'";
-        $resultado = mysqli_query($enlace, $consulta);
-
-        //Obtenemos el resultados mediante las filas
-        $filas = mysqli_num_rows($resultado);
-
-        //Si el usuario existe lo manda al modulo correspondiente.
-        if ($filas > 0) {
-            header("location:../modulosUsuarios/exploradores/exploradores.php");
+//Creamos la conexión a la BBDD
+$conexion = new mysqli("localhost", "root", "", "exploradores");
+//Iniciamos la sesión
+session_start();
+/*Si cuando se presiona el botón de entrar los campos de usuario y contraseña no están vacíos
+Se procede a realizar las validaciones siguientes:
+*/
+if (!empty($_POST["btningresar"])) {
+    if (!empty($_POST["usuario"]) and !empty($_POST["password"])) {
+        //Almacenamos el usuario
+        $usuario = $_POST["usuario"];
+        //Almacenamos la contraseña
+        $password = $_POST["password"];
+        //Verificamos si el usuario que ingresa es administrador del dept. de navegantes
+        $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'administradorNav'");
+        //Si el usuario es administrador de navegantes
+        if ($datos = $sql->fetch_object()) {
+            /*Guardamos el id en una variable de sesión
+            Dicho ID corresponde a la búsqueda en la BD.*/
+            $_SESSION["id"] = $datos->id;
+            /*Guardamos el usuario en una variable de sesión
+            Dicho usuario corresponde a la búsqueda en la BD.*/
+            $_SESSION["user"] = $datos->user;
+            /*Guardamos el nombre en una variable de sesión
+            Dicho ID corresponde a la búsqueda en la BD.*/
+            $_SESSION["nombre"] = $datos->nombre;
+            //Se hace la redirección correspondiente
+            header("location: moduloAdmin/navegantes/opciones.php");
         } else {
-            /////////VALIDACIÓN ADMIN EXPLORADORES/////////
-
-            //Consulta SQL que usaremos para buscar en la base de datos el usuario
-            $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorEx'";
-            $resultado = mysqli_query($enlace, $consulta);
-
-            //Obtenemos el resultados mediante las filas
-            $filas = mysqli_num_rows($resultado);
-
-            //Si el usuario existe lo manda al modulo correspondiente.
-            if ($filas > 0) {
-                header("location:../moduloAdmin/exploradores/opciones.php");
+            //Verificamos si el usuario que ingresa es usuario del dept. de Navegantes
+            $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'Navegantes'");
+            //Si el usuario es usuario de navegantes
+            if ($datos = $sql->fetch_object()) {
+                /*Guardamos el id en una variable de sesión
+                Dicho ID corresponde a la búsqueda en la BD.*/
+                $_SESSION["id"] = $datos->id;
+                /*Guardamos el usuario en una variable de sesión
+                Dicho usuario corresponde a la búsqueda en la BD.*/
+                $_SESSION["user"] = $datos->user;
+                /*Guardamos el nombre en una variable de sesión
+                Dicho nombre corresponde a la búsqueda en la BD.*/
+                $_SESSION["nombre"] = $datos->nombre;
+                //Se hace la redirección correspondiente
+                header("location: modulosUsuarios/navegantes/navegantes.php");
             } else {
-                /////////VALIDACIÓN ADMIN GENERAL/////////
-                if ($correo == "admin-general@ldj.com" && $contra == "12345") {
-                    header("location: ../moduloGen/index.php");
+                //Verificamos si el usuario que ingresa es administrador del dept. de Exploradores
+                $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'administradorEx'");
+                //Si el usuario es administrador de Exploradores
+                if ($datos = $sql->fetch_object()) {
+                    /*Guardamos el id en una variable de sesión
+                    Dicho ID corresponde a la búsqueda en la BD.*/
+                    $_SESSION["id"] = $datos->id;
+                    /*Guardamos el usuario en una variable de sesión
+                    Dicho usuario corresponde a la búsqueda en la BD.*/
+                    $_SESSION["user"] = $datos->user;
+                    /*Guardamos el nombre en una variable de sesión
+                    Dicho nombre corresponde a la búsqueda en la BD.*/
+                    $_SESSION["nombre"] = $datos->nombre;
+                    //Se hace la redirección correspondiente
+                    header("location: moduloAdmin/exploradores/opciones.php");
                 } else {
-                    /////////VALIDACIÓN ADMIN SEGUIDORES/////////
-
-                    //Consulta SQL que usaremos para buscar en la base de datos el usuario
-                    $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'administradorSe'";
-                    $resultado = mysqli_query($enlace, $consulta);
-
-                    //Obtenemos el resultados mediante las filas
-                    $filas = mysqli_num_rows($resultado);
-
-                    if ($filas > 0) {
-                        header("location: ../moduloAdmin/seguidores/index.php");
+                    //Verificamos si el usuario que ingresa es usuario del dept. de Exploradores
+                    $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'Exploradores'");
+                    //Si el usuario es usuario de Exploradores
+                    if ($datos = $sql->fetch_object()) {
+                        /*Guardamos el id en una variable de sesión
+                        Dicho ID corresponde a la búsqueda en la BD.*/
+                        $_SESSION["id"] = $datos->id;
+                        /*Guardamos el usuario en una variable de sesión
+                        Dicho usuario corresponde a la búsqueda en la BD.*/
+                        $_SESSION["user"] = $datos->user;
+                        /*Guardamos el nombre en una variable de sesión
+                        Dicho nombre corresponde a la búsqueda en la BD.*/
+                        $_SESSION["nombre"] = $datos->nombre;
+                        //Se hace la redirección correspondiente
+                        header("location: modulosUsuarios/exploradores/exploradores.php");
                     } else {
-                        /////////VALIDACIÓN SEGUIDORES/////////
-
-                        //Consulta SQL que usaremos para buscar en la base de datos el usuario
-                        $consulta = "SELECT user, pass, departamento FROM usuarios WHERE user = '" . $correo . "' and pass = '" . $contra . "' and departamento = 'Seguidores'";
-                        $resultado = mysqli_query($enlace, $consulta);
-
-                        //Obtenemos el resultados mediante las filas
-                        $filas = mysqli_num_rows($resultado);
-
-                        //Si el usuario existe lo manda al modulo correspondiente
-                        if ($filas > 0) {
-                            header("location: ../modulosUsuarios/seguidores/index.php");
+                        //Verificamos si el usuario que ingresa es administrador del dept. de seguidores
+                        $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'administradorSe'");
+                        //Si el usuario es administrador de seguidores
+                        if ($datos = $sql->fetch_object()) {
+                            /*Guardamos el id en una variable de sesión
+                            Dicho ID corresponde a la búsqueda en la BD.*/
+                            $_SESSION["id"] = $datos->id;
+                            /*Guardamos el usuario en una variable de sesión
+                            Dicho usuario corresponde a la búsqueda en la BD.*/
+                            $_SESSION["user"] = $datos->user;
+                            /*Guardamos el nombre en una variable de sesión
+                            Dicho nombre corresponde a la búsqueda en la BD.*/
+                            $_SESSION["nombre"] = $datos->nombre;
+                            //Se hace la redirección correspondiente
+                            header("location: moduloAdmin/seguidores/index.php");
                         } else {
-                            header("location: baduser.php");
+                            //Verificamos si el usuario que ingresa es un usuario del dept. de seguidores
+                            $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'Seguidores'");
+                            //Si el usuario es usuario de seguidores
+                            if ($datos = $sql->fetch_object()) {
+                                /*Guardamos el id en una variable de sesión
+                                Dicho ID corresponde a la búsqueda en la BD.*/
+                                $_SESSION["id"] = $datos->id;
+                                /*Guardamos el usuario en una variable de sesión
+                                Dicho usuario corresponde a la búsqueda en la BD.*/
+                                $_SESSION["user"] = $datos->user;
+                                /*Guardamos el nombre en una variable de sesión
+                                Dicho nombre corresponde a la búsqueda en la BD.*/
+                                $_SESSION["nombre"] = $datos->nombre;
+                                //Se hace la redirección correspondiente
+                                header("location: modulosUsuarios/seguidores/index.php");
+                            } else {
+                                //Verificamos si el usuario que ingresa es el administrador general
+                                $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'administradorGe'");
+                                //Si el usuario es el administrador general
+                                if ($datos = $sql->fetch_object()) {
+                                    /*Guardamos el id en una variable de sesión
+                                    Dicho ID corresponde a la búsqueda en la BD.*/
+                                    $_SESSION["id"] = $datos->id;
+                                    /*Guardamos el usuario en una variable de sesión
+                                    Dicho usuario corresponde a la búsqueda en la BD.*/
+                                    $_SESSION["user"] = $datos->user;
+                                    /*Guardamos el nombre en una variable de sesión
+                                    Dicho nombre corresponde a la búsqueda en la BD.*/
+                                    $_SESSION["nombre"] = $datos->nombre;
+                                    //Se hace la redirección correspondiente
+                                    header("location: moduloGen/index.php");
+                                }
+                                //Si los datos ingresados no son iguales a los de la BD se muestra el mensaje
+                                echo "<div class='alert alert-danger text-center'>Usuario o contraseña incorrectos</div>";
+                            }
                         }
                     }
                 }
             }
         }
+    } else {
+        //Si los campos quedan vacíos se muestra el siguiente mensaje
+        echo "<div class='alert alert-warning'>Campos vacíos</div>";
     }
 }
-
-
-
-
-
-//Iniciamos una sesión (esta nos sirve para mantener uno o varios datos a la vez del usuario ingresado)
-session_start();
-//En este caso mantenemos el correo del usuario
-$_SESSION['user'] = $_POST['user'];

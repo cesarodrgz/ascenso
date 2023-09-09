@@ -6,68 +6,73 @@ entonces nos regresa al index, esto para evitar que vuelva
 hacía atrás después de cerrar sesión
 */
 if (empty($_SESSION["id"])) {
-    header("Location: ../../../index.php");
+    header("Location: ../../../../../index.php");
 }
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Seleccionar año</title>
+    <title>Actualizar premios - Seleccionar trimestre</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Estilos del footer -->
-    <link rel="stylesheet" href="../../../css/foot.css">
+    <link rel="stylesheet" href="../../../../../css/foot.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Imagenes-->
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
 </head>
 
-<!--NavBar-->
-<?php include '../../../templates/seguidores/nav2.php' ?>
+<!--Navbar-->
+<?php include '../../../../../templates/seguidores/nav5.php' ?>
 
-<body> <br>
+<body>
     <div class="container">
-        <!--Título-->
-        <h1 class="text-primary text-center">Agregar Premios</h1>
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-xl-12">
-                <div class="alert alert-secondary text-center" role="alert">
-                    Seleccione el año al que desea agregar premios al Seguidor
-                </div>
-            </div>
+        <h2 class="text-primary text-center">Seleccione el Trimestre</h2>
+        <div class="alert alert-secondary text-center" role="alert">
+            Seleccione el trimestre en el cual desea modificar los premios
         </div>
 
-        <!--Año 1-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/bronce.png" class="rounded mx-auto d-block" alt="A1-BRONCE" style="width: 125px;">
+                <img src="../../../../../img/1.png" alt="T1/Q1" class="mx-auto d-block">
                 <br>
-                <a href="#" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="trimestre1/index.php" class="btn btn-info btn-block">Trimestre 1</a>
             </div>
         </div><br>
 
-        <!--Año 2-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/plata.png" class="rounded mx-auto d-block" alt="A2-PLATA" style="width: 125px;">
+                <img src="../../../../../img/2.png" alt="T2/Q2" class="mx-auto d-block">
                 <br>
-                <a href="A2/index.php" class="btn btn-info btn-block">Año 2 - Plata</a>
+                <a href="trimestre2/index.php" class="btn btn-info btn-block">Trimestre 2</a>
             </div>
-        </div> <br>
+        </div><br>
 
-        <!--Año 3-->
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/oro.png" class="rounded mx-auto d-block" alt="A3-ORO" style="width: 125px;">
+                <img src="../../../../../img/3.png" alt="T3/Q3" class="mx-auto d-block">
                 <br>
-                <a href="#" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="trimestre3/index.php" class="btn btn-info btn-block">Trimestre 3</a>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-xl-12">
+                <img src="../../../../../img/4.png" alt="T4/Q4" class="mx-auto d-block">
+                <br>
+                <a href="trimestre4/index.php" class="btn btn-info btn-block">Trimestre 4</a>
             </div>
         </div>
-    </div> <br>
+    </div> <br><br>
 
-    <!--Inlcuimos el footer-->
-    <?php include '../../../templates/foot2.php' ?>
+    <?php include '../../../../../templates/foot2.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

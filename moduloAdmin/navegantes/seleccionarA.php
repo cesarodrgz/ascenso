@@ -1,3 +1,14 @@
+<?php
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 

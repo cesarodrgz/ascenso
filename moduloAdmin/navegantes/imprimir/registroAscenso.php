@@ -4,6 +4,16 @@ include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
 $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 $consulta2 = mysqli_query($enlace, "SELECT * from navplata");
+$consulta3 = mysqli_query($enlace, "SELECT * from navoro");
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -116,6 +126,48 @@ $consulta2 = mysqli_query($enlace, "SELECT * from navplata");
                         <?php
                         //Mostramos los datos que coincidan con la consulta SQL realizada
                         while ($datos = mysqli_fetch_array($consulta2)) { ?>
+                            <tr>
+                                <!--Mostramos el nombre -->
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <!--Mostramos la direccion -->
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <!--Mostramos el telefono -->
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <!--Mostramos el id -->
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p6"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p7"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p8"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p9"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p10"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p11"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p12"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p13"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p14"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p15"]; ?></td>
+                                <!--Mostramos el usuario -->
+                                <td><?php echo $datos["p16"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        //Mostramos los datos que coincidan con la consulta SQL realizada
+                        while ($datos = mysqli_fetch_array($consulta3)) { ?>
                             <tr>
                                 <!--Mostramos el nombre -->
                                 <td><?php echo $datos["nombre"]; ?></td>

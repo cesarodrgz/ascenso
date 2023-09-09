@@ -5,6 +5,15 @@ include "../../templates/conexion.php";
 $consulta = mysqli_query($enlace, "SELECT * from navbronce");
 $consulta2 = mysqli_query($enlace, "SELECT * from navplata");
 $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,12 +34,12 @@ $consulta3 = mysqli_query($enlace, "SELECT * from navoro");
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
     <title>Premios Navegantes</title>
-
+    <!--Diseño de tabla-->
     <style>
-        table thead {
-            background-color: #38ef7d;
-        }
-    </style>
+    th{
+      background-color: #FFC300;
+    }
+  </style>
 </head>
 
 <body>

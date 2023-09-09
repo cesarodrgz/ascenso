@@ -3,6 +3,15 @@
 include '../../../../../templates/conexion.php';
 //Realizamos una búsqueda SQL en la tabla usuarios donde mostramos a todos los usuarios del departamento de navegantes
 $consulta = mysqli_query($enlace, "SELECT * from navoro");
+//Iniciamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

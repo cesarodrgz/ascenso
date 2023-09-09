@@ -36,7 +36,7 @@
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../../templates/cerrarS.php">Cerrar Sesión <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../../templates/cerrarS.php">Cerrar Sesión</a>
             </li>
         </ul>
     </div>

@@ -3,6 +3,15 @@
 include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL para los premios del año 1
 $consulta = mysqli_query($enlace, "SELECT * from segplata");
+//Iniamos la sesión
+session_start();
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../../index.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,11 +27,10 @@ $consulta = mysqli_query($enlace, "SELECT * from segplata");
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <!--Estilos del footer -->
     <link rel="stylesheet" href="../../../css/foot.css">
-
+    <!--Estilos tabla-->
     <style>
-        table th {
-            background-color: #22a593;
-            color: white;
+        th {
+            background-color: #9370DB;
         }
     </style>
 </head>

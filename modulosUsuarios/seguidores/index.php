@@ -1,9 +1,18 @@
 <?php
-include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
+//Incluimos la clase conexión para realizar busquedas SQL
+include "../../templates/conexion.php"; 
 session_start(); //Iniciamos la variable de sesión
-$user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
-
-$consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$user'"); //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+//Obtenemos de Inciar sesion el user que esta entrando
+$user = $_SESSION['user']; 
+//Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesión
+$consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$user'"); 
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

@@ -3,7 +3,13 @@ include '../../templates/actualizarE.php';
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 session_start(); //Iniciamos la variable de sesión
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
-
+/*Si la variable de sesión que contiene el ID está vacía
+entonces nos regresa al index, esto para evitar que vuelva
+hacía atrás después de cerrar sesión
+*/
+if (empty($_SESSION["id"])) {
+    header("Location: ../../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">

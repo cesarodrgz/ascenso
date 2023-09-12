@@ -2,7 +2,9 @@
 //Incluimos la clase conexión para realizar la siguiente busqueda y llenar la tabal
 include '../../../templates/conexion.php';
 //Realizamos una búsqueda SQL para los premios del año 1
-$consulta = mysqli_query($enlace, "SELECT * from piplata");
+$consulta = mysqli_query($enlace, "SELECT * from pibronce");
+//Realizamos una búsqueda SQL para los premios del año 2
+$consulta2 = mysqli_query($enlace, "SELECT * from piplata");
 //Iniamos la sesión
 session_start();
 /*Si la variable de sesión que contiene el ID está vacía
@@ -76,6 +78,37 @@ if (empty($_SESSION["id"])) {
                         <?php
                         //Mostramos los datos que coincidan con la consulta SQL realizada
                         while ($datos = mysqli_fetch_array($consulta)) { ?>
+                            <tr>
+                                <!--Mostramos el nombre -->
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <!--Mostramos la direccion -->
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <!--Mostramos el telefono -->
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p6"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p7"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p8"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p9"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p10"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <!-- AÑO 2 -->
+                        <?php
+                        //Mostramos los datos que coincidan con la consulta SQL realizada
+                        while ($datos = mysqli_fetch_array($consulta2)) { ?>
                             <tr>
                                 <!--Mostramos el nombre -->
                                 <td><?php echo $datos["nombre"]; ?></td>

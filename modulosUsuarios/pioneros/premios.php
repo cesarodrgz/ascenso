@@ -12,8 +12,10 @@ hacía atrás después de cerrar sesión
 if (empty($_SESSION["id"])) {
     header("Location: ../../login.php");
 }
+//Realizamos una búsqueda SQL en la tabla de los premios del año 1
+$consulta = mysqli_query($enlace, "SELECT * from pibronce WHERE user = '$user'");
 //Realizamos una búsqueda SQL en la tabla de los premios del año 2
-$consulta = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'");
+$consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -79,6 +81,24 @@ $consulta = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'");
                             <?php
                             //Mostramos los datos que coincidan con la consulta SQL realizada
                             while ($datos = mysqli_fetch_array($consulta)) { ?>
+                                <tr>
+                                    <td><?php echo $datos["p1"]; ?></td>
+                                    <td><?php echo $datos["p2"]; ?></td>
+                                    <td><?php echo $datos["p3"]; ?></td>
+                                    <td><?php echo $datos["p4"]; ?></td>
+                                    <td><?php echo $datos["p5"]; ?></td>
+                                    <td><?php echo $datos["p6"]; ?></td>
+                                    <td><?php echo $datos["p7"]; ?></td>
+                                    <td><?php echo $datos["p8"]; ?></td>
+                                    <td><?php echo $datos["p9"]; ?></td>
+                                    <td><?php echo $datos["p10"]; ?></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos = mysqli_fetch_array($consulta2)) { ?>
                                 <tr>
                                     <td><?php echo $datos["p1"]; ?></td>
                                     <td><?php echo $datos["p2"]; ?></td>

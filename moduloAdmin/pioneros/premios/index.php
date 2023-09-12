@@ -43,7 +43,7 @@ if (empty($_SESSION["id"])) {
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <img src="../../../img/bronce.png" class="rounded mx-auto d-block" alt="A1-BRONCE" style="width: 125px;">
                 <br>
-                <a href="#" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="A1/index.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
             </div>
         </div><br>
 

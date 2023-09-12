@@ -34,7 +34,7 @@ if (empty($_SESSION["id"])) {
     <div id="my-nav" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Año 1</a>
+                <a class="nav-link" href="A1/index.php">Año 1</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="A2/index.php">Año 2</a>
@@ -66,7 +66,7 @@ if (empty($_SESSION["id"])) {
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <img src="../../../../img/bronce.png" class="rounded mx-auto d-block" alt="A1-BRONCE" style="width: 125px;">
                 <br>
-                <a href="#" class="btn btn-info btn-block">Año 1 - Bronce</a>
+                <a href="A1/index.php" class="btn btn-info btn-block">Año 1 - Bronce</a>
             </div>
         </div><br>
 

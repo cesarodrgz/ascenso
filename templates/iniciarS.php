@@ -123,9 +123,44 @@ if (!empty($_POST["btningresar"])) {
                                     $_SESSION["nombre"] = $datos->nombre;
                                     //Se hace la redirección correspondiente
                                     header("location: moduloGen/index.php");
+                                } else {
+                                    //Verificamos si el usuario que ingresa es el administrador general
+                                    $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'administradorPi'");
+                                    //Si el usuario es el administrador general
+                                    if ($datos = $sql->fetch_object()) {
+                                        /*Guardamos el id en una variable de sesión
+                                    Dicho ID corresponde a la búsqueda en la BD.*/
+                                        $_SESSION["id"] = $datos->id;
+                                        /*Guardamos el usuario en una variable de sesión
+                                    Dicho usuario corresponde a la búsqueda en la BD.*/
+                                        $_SESSION["user"] = $datos->user;
+                                        /*Guardamos el nombre en una variable de sesión
+                                    Dicho nombre corresponde a la búsqueda en la BD.*/
+                                        $_SESSION["nombre"] = $datos->nombre;
+                                        //Se hace la redirección correspondiente
+                                        header("location: moduloAdmin/pioneros/index.php");
+                                    } else {
+                                        //Verificamos si el usuario que ingresa es el administrador general
+                                        $sql = $conexion->query("SELECT * FROM usuarios WHERE user = '$usuario' and pass = '$password' and departamento = 'pioneros'");
+                                        //Si el usuario es el administrador general
+                                        if ($datos = $sql->fetch_object()) {
+                                            /*Guardamos el id en una variable de sesión
+                                    Dicho ID corresponde a la búsqueda en la BD.*/
+                                            $_SESSION["id"] = $datos->id;
+                                            /*Guardamos el usuario en una variable de sesión
+                                    Dicho usuario corresponde a la búsqueda en la BD.*/
+                                            $_SESSION["user"] = $datos->user;
+                                            /*Guardamos el nombre en una variable de sesión
+                                    Dicho nombre corresponde a la búsqueda en la BD.*/
+                                            $_SESSION["nombre"] = $datos->nombre;
+                                            //Se hace la redirección correspondiente
+                                            header("location: modulosUsuarios/pioneros/index.php");
+                                        } else {
+                                            //Si los datos ingresados no son iguales a los de la BD se muestra el mensaje
+                                            echo "<div class='alert alert-danger text-center'>Usuario o contraseña incorrectos</div>";
+                                        }
+                                    }
                                 }
-                                //Si los datos ingresados no son iguales a los de la BD se muestra el mensaje
-                                echo "<div class='alert alert-danger text-center'>Usuario o contraseña incorrectos</div>";
                             }
                         }
                     }

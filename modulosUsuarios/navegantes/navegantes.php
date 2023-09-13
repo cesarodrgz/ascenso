@@ -1,7 +1,7 @@
 <?php
 include "../../templates/conexion.php"; //Incluimos la clase conexión para realizar busquedas SQL
 //Iniciamos la variable de sesión
-session_start(); 
+session_start();
 $user = $_SESSION['user']; //Obtenemos de Inciar sesion el user que esta entrando
 //Realizamos una búsqueda SQL en la tabla usuarios donde el usuario sea igual a lo que traiga la variable de incio de sesió
 $consulta = mysqli_query($enlace, "SELECT nombre from usuarios where user = '$user'");
@@ -10,7 +10,7 @@ entonces nos regresa al index, esto para evitar que vuelva
 hacía atrás después de cerrar sesión
 */
 if (empty($_SESSION["id"])) {
-    header("Location: ../../login.php");
+  header("Location: ../../login.php");
 }
 ?>
 <!doctype html>
@@ -20,6 +20,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
   <title>Inicio - Navegantes</title>
+  <!-- icono -->
+  <link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

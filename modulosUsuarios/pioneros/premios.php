@@ -24,6 +24,8 @@ $consulta3 = mysqli_query($enlace, "SELECT * from pioro WHERE user = '$user'");
 
 <head>
     <title>Mis premios - pioneros</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

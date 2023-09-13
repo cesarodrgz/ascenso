@@ -20,6 +20,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <!-- Required meta tags -->
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--CSS FOOTER-->
@@ -36,10 +38,10 @@ if (empty($_SESSION["id"])) {
     <title>Premios Navegantes</title>
     <!--Diseño de tabla-->
     <style>
-    th{
-      background-color: #FFC300;
-    }
-  </style>
+        th {
+            background-color: #FFC300;
+        }
+    </style>
 </head>
 
 <body>

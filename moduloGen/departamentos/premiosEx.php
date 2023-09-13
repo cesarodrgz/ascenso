@@ -30,6 +30,8 @@ if (empty($_SESSION["id"])) {
 
     <!--  Datatables  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon">
 
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">

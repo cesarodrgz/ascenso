@@ -1,4 +1,5 @@
 <?php
+//Variables envías del formulario anterior
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
 $premio2 = $_POST["p2"];
@@ -19,6 +20,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <title>Actualizar T2|A1</title>
+    <!-- Icono -->
+    <link rel="shortcut icon" href="../../../../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,11 +31,11 @@ if (empty($_SESSION["id"])) {
     <!--Estilos footer-->
     <link rel="stylesheet" href="../../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
+<!-- Navbar -->
 <?php include 'navbarT2.php' ?>
-
 
 <body>
     <br>
@@ -40,7 +43,7 @@ if (empty($_SESSION["id"])) {
         <h2 class="text-primary text-center">Actualizar premios</h2>
         <div class="col-xs-12 col-md-12 col-xl-12">
             <div class="alert alert-info text-center" role="alert">
-            Esta actualizando los premios de: <b><?php echo $nombre ?></b> 
+                Esta actualizando los premios de: <b><?php echo $nombre ?></b>
             </div>
         </div>
         <div class="row">
@@ -63,16 +66,20 @@ if (empty($_SESSION["id"])) {
     </div>
 
     <?php
+    //Recibimos los datos al presionar el botón
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
         $p2 = $_POST["p2"];
 
+        //Consulta a ejecutar
         $actualizar = "UPDATE explobronce SET p2 = '$p2' WHERE id = '$id' AND nombre = '$nombre'";
 
+        //Ejecutamos la consulta
         $ejecutar = mysqli_query($enlace, $actualizar);
     ?>
         <script>
+            //Si la consulta no se ejecuta muestra el mensaje de error siguiente
             <?php if (!$ejecutar) { ?>
                 swal.fire({
                     title: "Oops...",
@@ -81,6 +88,7 @@ if (empty($_SESSION["id"])) {
                     button: "OK",
                 });
             <?php } else { ?>
+                //Si la consulta se ejecuta correctamente muestra el siguiente mensaje
                 swal.fire({
                     title: "¡Bien hecho!",
                     text: "Premios actualizados Correctamente",
@@ -94,15 +102,17 @@ if (empty($_SESSION["id"])) {
             <?php }
         } ?>
         </script>
-        
+
         <div class="espacio"></div>
+
+        <!-- footer -->
         <?php include '../../../../../templates/foot2.php' ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp8YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p7pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

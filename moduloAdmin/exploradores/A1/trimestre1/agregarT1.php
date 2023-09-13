@@ -18,6 +18,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <title>Agregar Trimestre 1</title>
+    <!-- Icono -->
+    <link rel="shortcut icon" href="../../../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,9 +28,10 @@ if (empty($_SESSION["id"])) {
     <!--Estilos del footer -->
     <link rel="stylesheet" href="../../../../css/foot.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
+<!-- Incluimos el navbar -->
 <?php include 'navbar2.php' ?>
 
 <body>
@@ -81,7 +84,7 @@ if (empty($_SESSION["id"])) {
     <?php
     /* Mediante el if comprobamos que las variables a insertar no esten vacias
        mediante el isset, si lo estan tomamos dichas variables de los campos:
-       id, user, nombre, p1, p2, p3, p4
+       id, user, nombre, p1, 
     */
     if (isset($_POST["send"])) {
         $id = $_POST["id"];
@@ -90,7 +93,7 @@ if (empty($_SESSION["id"])) {
         $p1 = $_POST["p1"];
 
         //Declaramos la variable insertar que contendrá la sentencia SQL a utilizar, en este caso insertar  
-        //Insertamos los valores de id, user, nombre, p1, p2, p3 y p4
+        //Insertamos los valores de id, user, nombre, p1, 
         $insertar = "INSERT INTO explobronce(id, user, nombre, p1) 
         VALUES('$id', 
                 '$user',
@@ -126,14 +129,16 @@ if (empty($_SESSION["id"])) {
         </script>
 
         <br><br><br><br><br>
+
+        <!-- Incluimos el footer -->
         <?php include '../../../../templates/foot2.php' ?>
 
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -60,25 +60,23 @@
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <h1 id="nosotros" class="font-weight-bold">Nosotros</h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Explicabo quos perspiciatis minima eum soluta enim doloremque,
-                    officia sit ipsa voluptates in illo consectetur, fugit expedita ab tenetur!
-                    Laboriosam, vitae reprehenderit!
+                <p style="text-align: justify;">
+                    EXPLORADORES DEL REY, ES UN MINISTERIO INFANTO JUVENIL CON EL ÚNICO OBJETIVO DE EVANGELIZAR,
+                    EQUIPAR Y EMPODERAR
+                    LA PRÓXIMA GENERACIÓN DE HOMBRES DE DIOS
+                    Y LÍDERES SIERVOS DE POR VIDA.
                 </p>
             </div>
         </div>
 
-        <br><br><br>
+        <br><br>
 
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <h1 id="acerca" class="font-weight-bold">Acerca de</h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Explicabo quos perspiciatis minima eum soluta enim doloremque,
-                    officia sit ipsa voluptates in illo consectetur, fugit expedita ab tenetur!
-                    Laboriosam, vitae reprehenderit!
+                <p style="text-align: justify;">
+                    NUESTROS HORARIOS DE LAS REUNIONES SON TODOS LOS DOMINGOS DE 8:30 AM A 10:00
+                    AM EN EL PARQUE DE LA URBANIZACIÓN SANTA EMILIA, SAN MIGUEL, EL SALVADOR.
                 </p>
             </div>
         </div>

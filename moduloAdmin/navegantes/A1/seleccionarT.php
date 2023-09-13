@@ -14,6 +14,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <title>Seleccionar trimeste</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,7 +41,7 @@ if (empty($_SESSION["id"])) {
 
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/2.png" class="rounded mx-auto d-block"  alt="T2/Q2" style="width: 125px;">
+                <img src="../../../img/2.png" class="rounded mx-auto d-block" alt="T2/Q2" style="width: 125px;">
                 <br>
                 <a href="trimestre2/seleccionarNav.php" class="btn btn-info btn-block">Trimestre 2</a>
             </div>
@@ -47,7 +49,7 @@ if (empty($_SESSION["id"])) {
 
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/3.png" class="rounded mx-auto d-block"  alt="T3/Q3" style="width: 125px;">
+                <img src="../../../img/3.png" class="rounded mx-auto d-block" alt="T3/Q3" style="width: 125px;">
                 <br>
                 <a href="trimestre3/seleccionarNav.php" class="btn btn-info btn-block">Trimestre 3</a>
             </div>
@@ -55,7 +57,7 @@ if (empty($_SESSION["id"])) {
 
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <img src="../../../img/4.png" class="rounded mx-auto d-block"  alt="T4/Q4" style="width: 125px;">
+                <img src="../../../img/4.png" class="rounded mx-auto d-block" alt="T4/Q4" style="width: 125px;">
                 <br>
                 <a href="trimestre4/seleccionarNav.php" class="btn btn-info btn-block">Trimestre 4</a>
             </div>

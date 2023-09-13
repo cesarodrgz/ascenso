@@ -40,7 +40,7 @@ if (empty($_SESSION["id"])) {
                 <a class="nav-link" href="A2/index.php">Año 2</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Año 3</a>
+                <a class="nav-link" href="A3/index.php">Año 3</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="../../../../templates/cerrarS.php">Cerrar sesión</a>
@@ -84,7 +84,7 @@ if (empty($_SESSION["id"])) {
             <div class="col-xs-12 col-md-12 col-xl-12">
                 <img src="../../../../img/oro.png" class="rounded mx-auto d-block" alt="A3-ORO" style="width: 125px;">
                 <br>
-                <a href="#" class="btn btn-info btn-block">Año 3 - Oro</a>
+                <a href="A3/index.php" class="btn btn-info btn-block">Año 3 - Oro</a>
             </div>
         </div>
     </div> <br>

@@ -17,7 +17,7 @@
                 <a class="nav-link" href="premios/actualizar/index.php" tabindex="-1" aria-disabled="true">Actualizar premios</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Imprimir</a>
+                <a class="nav-link" href="imprimir/index.php" tabindex="-1" aria-disabled="true">Imprimir</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="../../templates/cerrarS.php" tabindex="-1" aria-disabled="true">Cerrar sesión</a>

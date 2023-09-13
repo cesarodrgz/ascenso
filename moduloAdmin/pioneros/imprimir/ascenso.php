@@ -5,6 +5,8 @@ include '../../../templates/conexion.php';
 $consulta = mysqli_query($enlace, "SELECT * from pibronce");
 //Realizamos una búsqueda SQL para los premios del año 2
 $consulta2 = mysqli_query($enlace, "SELECT * from piplata");
+//Realizamos una búsqueda SQL para los premios del año 3
+$consulta3 = mysqli_query($enlace, "SELECT * from pioro");
 //Iniamos la sesión
 session_start();
 /*Si la variable de sesión que contiene el ID está vacía
@@ -71,6 +73,7 @@ if (empty($_SESSION["id"])) {
                             <th>Premio 8</th>
                             <th>Premio 9</th>
                             <th>Premio 10</th>
+                            <th>Premio 11</th>
                         </tr>
                     </thead>
                     <!--Cuerpo de la tabla-->
@@ -101,6 +104,7 @@ if (empty($_SESSION["id"])) {
                                 <td><?php echo $datos["p9"]; ?></td>
                                 <!--Mostramos el premio -->
                                 <td><?php echo $datos["p10"]; ?></td>
+                                <td></td>
                             </tr>
                         <?php
                         }
@@ -132,6 +136,40 @@ if (empty($_SESSION["id"])) {
                                 <td><?php echo $datos["p9"]; ?></td>
                                 <!--Mostramos el premio -->
                                 <td><?php echo $datos["p10"]; ?></td>
+                                <td></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <!-- AÑO 3 -->
+                        <?php
+                        //Mostramos los datos que coincidan con la consulta SQL realizada
+                        while ($datos = mysqli_fetch_array($consulta3)) { ?>
+                            <tr>
+                                <!--Mostramos el nombre -->
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <!--Mostramos la direccion -->
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <!--Mostramos el telefono -->
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p6"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p7"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p8"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p9"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p10"]; ?></td>
+                                <!--Mostramos el premio -->
+                                <td><?php echo $datos["p11"]; ?></td>
                             </tr>
                         <?php
                         }

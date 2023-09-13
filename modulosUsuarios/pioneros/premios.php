@@ -16,6 +16,8 @@ if (empty($_SESSION["id"])) {
 $consulta = mysqli_query($enlace, "SELECT * from pibronce WHERE user = '$user'");
 //Realizamos una búsqueda SQL en la tabla de los premios del año 2
 $consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'");
+//Realizamos una búsqueda SQL en la tabla de los premios del año 3
+$consulta3 = mysqli_query($enlace, "SELECT * from pioro WHERE user = '$user'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,7 +62,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'")
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-xl-12">
-                <h3 class="text-center">Premios obtenidos en el Año 1</h3>
+                <h3 class="text-center">Premios obtenidos</h3>
                 <div class="table-responsive-md">
                     <table class="table">
                         <tr>
@@ -75,6 +77,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'")
                                 <th>Premio 8</th>
                                 <th>Premio 9</th>
                                 <th>Premio 10</th>
+                                <th>Premio 11</th>
                             </thead>
                         </tr>
                         <tbody>
@@ -92,6 +95,7 @@ $consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'")
                                     <td><?php echo $datos["p8"]; ?></td>
                                     <td><?php echo $datos["p9"]; ?></td>
                                     <td><?php echo $datos["p10"]; ?></td>
+                                    <td>N/A</td>
                                 </tr>
                             <?php
                             }
@@ -110,6 +114,26 @@ $consulta2 = mysqli_query($enlace, "SELECT * from piplata WHERE user = '$user'")
                                     <td><?php echo $datos["p8"]; ?></td>
                                     <td><?php echo $datos["p9"]; ?></td>
                                     <td><?php echo $datos["p10"]; ?></td>
+                                    <td>N/A</td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            //Mostramos los datos que coincidan con la consulta SQL realizada
+                            while ($datos = mysqli_fetch_array($consulta3)) { ?>
+                                <tr>
+                                    <td><?php echo $datos["p1"]; ?></td>
+                                    <td><?php echo $datos["p2"]; ?></td>
+                                    <td><?php echo $datos["p3"]; ?></td>
+                                    <td><?php echo $datos["p4"]; ?></td>
+                                    <td><?php echo $datos["p5"]; ?></td>
+                                    <td><?php echo $datos["p6"]; ?></td>
+                                    <td><?php echo $datos["p7"]; ?></td>
+                                    <td><?php echo $datos["p8"]; ?></td>
+                                    <td><?php echo $datos["p9"]; ?></td>
+                                    <td><?php echo $datos["p10"]; ?></td>
+                                    <td><?php echo $datos["p11"]; ?></td>
                                 </tr>
                             <?php
                             }

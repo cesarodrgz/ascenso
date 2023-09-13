@@ -43,7 +43,7 @@ include 'templates/conexion.php';
     <br>
 
     <!-- Logo del ministerio -->
-    <img src="img/logo.png" alt="LOGO" style="width: 150px;" class="rounded mx-auto d-bloc">
+    <img src="img/logo.png" alt="LOGO" style="width: 150px;" class="rounded mx-auto d-block">
 
     <!-- Inicio del container -->
     <div class="container">

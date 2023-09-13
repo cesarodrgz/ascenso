@@ -18,6 +18,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <title>Actualizar premios A1|T2</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../../../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,8 +35,8 @@ if (empty($_SESSION["id"])) {
 
 <body>
     <br>
-        <!-- Logo de navegantes-->
-        <img src="../../../../../img/navegantes.png" class="rounded mx-auto d-block" alt="LOGO-NAVEGANTES" style="width: 100px;">
+    <!-- Logo de navegantes-->
+    <img src="../../../../../img/navegantes.png" class="rounded mx-auto d-block" alt="LOGO-NAVEGANTES" style="width: 100px;">
     <div class="container">
         <div class="col-xs-12 col-md-12 col-xl-12">
             <!-- Título-->

@@ -18,6 +18,8 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <title>Actualizar premios T2|A3</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../../../../../img/logo.ico" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +34,8 @@ if (empty($_SESSION["id"])) {
     <!--Estilos tabla-->
     <style>
         th {
-            background-color: #E7B513;;
+            background-color: #E7B513;
+            ;
         }
     </style>
 </head>

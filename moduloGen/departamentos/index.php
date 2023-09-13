@@ -60,32 +60,32 @@ if (empty($_SESSION["id"])) {
             </div>
         </div>
 
-        <div class="select">
-            <div class="navegantes">
+        <div class="row">
+        <div class="col-md-3">
                 <a href="premiosNav.php">
                     <img src="../../img/navegantes.png" class="mx-auto d-block">
                 </a>
             </div> <br>
 
-            <div class="Pioneros">
-                <a href="#">
+            <div class="col-md-3">
+                <a href="premiosPi.php">
                     <img src="../../img/pioneros.png" class="mx-auto d-block">
                 </a>
             </div> <br>
 
-            <div class="Seguidores">
+            <div class="col-md-3">
                 <a href="premiosSe.php" class="btn btn-block">
                     <img src="../../img/seguidores.png" class="mx-auto d-block">
                 </a>
             </div> <br>
 
-            <div class="Exploradores">
+            <div class="col-md-3">
                 <a href="premiosEx.php">
                     <img src="../../img/exploradores.png" class="mx-auto d-block">
                 </a>
             </div>
         </div>
-    </div> <br>
+    </div> <br><br><br><br><br><br><br><br>
 
     <?php include '../../templates/foot2.php' ?>
 

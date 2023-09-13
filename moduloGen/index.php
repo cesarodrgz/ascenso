@@ -1,6 +1,7 @@
 <?php
 //Iniciamos la sesión
 session_start();
+
 /*Si la variable de sesión que contiene el ID está vacía
 entonces nos regresa al index, esto para evitar que vuelva
 hacía atrás después de cerrar sesión
@@ -44,18 +45,26 @@ if (empty($_SESSION["id"])) {
     </nav> <br><br><br>
 
     <div class="container">
-        <h2 class="text-center text-primary">Opciones <br> (Administrador General)</h2> <br>
+        <h2 class="text-center text-primary">Opciones</h2> <br>
+        <div class="alert alert-success" role="alert">
+            <b>Bienvenido:</b> <?php echo $_SESSION["nombre"]; ?>
+        </div>
 
         <div class="opciones">
+            <!-- Usuarios -->
+            <img src="../img/usuario.png" alt="logo-usuarios" class="rounded mx-auto d-block" style="width: 115px;">
             <div class="usuarios">
                 <a href="usuarios/index.php" class="btn btn-warning btn-block">Gestionar usuarios</a>
             </div> <br>
+
+            <!-- Premios -->
+            <img src="../img/premio.png" alt="logo-usuarios" class="rounded mx-auto d-block" style="width: 115px;">
 
             <div class="departamentos">
                 <a href="departamentos/index.php" class="btn btn-warning btn-block">Premios</a>
             </div>
         </div>
-    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div> <br><br>
 
     <!--Inlcuimos el footer-->
     <?php include '../templates/foot2.php' ?>

@@ -2,9 +2,9 @@
 //Incluimos la clase conexión para realizar busquedas SQL
 include "../../templates/conexion.php";
 //Consulta para mostrar los premios
-//$consulta = mysqli_query($enlace, "SELECT * from segbronce");
-$consulta2 = mysqli_query($enlace, "SELECT * from segplata");
-//$consulta3 = mysqli_query($enlace, "SELECT * from segoro");
+$consulta = mysqli_query($enlace, "SELECT * from pibronce");
+$consulta2 = mysqli_query($enlace, "SELECT * from piplata");
+$consulta3 = mysqli_query($enlace, "SELECT * from pioro");
 //Iniciamos la sesión
 session_start();
 /*Si la variable de sesión que contiene el ID está vacía
@@ -19,7 +19,7 @@ if (empty($_SESSION["id"])) {
 <html lang="en">
 
 <head>
-<title>Premios Pioneros</title>
+    <title>Premios Pioneros</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,11 +34,11 @@ if (empty($_SESSION["id"])) {
 
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    
+
     <!--Estilos tabla-->
     <style>
         th {
-            background-color: #9370DB;
+            background-color: #E7B513;
         }
     </style>
 </head>
@@ -64,8 +64,8 @@ if (empty($_SESSION["id"])) {
         </div>
     </nav> <br><br><br>
 
-    <img src="../../img/seguidores.png" class="mx-auto d-block" style="width: 100px;">
-    <h1 class="text-center">Premios de Seguidores</h1>
+    <img src="../../img/pioneros.png" class="mx-auto d-block" style="width: 100px;">
+    <h1 class="text-center">Premios de Pioneros</h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -87,9 +87,49 @@ if (empty($_SESSION["id"])) {
                         </tr>
                     </thead>
                     <tbody>
+                        <!--AÑO 1-->
+                        <?php
+                        while ($datos = mysqli_fetch_array($consulta)) { ?>
+                            <tr>
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <td><?php echo $datos["p6"]; ?></td>
+                                <td><?php echo $datos["p7"]; ?></td>
+                                <td><?php echo $datos["p8"]; ?></td>
+                                <td><?php echo $datos["p9"]; ?></td>
+                                <td><?php echo $datos["p10"]; ?></td>
+                                <td>N/A</td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                         <!--AÑO 2-->
                         <?php
                         while ($datos = mysqli_fetch_array($consulta2)) { ?>
+                            <tr>
+                                <td><?php echo $datos["nombre"]; ?></td>
+                                <td><?php echo $datos["p1"]; ?></td>
+                                <td><?php echo $datos["p2"]; ?></td>
+                                <td><?php echo $datos["p3"]; ?></td>
+                                <td><?php echo $datos["p4"]; ?></td>
+                                <td><?php echo $datos["p5"]; ?></td>
+                                <td><?php echo $datos["p6"]; ?></td>
+                                <td><?php echo $datos["p7"]; ?></td>
+                                <td><?php echo $datos["p8"]; ?></td>
+                                <td><?php echo $datos["p9"]; ?></td>
+                                <td><?php echo $datos["p10"]; ?></td>
+                                <td>N/A</td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <!--AÑO 2-->
+                        <?php
+                        while ($datos = mysqli_fetch_array($consulta3)) { ?>
                             <tr>
                                 <td><?php echo $datos["nombre"]; ?></td>
                                 <td><?php echo $datos["p1"]; ?></td>
